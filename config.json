@@ -1,0 +1,15 @@
+{
+  "sip_uri": "sip:4267@192.168.6.120",
+  "microsip_paths": [
+    "C:\\Users\\user\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\MicroSIP\\MicroSIP.lnk",
+    "C:\\Program Files\\MicroSIP\\microsip.exe",
+    "C:\\Program Files (x86)\\MicroSIP\\microsip.exe"
+  ],
+  "audio_files": {
+    "test_warning": "testing.wav",
+    "fall_warning": "fall_warning.wav",
+    "baggage_warning": "baggage_warning.wav",
+    "wheelchair_warning": "wheelchair_warning.wav",
+    "stay_warning": "stay_warning.wav"
+  }
+}
