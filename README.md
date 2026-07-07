@@ -1,102 +1,93 @@
-# Windows Broadcast Management Server
+# Native SIP/RTP IP Speaker Demo
 
-This project is a formalized Windows broadcast management architecture for PORTech IS-670 IP Speaker demos.
+This project controls a PORTech IS-670 / IS-670P+ IP Speaker directly from Python.
+It does not use MicroSIP, VB-CABLE, Asterisk, IBS, or a separate broadcast server.
 
-## Architecture
+Flow:
 
-Windows GUI Client -> Broadcast Management Server -> MicroSIP CLI -> VB-CABLE -> IP Speaker
+```text
+Python tkinter GUI -> SIP INVITE / ACK / BYE -> RTP G.711 u-law -> IP Speaker
+```
 
-The tkinter GUI does not control MicroSIP directly. It calls the local FastAPI server through HTTP APIs. The server owns speaker/group management, task queueing, MicroSIP CLI calls, audio playback, hangup, and logs.
+## Folder Structure
 
-## Requirements
-
-- Python 3.11+
-- MicroSIP
-- VB-CABLE
-- IP Speaker reachable by SIP, for example `sip:4267@192.168.6.120`
-
-## Install Python Packages
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\activate
-pip install -r requirements.txt
+```text
+ip_speaker/
+??? app.py                 # Main GUI
+??? config.json            # IP, SIP, RTP, and audio mapping settings
+??? run_demo.bat           # Double-click launcher
+??? README.md
+??? audio/                 # Active 8000 Hz mono 16-bit PCM WAV files
+??? audio_backup/          # Original backup WAV files, not used by the GUI
+??? logs/                  # Native SIP/RTP debug logs
+??? native/                # SIP, RTP, WAV, and G.711 implementation modules
 ```
 
 ## Run
 
-Terminal 1:
-
 ```powershell
-python broadcast_server.py
-```
-
-Terminal 2:
-
-```powershell
+cd C:\Users\user\Desktop\ip_speaker
 python app.py
 ```
 
-## MicroSIP Settings
-
-- Set microphone device to `CABLE Output`.
-- Prefer G.711 A-law / G.711 u-law codec.
-- Confirm CLI works:
-
-```powershell
-"C:\Program Files\MicroSIP\microsip.exe" "sip:4267@192.168.6.120"
-"C:\Program Files\MicroSIP\microsip.exe" /hangupall
-```
-
-## VB-CABLE Settings
-
-- Windows audio output should go to `CABLE Input`.
-- MicroSIP microphone should receive `CABLE Output`.
-
-## Add Speaker
-
-Edit `config.json` -> `speakers`.
-
-## Add Group
-
-Edit `config.json` -> `groups`.
-
-## Add Audio File
-
-Put a WAV file into `audio/`, then edit `config.json` -> `audio_files`.
-
-Current test broadcast uses `testing.wav`.
-
-## Recommended Audio Format
-
-WAV, 8000 Hz, mono, 16-bit PCM.
-
-## Logs
-
-Logs are written to:
+Or double-click:
 
 ```text
-logs/broadcast_log.csv
+run_demo.bat
 ```
 
-CSV columns:
+## Current Settings
+
+`config.json` contains:
+
+- `local.ip`: the real Windows IP used to bind SIP/RTP sockets.
+- `local.advertise_ip`: optional IP announced inside SIP SDP. Leave empty for normal LAN use. In routed/NAT environments, this can be set to the IP that the speaker sees, such as `192.168.6.1`.
+- `local.sip_port`: local SIP UDP port.
+- `local.rtp_port`: local RTP UDP port.
+- `speaker.ip`: IP Speaker address.
+- `speaker.sip_user`: IP Speaker SIP user.
+- `speaker.sip_port`: IP Speaker SIP UDP port.
+- `audio_files`: GUI button label to WAV filename mapping.
+
+Current demo values:
 
 ```text
-time, task_id, type, target_group, target_speakers, audio_file, status, message
+Local IP:      140.124.42.67
+Advertise IP:  192.168.6.1
+Speaker IP:    192.168.6.120
+SIP User:      4267
 ```
 
-## API
+## Audio Files
 
-- `GET /api/health`
-- `GET /api/speakers`
-- `GET /api/groups`
-- `GET /api/audio-files`
-- `GET /api/logs`
-- `POST /api/broadcast/audio`
-- `POST /api/broadcast/live/start`
-- `POST /api/broadcast/live/stop`
-- `POST /api/broadcast/stop`
+Put playable WAV files in `audio/`.
 
-## Limitations
+Required WAV format:
 
-This is a single Windows host formalized solution. Multi-speaker simultaneous playback depends on MicroSIP multi-call behavior. For many speakers, precise sync, scheduling, and higher operational stability, upgrade to the vendor IBS solution or a dedicated SIP Broadcast Server.
+```text
+8000 Hz
+mono
+16-bit PCM
+.wav
+```
+
+Current audio files:
+
+```text
+testing.wav
+fall_warning.wav
+baggage_warning.wav
+wheelchair_warning.wav
+stay_warning.wav
+```
+
+The GUI validates the WAV format before sending RTP. If a file is missing or has the wrong format, it shows an error instead of crashing.
+
+## Operation
+
+1. Open `app.py` or run `run_demo.bat`.
+2. Confirm the Local IP, Advertise IP, Speaker IP, SIP User, and ports.
+3. Click `Apply Settings`.
+4. Click `Test Call / Play Test Audio` or one of the pre-recorded audio buttons.
+5. The program sends SIP INVITE, streams PCMU RTP audio, then sends BYE automatically.
+6. Check `logs/native_debug.log` when troubleshooting SIP/RTP behavior.

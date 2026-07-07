@@ -1,41 +1,16 @@
 {
-  "server": {
-    "host": "127.0.0.1",
-    "port": 8000
+  "local": {
+    "ip": "140.124.42.67",
+    "advertise_ip": "140.124.42.67",
+    "sip_port": 64882,
+    "rtp_port": 4004,
+    "audio_gain": 10.0,
+    "start_delay_ms": 500
   },
-  "microsip": {
-    "path": "C:\\Users\\user\\AppData\\Local\\MicroSIP\\MicroSIP.exe",
-    "call_connect_delay_sec": 1.5,
-    "multi_call_interval_sec": 0.8,
-    "hangup_after_playback": true
-  },
-  "speakers": [
-    {
-      "id": "SPK001",
-      "name": "月台A",
-      "sip_uri": "sip:4267@192.168.6.120",
-      "zone": "月台區",
-      "enabled": true
-    },
-    {
-      "id": "SPK002",
-      "name": "大廳",
-      "sip_uri": "sip:4268@192.168.6.121",
-      "zone": "大廳區",
-      "enabled": false
-    }
-  ],
-  "groups": {
-    "全區": [
-      "SPK001",
-      "SPK002"
-    ],
-    "月台區": [
-      "SPK001"
-    ],
-    "大廳區": [
-      "SPK002"
-    ]
+  "speaker": {
+    "ip": "192.168.6.120",
+    "sip_user": "4267",
+    "sip_port": 5060
   },
   "audio_files": {
     "測試廣播": "testing.wav",
