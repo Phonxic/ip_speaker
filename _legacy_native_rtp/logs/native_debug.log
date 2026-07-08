@@ -5139,3 +5139,259 @@ CSeq: 2 BYE
 Content-Length: 0
 
 
+[2026-07-07T17:59:37] === Native broadcast started ===
+[2026-07-07T17:59:37] settings={'local_ip': '140.124.42.67', 'advertise_ip': '140.124.42.67', 'local_sip_port': 64882, 'local_rtp_port': 4004, 'speaker_ip': '192.168.6.120', 'speaker_sip_user': '4267', 'speaker_sip_port': 5060, 'audio_gain': 10.0, 'start_delay_ms': 500}, audio_path=C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[2026-07-07T17:59:37] WAV loaded: samples=25171
+[2026-07-07T17:59:37] SIP bind_ip=140.124.42.67, advertise_ip=140.124.42.67, local_sip_port=64882, local_rtp_port=4004
+[2026-07-07T17:59:37] SDP advertise_ip=140.124.42.67, bind_ip=140.124.42.67
+[2026-07-07T17:59:37] SIP SEND:
+INVITE sip:4267@192.168.6.120 SIP/2.0
+Via: SIP/2.0/UDP 140.124.42.67:64882;branch=z9hG4bK-b1aa9c4c820f49e5a0d298bda88d128d;rport
+Max-Forwards: 70
+From: <sip:140.124.42.67>;tag=471fa85d6d
+To: <sip:4267@192.168.6.120>
+Call-ID: c14095b8-8b28-4069-bea8-dbdf6e092c27@140.124.42.67
+CSeq: 1 INVITE
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+Supported: replaces, 100rel, timer, norefersub
+Session-Expires: 1800
+Min-SE: 90
+User-Agent: MicroSIP/3.22.12-compatible-python
+Contact: <sip:140.124.42.67:64882;ob>
+Content-Type: application/sdp
+Content-Length: 340
+
+v=0
+o=- 1783418377 1783418377 IN IP4 140.124.42.67
+s=pjmedia
+b=AS:84
+t=0 0
+a=X-nat:0
+m=audio 4004 RTP/AVP 8 0 101
+c=IN IP4 140.124.42.67
+b=TIAS:64000
+a=rtcp:4005 IN IP4 140.124.42.67
+a=sendrecv
+a=rtpmap:8 PCMA/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-16
+a=ssrc:2691073895 cname:python-native
+
+[2026-07-07T17:59:37] SIP RECV:
+SIP/2.0 100 Trying
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bK-b1aa9c4c820f49e5a0d298bda88d128d
+From: <sip:140.124.42.67>;tag=471fa85d6d
+To: <sip:4267@192.168.6.120>
+Call-ID: c14095b8-8b28-4069-bea8-dbdf6e092c27@140.124.42.67
+CSeq: 1 INVITE
+Content-Length: 0
+
+
+[2026-07-07T17:59:37] SIP RECV:
+SIP/2.0 180 Ringing
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bK-b1aa9c4c820f49e5a0d298bda88d128d
+From: <sip:140.124.42.67>;tag=471fa85d6d
+To: <sip:4267@192.168.6.120>;tag=56822b5d
+Call-ID: c14095b8-8b28-4069-bea8-dbdf6e092c27@140.124.42.67
+Contact: <sip:101@192.168.6.120:5060>
+CSeq: 1 INVITE
+Content-Length: 0
+
+
+[2026-07-07T17:59:38] SIP RECV:
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bK-b1aa9c4c820f49e5a0d298bda88d128d
+From: <sip:140.124.42.67>;tag=471fa85d6d
+To: <sip:4267@192.168.6.120>;tag=56822b5d
+Call-ID: c14095b8-8b28-4069-bea8-dbdf6e092c27@140.124.42.67
+Contact: <sip:101@192.168.6.120:5060>
+CSeq: 1 INVITE
+Allow: INVITE,CANCEL,ACK,BYE,NOTIFY,REFER,OPTIONS,INFO,MESSAGE,UPDATE
+Supported: replaces,timer
+Session-Expires: 1800;refresher=uac
+Content-Type: application/sdp
+User-Agent: IPSPK-v1.306
+Content-Length: 183
+
+v=0
+o=CMI-SIPUA 19943 0 IN IP4 192.168.6.120
+s=SIP CALL
+c=IN IP4 192.168.6.120
+t=0 0
+m=audio 20000 RTP/AVP 8 101
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+a=sendrecv
+
+[2026-07-07T17:59:38] SIP 200 OK parsed: to_tag=56822b5d, contact=sip:101@192.168.6.120:5060, remote_rtp=192.168.6.120:20000, payload_type=8
+[2026-07-07T17:59:38] SIP SEND:
+ACK sip:101@192.168.6.120:5060 SIP/2.0
+Via: SIP/2.0/UDP 140.124.42.67:64882;branch=z9hG4bK-9290a50c3e7541cf94667328ef93220b;rport
+Max-Forwards: 70
+From: <sip:140.124.42.67>;tag=471fa85d6d
+To: <sip:4267@192.168.6.120>;tag=56822b5d
+Call-ID: c14095b8-8b28-4069-bea8-dbdf6e092c27@140.124.42.67
+CSeq: 1 ACK
+Content-Length: 0
+
+
+[2026-07-07T17:59:38] RTP START: local=140.124.42.67:4004, remote=192.168.6.120:20000, payload_type=8, audio_gain=10.0, start_delay_ms=500, samples=25171
+[2026-07-07T17:59:38] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=2691073895
+[2026-07-07T17:59:38] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=2691073895
+[2026-07-07T17:59:38] RTP start delay: 500 ms
+[2026-07-07T17:59:39] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=2691073895
+[2026-07-07T17:59:40] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=2691073895
+[2026-07-07T17:59:41] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=2691073895
+[2026-07-07T17:59:41] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=2691073895
+[2026-07-07T17:59:41] RTP END: packets_sent=158
+[2026-07-07T17:59:41] SIP SEND:
+BYE sip:101@192.168.6.120:5060 SIP/2.0
+Via: SIP/2.0/UDP 140.124.42.67:64882;branch=z9hG4bK-80d42cc32a99477c970ccd5c30175cf8;rport
+Max-Forwards: 70
+From: <sip:140.124.42.67>;tag=471fa85d6d
+To: <sip:4267@192.168.6.120>;tag=56822b5d
+Call-ID: c14095b8-8b28-4069-bea8-dbdf6e092c27@140.124.42.67
+CSeq: 2 BYE
+User-Agent: MicroSIP/3.22.12-compatible-python
+Content-Length: 0
+
+
+[2026-07-07T17:59:41] SIP RECV:
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bK-80d42cc32a99477c970ccd5c30175cf8
+From: <sip:140.124.42.67>;tag=471fa85d6d
+To: <sip:4267@192.168.6.120>;tag=56822b5d
+Call-ID: c14095b8-8b28-4069-bea8-dbdf6e092c27@140.124.42.67
+CSeq: 2 BYE
+Content-Length: 0
+
+
+[2026-07-07T18:01:01] === Native broadcast started ===
+[2026-07-07T18:01:01] settings={'local_ip': '140.124.42.67', 'advertise_ip': '140.124.42.67', 'local_sip_port': 64882, 'local_rtp_port': 4004, 'speaker_ip': '192.168.6.120', 'speaker_sip_user': '0001', 'speaker_sip_port': 5060, 'audio_gain': 10.0, 'start_delay_ms': 500}, audio_path=C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[2026-07-07T18:01:01] WAV loaded: samples=25171
+[2026-07-07T18:01:01] SIP bind_ip=140.124.42.67, advertise_ip=140.124.42.67, local_sip_port=64882, local_rtp_port=4004
+[2026-07-07T18:01:01] SDP advertise_ip=140.124.42.67, bind_ip=140.124.42.67
+[2026-07-07T18:01:01] SIP SEND:
+INVITE sip:0001@192.168.6.120 SIP/2.0
+Via: SIP/2.0/UDP 140.124.42.67:64882;branch=z9hG4bK-5f4f24d63fd3481ab3be4cd9407d0f44;rport
+Max-Forwards: 70
+From: <sip:140.124.42.67>;tag=71ea1c8b7b
+To: <sip:0001@192.168.6.120>
+Call-ID: 469395b4-6f4a-4561-acd3-9f5a418f22d6@140.124.42.67
+CSeq: 1 INVITE
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+Supported: replaces, 100rel, timer, norefersub
+Session-Expires: 1800
+Min-SE: 90
+User-Agent: MicroSIP/3.22.12-compatible-python
+Contact: <sip:140.124.42.67:64882;ob>
+Content-Type: application/sdp
+Content-Length: 340
+
+v=0
+o=- 1783418461 1783418461 IN IP4 140.124.42.67
+s=pjmedia
+b=AS:84
+t=0 0
+a=X-nat:0
+m=audio 4004 RTP/AVP 8 0 101
+c=IN IP4 140.124.42.67
+b=TIAS:64000
+a=rtcp:4005 IN IP4 140.124.42.67
+a=sendrecv
+a=rtpmap:8 PCMA/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-16
+a=ssrc:3295671161 cname:python-native
+
+[2026-07-07T18:01:01] SIP RECV:
+SIP/2.0 100 Trying
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bK-5f4f24d63fd3481ab3be4cd9407d0f44
+From: <sip:140.124.42.67>;tag=71ea1c8b7b
+To: <sip:0001@192.168.6.120>
+Call-ID: 469395b4-6f4a-4561-acd3-9f5a418f22d6@140.124.42.67
+CSeq: 1 INVITE
+Content-Length: 0
+
+
+[2026-07-07T18:01:01] SIP RECV:
+SIP/2.0 180 Ringing
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bK-5f4f24d63fd3481ab3be4cd9407d0f44
+From: <sip:140.124.42.67>;tag=71ea1c8b7b
+To: <sip:0001@192.168.6.120>;tag=2b988c0b
+Call-ID: 469395b4-6f4a-4561-acd3-9f5a418f22d6@140.124.42.67
+Contact: <sip:101@192.168.6.120:5060>
+CSeq: 1 INVITE
+Content-Length: 0
+
+
+[2026-07-07T18:01:01] SIP RECV:
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bK-5f4f24d63fd3481ab3be4cd9407d0f44
+From: <sip:140.124.42.67>;tag=71ea1c8b7b
+To: <sip:0001@192.168.6.120>;tag=2b988c0b
+Call-ID: 469395b4-6f4a-4561-acd3-9f5a418f22d6@140.124.42.67
+Contact: <sip:101@192.168.6.120:5060>
+CSeq: 1 INVITE
+Allow: INVITE,CANCEL,ACK,BYE,NOTIFY,REFER,OPTIONS,INFO,MESSAGE,UPDATE
+Supported: replaces,timer
+Session-Expires: 1800;refresher=uac
+Content-Type: application/sdp
+User-Agent: IPSPK-v1.306
+Content-Length: 183
+
+v=0
+o=CMI-SIPUA 51187 0 IN IP4 192.168.6.120
+s=SIP CALL
+c=IN IP4 192.168.6.120
+t=0 0
+m=audio 20000 RTP/AVP 8 101
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+a=sendrecv
+
+[2026-07-07T18:01:02] SIP 200 OK parsed: to_tag=2b988c0b, contact=sip:101@192.168.6.120:5060, remote_rtp=192.168.6.120:20000, payload_type=8
+[2026-07-07T18:01:02] SIP SEND:
+ACK sip:101@192.168.6.120:5060 SIP/2.0
+Via: SIP/2.0/UDP 140.124.42.67:64882;branch=z9hG4bK-6b194c65aa6b460fb1096a456b6b7d39;rport
+Max-Forwards: 70
+From: <sip:140.124.42.67>;tag=71ea1c8b7b
+To: <sip:0001@192.168.6.120>;tag=2b988c0b
+Call-ID: 469395b4-6f4a-4561-acd3-9f5a418f22d6@140.124.42.67
+CSeq: 1 ACK
+Content-Length: 0
+
+
+[2026-07-07T18:01:02] RTP START: local=140.124.42.67:4004, remote=192.168.6.120:20000, payload_type=8, audio_gain=10.0, start_delay_ms=500, samples=25171
+[2026-07-07T18:01:02] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=3295671161
+[2026-07-07T18:01:02] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=3295671161
+[2026-07-07T18:01:02] RTP start delay: 500 ms
+[2026-07-07T18:01:03] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=3295671161
+[2026-07-07T18:01:04] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=3295671161
+[2026-07-07T18:01:05] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=3295671161
+[2026-07-07T18:01:05] RTCP sent: local=140.124.42.67:4005, remote=192.168.6.120:20001, ssrc=3295671161
+[2026-07-07T18:01:05] RTP END: packets_sent=158
+[2026-07-07T18:01:05] SIP SEND:
+BYE sip:101@192.168.6.120:5060 SIP/2.0
+Via: SIP/2.0/UDP 140.124.42.67:64882;branch=z9hG4bK-bee93f6d845549d387dbb5c2ea5b77fd;rport
+Max-Forwards: 70
+From: <sip:140.124.42.67>;tag=71ea1c8b7b
+To: <sip:0001@192.168.6.120>;tag=2b988c0b
+Call-ID: 469395b4-6f4a-4561-acd3-9f5a418f22d6@140.124.42.67
+CSeq: 2 BYE
+User-Agent: MicroSIP/3.22.12-compatible-python
+Content-Length: 0
+
+
+[2026-07-07T18:01:05] SIP RECV:
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bK-bee93f6d845549d387dbb5c2ea5b77fd
+From: <sip:140.124.42.67>;tag=71ea1c8b7b
+To: <sip:0001@192.168.6.120>;tag=2b988c0b
+Call-ID: 469395b4-6f4a-4561-acd3-9f5a418f22d6@140.124.42.67
+CSeq: 2 BYE
+Content-Length: 0
+
+

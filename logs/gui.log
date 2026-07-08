@@ -1,0 +1,1168 @@
+[20:59:54] GUI ready
+[20:59:58] Button pressed: 測試廣播
+[20:59:58] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[20:59:58] Starting Baresip backend
+[20:59:59] 啟動 Baresip
+[21:00:00] 已送出 Baresip 撥號請求
+[21:00:00] Dial command sent, waiting for audio duration
+[21:00:00] aufile: writing speaker audio to nil
+[21:00:00] aufile: writing speaker audio to nil
+[21:00:00] audio: Set audio encoder: PCMU 8000Hz 1ch
+[21:00:00] aufile: loading input file 'C:/Users/user/Desktop/ip_speaker/audio/testing.wav'
+[21:00:00] aufile: C:/Users/user/Desktop/ip_speaker/audio/testing.wav: 8000 Hz, 1 channels, S16LE
+[21:00:00] aufile: audio ptime=20 sampc=160
+[21:00:00] aufile: read end of file
+[21:00:00] aufile: loaded 50342 bytes
+[21:00:00] Baresip 通話已建立，正在播放音檔
+[21:00:03] aufile: end of file
+[21:00:09] Button pressed: 測試廣播
+[21:00:09] Broadcast ignored: previous broadcast is still running
+[21:00:13] Baresip 通話已結束
+[21:00:16] Stop requested
+[21:00:17] Broadcast completed
+[21:00:19] Button pressed: 測試廣播
+[21:00:19] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:00:19] Starting Baresip backend
+[21:00:20] 啟動 Baresip
+[21:00:21] 已送出 Baresip 撥號請求
+[21:00:21] Dial command sent, waiting for audio duration
+[21:00:21] aufile: writing speaker audio to nil
+[21:00:21] aufile: writing speaker audio to nil
+[21:00:21] audio: Set audio encoder: PCMU 8000Hz 1ch
+[21:00:21] aufile: loading input file 'C:/Users/user/Desktop/ip_speaker/audio/testing.wav'
+[21:00:21] aufile: C:/Users/user/Desktop/ip_speaker/audio/testing.wav: 8000 Hz, 1 channels, S16LE
+[21:00:21] aufile: audio ptime=20 sampc=160
+[21:00:21] aufile: read end of file
+[21:00:21] aufile: loaded 50342 bytes
+[21:00:21] Baresip 通話已建立，正在播放音檔
+[21:00:24] aufile: end of file
+[21:00:34] Baresip 通話已結束
+[21:00:37] Button pressed: 測試廣播
+[21:00:37] Broadcast ignored: previous broadcast is still running
+[21:00:37] Broadcast completed
+[21:00:39] Button pressed: 測試廣播
+[21:00:39] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:00:39] Starting Baresip backend
+[21:00:40] 啟動 Baresip
+[21:00:41] 已送出 Baresip 撥號請求
+[21:00:41] Dial command sent, waiting for audio duration
+[21:00:41] aufile: writing speaker audio to nil
+[21:00:41] aufile: writing speaker audio to nil
+[21:00:41] audio: Set audio encoder: PCMU 8000Hz 1ch
+[21:00:41] aufile: loading input file 'C:/Users/user/Desktop/ip_speaker/audio/testing.wav'
+[21:00:41] aufile: C:/Users/user/Desktop/ip_speaker/audio/testing.wav: 8000 Hz, 1 channels, S16LE
+[21:00:41] aufile: audio ptime=20 sampc=160
+[21:00:41] aufile: read end of file
+[21:00:41] aufile: loaded 50342 bytes
+[21:00:41] Baresip 通話已建立，正在播放音檔
+[21:00:44] aufile: end of file
+[21:00:54] Baresip 通話已結束
+[21:00:57] Broadcast completed
+[21:04:22] GUI ready
+[21:04:30] Button pressed: 測試廣播
+[21:04:30] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:04:30] Starting Baresip backend
+[21:04:30] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:04:30] 啟動 Baresip
+[21:04:31] 已送出 Baresip 撥號請求
+[21:04:31] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:04:31] Dial command sent, waiting for audio duration
+[21:04:31] call: SIP Progress: 180 Ringing (/)
+[21:04:31] aufile: writing speaker audio to nil
+[21:04:32] python@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:04:32] aufile: writing speaker audio to nil
+[21:04:32] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:04:32] aufile: loading input file 'C:/Users/user/Desktop/ip_speaker/logs/baresip_audio_source.wav'
+[21:04:32] aufile: C:/Users/user/Desktop/ip_speaker/logs/baresip_audio_source.wav: 8000 Hz, 1 channels, S16LE
+[21:04:32] aufile: audio ptime=20 sampc=160
+[21:04:32] aufile: read end of file
+[21:04:32] aufile: loaded 74342 bytes
+[21:04:32] Baresip 通話已建立，正在播放音檔
+[21:04:37] aufile: end of file
+[21:04:45] call: terminate call 'e2c71c5f66839dc1' with sip:4267@192.168.6.120:5060
+[21:04:45] Baresip 通話已結束
+[21:04:48] Broadcast completed
+[21:07:07] Button pressed: 測試廣播
+[21:07:07] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:07:07] Starting Baresip backend
+[21:07:07] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:07:07] 啟動 Baresip
+[21:07:08] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:07:08] 已送出 Baresip 撥號請求
+[21:07:08] Dial command sent, waiting for audio duration
+[21:07:09] call: SIP Progress: 180 Ringing (/)
+[21:07:09] aufile: writing speaker audio to nil
+[21:07:09] python@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:07:09] aufile: writing speaker audio to nil
+[21:07:09] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:07:09] aufile: loading input file 'C:/Users/user/Desktop/ip_speaker/logs/baresip_audio_source.wav'
+[21:07:09] aufile: C:/Users/user/Desktop/ip_speaker/logs/baresip_audio_source.wav: 8000 Hz, 1 channels, S16LE
+[21:07:09] aufile: audio ptime=20 sampc=160
+[21:07:09] aufile: read end of file
+[21:07:09] aufile: loaded 74342 bytes
+[21:07:09] Baresip 通話已建立，正在播放音檔
+[21:07:14] aufile: end of file
+[21:07:15] Button pressed: 旅客跌倒
+[21:07:15] Broadcast ignored: previous broadcast is still running
+[21:07:22] call: terminate call 'f0c3bc9decd843ce' with sip:4267@192.168.6.120:5060
+[21:07:22] Baresip 通話已結束
+[21:07:25] Broadcast completed
+[21:07:26] Button pressed: 旅客跌倒
+[21:07:26] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\fall_warning.wav
+[21:07:26] Starting Baresip backend
+[21:07:26] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:07:26] 啟動 Baresip
+[21:07:27] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:07:27] 已送出 Baresip 撥號請求
+[21:07:27] Dial command sent, waiting for audio duration
+[21:07:27] call: SIP Progress: 180 Ringing (/)
+[21:07:27] aufile: writing speaker audio to nil
+[21:07:28] python@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:07:28] aufile: writing speaker audio to nil
+[21:07:28] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:07:28] aufile: loading input file 'C:/Users/user/Desktop/ip_speaker/logs/baresip_audio_source.wav'
+[21:07:28] aufile: C:/Users/user/Desktop/ip_speaker/logs/baresip_audio_source.wav: 8000 Hz, 1 channels, S16LE
+[21:07:28] aufile: audio ptime=20 sampc=160
+[21:07:28] aufile: read end of file
+[21:07:28] aufile: loaded 43200 bytes
+[21:07:28] Baresip 通話已建立，正在播放音檔
+[21:07:30] aufile: end of file
+[21:07:38] call: terminate call '7fbfe295965613b6' with sip:4267@192.168.6.120:5060
+[21:07:38] Baresip 通話已結束
+[21:07:42] Broadcast completed
+[21:10:56] GUI ready
+[21:10:57] Button pressed: 測試廣播
+[21:10:57] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:10:57] Starting Baresip backend
+[21:10:58] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:10:58] 啟動 Baresip
+[21:10:59] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:10:59] 已送出 Baresip 撥號請求
+[21:10:59] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[21:10:59] Dial command sent, waiting for audio duration
+[21:10:59] Contact: <sip:python@140.124.42.67:5062>
+[21:10:59] To: <sip:4267@192.168.6.120:5060>
+[21:10:59] From: <sip:python@140.124.42.67>;tag=56ef22769b315d97
+[21:10:59] a=ssrc:588849890 cname:sip:python@140.124.42.67
+[21:10:59] From: <sip:python@140.124.42.67>;tag=56ef22769b315d97
+[21:10:59] To: <sip:4267@192.168.6.120:5060>
+[21:10:59] From: <sip:python@140.124.42.67>;tag=56ef22769b315d97
+[21:10:59] To: <sip:4267@192.168.6.120:5060>;tag=65f39748
+[21:10:59] Contact: <sip:101@192.168.6.120:5060>
+[21:10:59] call: SIP Progress: 180 Ringing (/)
+[21:10:59] aufile: writing speaker audio to nil
+[21:10:59] From: <sip:python@140.124.42.67>;tag=56ef22769b315d97
+[21:10:59] To: <sip:4267@192.168.6.120:5060>;tag=65f39748
+[21:10:59] Contact: <sip:101@192.168.6.120:5060>
+[21:10:59] python@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:10:59] aufile: writing speaker audio to nil
+[21:10:59] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:10:59] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[21:10:59] To: <sip:4267@192.168.6.120:5060>;tag=65f39748
+[21:10:59] From: <sip:python@140.124.42.67>;tag=56ef22769b315d97
+[21:10:59] Baresip 通話已建立，正在播放音檔
+[21:11:12] call: terminate call 'f625130c4900b70c' with sip:4267@192.168.6.120:5060
+[21:11:12] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[21:11:12] To: <sip:4267@192.168.6.120:5060>;tag=65f39748
+[21:11:12] From: <sip:python@140.124.42.67>;tag=56ef22769b315d97
+[21:11:12] Baresip 通話已結束
+[21:11:12] From: <sip:python@140.124.42.67>;tag=56ef22769b315d97
+[21:11:12] To: <sip:4267@192.168.6.120:5060>;tag=65f39748
+[21:11:16] Broadcast completed
+[21:11:18] Button pressed: 測試廣播
+[21:11:18] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:11:18] Starting Baresip backend
+[21:11:18] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:11:18] 啟動 Baresip
+[21:11:20] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:11:20] 已送出 Baresip 撥號請求
+[21:11:20] Dial command sent, waiting for audio duration
+[21:11:20] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[21:11:20] Contact: <sip:python@140.124.42.67:5062>
+[21:11:20] To: <sip:4267@192.168.6.120:5060>
+[21:11:20] From: <sip:python@140.124.42.67>;tag=14c58295f48c7451
+[21:11:20] a=ssrc:2337270415 cname:sip:python@140.124.42.67
+[21:11:20] From: <sip:python@140.124.42.67>;tag=14c58295f48c7451
+[21:11:20] To: <sip:4267@192.168.6.120:5060>
+[21:11:20] From: <sip:python@140.124.42.67>;tag=14c58295f48c7451
+[21:11:20] To: <sip:4267@192.168.6.120:5060>;tag=009fb8d7
+[21:11:20] Contact: <sip:101@192.168.6.120:5060>
+[21:11:20] call: SIP Progress: 180 Ringing (/)
+[21:11:20] aufile: writing speaker audio to nil
+[21:11:20] From: <sip:python@140.124.42.67>;tag=14c58295f48c7451
+[21:11:20] To: <sip:4267@192.168.6.120:5060>;tag=009fb8d7
+[21:11:20] Contact: <sip:101@192.168.6.120:5060>
+[21:11:20] python@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:11:20] aufile: writing speaker audio to nil
+[21:11:20] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:11:20] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[21:11:20] To: <sip:4267@192.168.6.120:5060>;tag=009fb8d7
+[21:11:20] From: <sip:python@140.124.42.67>;tag=14c58295f48c7451
+[21:11:20] Baresip 通話已建立，正在播放音檔
+[21:11:33] call: terminate call 'eb6a1c86b49f5cbb' with sip:4267@192.168.6.120:5060
+[21:11:33] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[21:11:33] To: <sip:4267@192.168.6.120:5060>;tag=009fb8d7
+[21:11:33] From: <sip:python@140.124.42.67>;tag=14c58295f48c7451
+[21:11:33] Baresip 通話已結束
+[21:11:33] From: <sip:python@140.124.42.67>;tag=14c58295f48c7451
+[21:11:33] To: <sip:4267@192.168.6.120:5060>;tag=009fb8d7
+[21:11:36] Broadcast completed
+[21:11:44] Button pressed: 測試廣播
+[21:11:44] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:11:44] Starting Baresip backend
+[21:11:45] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:11:45] 啟動 Baresip
+[21:11:46] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:11:46] 已送出 Baresip 撥號請求
+[21:11:46] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[21:11:46] Dial command sent, waiting for audio duration
+[21:11:46] Contact: <sip:python@140.124.42.67:5062>
+[21:11:46] To: <sip:4267@192.168.6.120:5060>
+[21:11:46] From: <sip:python@140.124.42.67>;tag=8bc03bdc1519a3f4
+[21:11:46] a=ssrc:4289719586 cname:sip:python@140.124.42.67
+[21:11:46] From: <sip:python@140.124.42.67>;tag=8bc03bdc1519a3f4
+[21:11:46] To: <sip:4267@192.168.6.120:5060>
+[21:11:46] From: <sip:python@140.124.42.67>;tag=8bc03bdc1519a3f4
+[21:11:46] To: <sip:4267@192.168.6.120:5060>;tag=4eb8624f
+[21:11:46] Contact: <sip:101@192.168.6.120:5060>
+[21:11:46] call: SIP Progress: 180 Ringing (/)
+[21:11:46] aufile: writing speaker audio to nil
+[21:11:46] From: <sip:python@140.124.42.67>;tag=8bc03bdc1519a3f4
+[21:11:46] To: <sip:4267@192.168.6.120:5060>;tag=4eb8624f
+[21:11:46] Contact: <sip:101@192.168.6.120:5060>
+[21:11:46] python@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:11:46] aufile: writing speaker audio to nil
+[21:11:46] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:11:46] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[21:11:46] To: <sip:4267@192.168.6.120:5060>;tag=4eb8624f
+[21:11:46] From: <sip:python@140.124.42.67>;tag=8bc03bdc1519a3f4
+[21:11:46] Baresip 通話已建立，正在播放音檔
+[21:11:59] call: terminate call 'e35bec6f4607f462' with sip:4267@192.168.6.120:5060
+[21:11:59] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[21:11:59] To: <sip:4267@192.168.6.120:5060>;tag=4eb8624f
+[21:11:59] From: <sip:python@140.124.42.67>;tag=8bc03bdc1519a3f4
+[21:11:59] Baresip 通話已結束
+[21:11:59] From: <sip:python@140.124.42.67>;tag=8bc03bdc1519a3f4
+[21:11:59] To: <sip:4267@192.168.6.120:5060>;tag=4eb8624f
+[21:12:03] Broadcast completed
+[21:16:36] GUI ready
+[21:16:38] Button pressed: 測試廣播
+[21:16:38] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:16:38] Starting Baresip backend
+[21:16:39] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:16:39] 啟動 Baresip
+[21:16:40] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:16:40] 已送出 Baresip 撥號請求
+[21:16:40] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[21:16:40] Dial command sent, waiting for audio duration
+[21:16:40] Contact: <sip:101@140.124.42.67:5062>
+[21:16:40] To: <sip:4267@192.168.6.120:5060>
+[21:16:40] From: <sip:101@140.124.42.67>;tag=b165127e6cad787d
+[21:16:40] a=ssrc:3602710670 cname:sip:101@140.124.42.67
+[21:16:40] From: <sip:101@140.124.42.67>;tag=b165127e6cad787d
+[21:16:40] To: <sip:4267@192.168.6.120:5060>
+[21:16:40] From: <sip:101@140.124.42.67>;tag=b165127e6cad787d
+[21:16:40] To: <sip:4267@192.168.6.120:5060>;tag=46820f74
+[21:16:40] Contact: <sip:101@192.168.6.120:5060>
+[21:16:40] call: SIP Progress: 180 Ringing (/)
+[21:16:40] aufile: writing speaker audio to nil
+[21:16:40] From: <sip:101@140.124.42.67>;tag=b165127e6cad787d
+[21:16:40] To: <sip:4267@192.168.6.120:5060>;tag=46820f74
+[21:16:40] Contact: <sip:101@192.168.6.120:5060>
+[21:16:40] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:16:40] aufile: writing speaker audio to nil
+[21:16:40] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:16:40] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[21:16:40] To: <sip:4267@192.168.6.120:5060>;tag=46820f74
+[21:16:40] From: <sip:101@140.124.42.67>;tag=b165127e6cad787d
+[21:16:40] Baresip 通話已建立，正在播放音檔
+[21:16:53] call: terminate call '702a8be417885729' with sip:4267@192.168.6.120:5060
+[21:16:53] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[21:16:53] To: <sip:4267@192.168.6.120:5060>;tag=46820f74
+[21:16:53] From: <sip:101@140.124.42.67>;tag=b165127e6cad787d
+[21:16:53] Baresip 通話已結束
+[21:16:53] From: <sip:101@140.124.42.67>;tag=b165127e6cad787d
+[21:16:53] To: <sip:4267@192.168.6.120:5060>;tag=46820f74
+[21:16:56] Broadcast completed
+[21:17:02] Button pressed: 測試廣播
+[21:17:02] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:17:02] Starting Baresip backend
+[21:17:02] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:17:02] 啟動 Baresip
+[21:17:03] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:17:03] 已送出 Baresip 撥號請求
+[21:17:03] Dial command sent, waiting for audio duration
+[21:17:03] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[21:17:03] Contact: <sip:101@140.124.42.67:5062>
+[21:17:03] To: <sip:4267@192.168.6.120:5060>
+[21:17:03] From: <sip:101@140.124.42.67>;tag=18b301ecb0670112
+[21:17:03] a=ssrc:2484630545 cname:sip:101@140.124.42.67
+[21:17:03] From: <sip:101@140.124.42.67>;tag=18b301ecb0670112
+[21:17:03] To: <sip:4267@192.168.6.120:5060>
+[21:17:03] From: <sip:101@140.124.42.67>;tag=18b301ecb0670112
+[21:17:03] To: <sip:4267@192.168.6.120:5060>;tag=0237f5ab
+[21:17:03] Contact: <sip:101@192.168.6.120:5060>
+[21:17:03] call: SIP Progress: 180 Ringing (/)
+[21:17:03] aufile: writing speaker audio to nil
+[21:17:04] From: <sip:101@140.124.42.67>;tag=18b301ecb0670112
+[21:17:04] To: <sip:4267@192.168.6.120:5060>;tag=0237f5ab
+[21:17:04] Contact: <sip:101@192.168.6.120:5060>
+[21:17:04] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:17:04] aufile: writing speaker audio to nil
+[21:17:04] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:17:04] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[21:17:04] To: <sip:4267@192.168.6.120:5060>;tag=0237f5ab
+[21:17:04] From: <sip:101@140.124.42.67>;tag=18b301ecb0670112
+[21:17:04] Baresip 通話已建立，正在播放音檔
+[21:17:16] call: terminate call 'e63171882d753932' with sip:4267@192.168.6.120:5060
+[21:17:16] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[21:17:16] To: <sip:4267@192.168.6.120:5060>;tag=0237f5ab
+[21:17:16] From: <sip:101@140.124.42.67>;tag=18b301ecb0670112
+[21:17:16] Baresip 通話已結束
+[21:17:16] From: <sip:101@140.124.42.67>;tag=18b301ecb0670112
+[21:17:16] To: <sip:4267@192.168.6.120:5060>;tag=0237f5ab
+[21:17:20] Broadcast completed
+[21:17:34] Button pressed: 測試廣播
+[21:17:34] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:17:34] Starting Baresip backend
+[21:17:35] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:17:35] 啟動 Baresip
+[21:17:36] 已送出 Baresip 撥號請求
+[21:17:36] call: connecting to 'sip:0001@192.168.6.120:5060'..
+[21:17:36] Dial command sent, waiting for audio duration
+[21:17:36] INVITE sip:0001@192.168.6.120:5060 SIP/2.0
+[21:17:36] Contact: <sip:101@140.124.42.67:5062>
+[21:17:36] To: <sip:0001@192.168.6.120:5060>
+[21:17:36] From: <sip:101@140.124.42.67>;tag=5ce7c4cf7b8e3632
+[21:17:36] a=ssrc:566641357 cname:sip:101@140.124.42.67
+[21:17:36] From: <sip:101@140.124.42.67>;tag=5ce7c4cf7b8e3632
+[21:17:36] To: <sip:0001@192.168.6.120:5060>
+[21:17:36] From: <sip:101@140.124.42.67>;tag=5ce7c4cf7b8e3632
+[21:17:36] To: <sip:0001@192.168.6.120:5060>;tag=60a15402
+[21:17:36] Contact: <sip:101@192.168.6.120:5060>
+[21:17:36] call: SIP Progress: 180 Ringing (/)
+[21:17:36] aufile: writing speaker audio to nil
+[21:17:36] From: <sip:101@140.124.42.67>;tag=5ce7c4cf7b8e3632
+[21:17:36] To: <sip:0001@192.168.6.120:5060>;tag=60a15402
+[21:17:36] Contact: <sip:101@192.168.6.120:5060>
+[21:17:36] 101@140.124.42.67: Call answered: sip:0001@192.168.6.120:5060
+[21:17:36] aufile: writing speaker audio to nil
+[21:17:36] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:17:36] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[21:17:36] To: <sip:0001@192.168.6.120:5060>;tag=60a15402
+[21:17:36] From: <sip:101@140.124.42.67>;tag=5ce7c4cf7b8e3632
+[21:17:36] Baresip 通話已建立，正在播放音檔
+[21:17:49] call: terminate call '9a9add41a36c0c92' with sip:0001@192.168.6.120:5060
+[21:17:49] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[21:17:49] To: <sip:0001@192.168.6.120:5060>;tag=60a15402
+[21:17:49] From: <sip:101@140.124.42.67>;tag=5ce7c4cf7b8e3632
+[21:17:49] Baresip 通話已結束
+[21:17:49] From: <sip:101@140.124.42.67>;tag=5ce7c4cf7b8e3632
+[21:17:49] To: <sip:0001@192.168.6.120:5060>;tag=60a15402
+[21:17:52] Broadcast completed
+[21:22:34] GUI ready
+[21:22:35] Button pressed: 測試廣播
+[21:22:35] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:22:35] Starting Baresip backend
+[21:22:36] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:22:36] 啟動 Baresip
+[21:22:37] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:22:37] 已送出 Baresip 撥號請求
+[21:22:37] Dial command sent, waiting for audio duration
+[21:22:52] Stop requested
+[21:22:53] Broadcast completed
+[21:22:55] Button pressed: 測試廣播
+[21:22:55] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:22:55] Starting Baresip backend
+[21:22:56] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:22:56] 啟動 Baresip
+[21:22:57] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:22:57] 已送出 Baresip 撥號請求
+[21:22:57] Dial command sent, waiting for audio duration
+[21:23:13] Broadcast completed
+[21:27:02] GUI ready
+[21:27:04] Button pressed: 測試廣播
+[21:27:04] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:27:04] Starting Baresip backend
+[21:27:04] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:27:04] 啟動 Baresip
+[21:27:05] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:27:05] 已送出 Baresip 撥號請求
+[21:27:05] Dial command sent, waiting for audio duration
+[21:27:05] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[21:27:05] Contact: <sip:101@140.124.42.67:64882>
+[21:27:05] To: <sip:4267@192.168.6.120:5060>
+[21:27:05] From: <sip:101@140.124.42.67>;tag=6c820371477d3e92
+[21:27:05] a=ssrc:1564776387 cname:sip:101@140.124.42.67
+[21:27:05] From: <sip:101@140.124.42.67>;tag=6c820371477d3e92
+[21:27:05] To: <sip:4267@192.168.6.120:5060>
+[21:27:05] From: <sip:101@140.124.42.67>;tag=6c820371477d3e92
+[21:27:05] To: <sip:4267@192.168.6.120:5060>;tag=1f68b899
+[21:27:05] Contact: <sip:101@192.168.6.120:5060>
+[21:27:05] call: SIP Progress: 180 Ringing (/)
+[21:27:05] aufile: writing speaker audio to nil
+[21:27:06] From: <sip:101@140.124.42.67>;tag=6c820371477d3e92
+[21:27:06] To: <sip:4267@192.168.6.120:5060>;tag=1f68b899
+[21:27:06] Contact: <sip:101@192.168.6.120:5060>
+[21:27:06] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:27:06] aufile: writing speaker audio to nil
+[21:27:06] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:27:06] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[21:27:06] To: <sip:4267@192.168.6.120:5060>;tag=1f68b899
+[21:27:06] From: <sip:101@140.124.42.67>;tag=6c820371477d3e92
+[21:27:06] Baresip 通話已建立，正在播放音檔
+[21:27:18] call: terminate call 'a625f07b660a4494' with sip:4267@192.168.6.120:5060
+[21:27:18] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[21:27:18] To: <sip:4267@192.168.6.120:5060>;tag=1f68b899
+[21:27:18] From: <sip:101@140.124.42.67>;tag=6c820371477d3e92
+[21:27:18] Baresip 通話已結束
+[21:27:18] From: <sip:101@140.124.42.67>;tag=6c820371477d3e92
+[21:27:18] To: <sip:4267@192.168.6.120:5060>;tag=1f68b899
+[21:27:22] Broadcast completed
+[21:27:27] Button pressed: 測試廣播
+[21:27:27] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:27:27] Starting Baresip backend
+[21:27:28] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:27:28] 啟動 Baresip
+[21:27:29] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:27:29] 已送出 Baresip 撥號請求
+[21:27:29] Dial command sent, waiting for audio duration
+[21:27:29] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[21:27:29] Contact: <sip:101@140.124.42.67:64882>
+[21:27:29] To: <sip:4267@192.168.6.120:5060>
+[21:27:29] From: <sip:101@140.124.42.67>;tag=f758e2b340a5ad95
+[21:27:29] a=ssrc:2956448506 cname:sip:101@140.124.42.67
+[21:27:29] From: <sip:101@140.124.42.67>;tag=f758e2b340a5ad95
+[21:27:29] To: <sip:4267@192.168.6.120:5060>
+[21:27:29] From: <sip:101@140.124.42.67>;tag=f758e2b340a5ad95
+[21:27:29] To: <sip:4267@192.168.6.120:5060>;tag=749418a2
+[21:27:29] Contact: <sip:101@192.168.6.120:5060>
+[21:27:29] call: SIP Progress: 180 Ringing (/)
+[21:27:29] aufile: writing speaker audio to nil
+[21:27:29] From: <sip:101@140.124.42.67>;tag=f758e2b340a5ad95
+[21:27:29] To: <sip:4267@192.168.6.120:5060>;tag=749418a2
+[21:27:29] Contact: <sip:101@192.168.6.120:5060>
+[21:27:29] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:27:29] aufile: writing speaker audio to nil
+[21:27:29] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:27:29] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[21:27:29] To: <sip:4267@192.168.6.120:5060>;tag=749418a2
+[21:27:29] From: <sip:101@140.124.42.67>;tag=f758e2b340a5ad95
+[21:27:29] Baresip 通話已建立，正在播放音檔
+[21:27:42] call: terminate call '0f88a9bb881b6b89' with sip:4267@192.168.6.120:5060
+[21:27:42] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[21:27:42] To: <sip:4267@192.168.6.120:5060>;tag=749418a2
+[21:27:42] From: <sip:101@140.124.42.67>;tag=f758e2b340a5ad95
+[21:27:42] Baresip 通話已結束
+[21:27:42] From: <sip:101@140.124.42.67>;tag=f758e2b340a5ad95
+[21:27:42] To: <sip:4267@192.168.6.120:5060>;tag=749418a2
+[21:27:46] Broadcast completed
+[21:33:30] GUI ready
+[21:33:45] GUI ready
+[21:33:46] Button pressed: 測試廣播
+[21:33:46] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:33:46] Starting Baresip backend
+[21:33:47] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:33:47] Baresip config written: account=<sip:140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source ausine,1000
+[21:33:47] 啟動 Baresip
+[21:33:47] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[21:33:48] Baresip error: Baresip command failed: uanew <sip:140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20
+Creating UA for <sip:140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20 ...
+menu: create_ua failed: Invalid argument [22]
+
+[21:33:53] Button pressed: 測試廣播
+[21:33:53] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:33:53] Starting Baresip backend
+[21:33:53] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:33:53] Baresip config written: account=<sip:140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source ausine,1000
+[21:33:53] 啟動 Baresip
+[21:33:53] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[21:33:54] Baresip error: Baresip command failed: uanew <sip:140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20
+Creating UA for <sip:140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20 ...
+menu: create_ua failed: Invalid argument [22]
+
+[21:35:43] GUI ready
+[21:35:46] Button pressed: 測試廣播
+[21:35:46] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:35:46] Starting Baresip backend
+[21:35:47] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:35:47] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source ausine,1000
+[21:35:47] 啟動 Baresip
+[21:35:47] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[21:35:48] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:35:48] 已送出 Baresip 撥號請求
+[21:35:48] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[21:35:48] Dial command sent, waiting for audio duration
+[21:35:48] Contact: <sip:101@140.124.42.67:64882>
+[21:35:48] To: <sip:4267@192.168.6.120:5060>
+[21:35:48] From: <sip:101@140.124.42.67>;tag=d973eeecf3fcdb71
+[21:35:48] a=ssrc:3694141838 cname:sip:101@140.124.42.67
+[21:35:48] From: <sip:101@140.124.42.67>;tag=d973eeecf3fcdb71
+[21:35:48] To: <sip:4267@192.168.6.120:5060>
+[21:35:48] From: <sip:101@140.124.42.67>;tag=d973eeecf3fcdb71
+[21:35:48] To: <sip:4267@192.168.6.120:5060>;tag=23dc3d57
+[21:35:48] Contact: <sip:101@192.168.6.120:5060>
+[21:35:48] call: SIP Progress: 180 Ringing (/)
+[21:35:48] aufile: writing speaker audio to nil
+[21:35:48] From: <sip:101@140.124.42.67>;tag=d973eeecf3fcdb71
+[21:35:48] To: <sip:4267@192.168.6.120:5060>;tag=23dc3d57
+[21:35:48] Contact: <sip:101@192.168.6.120:5060>
+[21:35:48] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:35:48] aufile: writing speaker audio to nil
+[21:35:48] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:35:48] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[21:35:48] To: <sip:4267@192.168.6.120:5060>;tag=23dc3d57
+[21:35:48] From: <sip:101@140.124.42.67>;tag=d973eeecf3fcdb71
+[21:35:48] Baresip 通話已建立，正在播放音檔
+[21:36:01] call: terminate call 'd8f7231be12d97e8' with sip:4267@192.168.6.120:5060
+[21:36:01] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[21:36:01] To: <sip:4267@192.168.6.120:5060>;tag=23dc3d57
+[21:36:01] From: <sip:101@140.124.42.67>;tag=d973eeecf3fcdb71
+[21:36:01] Baresip 通話已結束
+[21:36:01] From: <sip:101@140.124.42.67>;tag=d973eeecf3fcdb71
+[21:36:01] To: <sip:4267@192.168.6.120:5060>;tag=23dc3d57
+[21:36:05] Broadcast completed
+[21:36:06] Button pressed: 測試廣播
+[21:36:06] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[21:36:06] Starting Baresip backend
+[21:36:06] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[21:36:06] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source ausine,1000
+[21:36:06] 啟動 Baresip
+[21:36:06] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[21:36:07] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[21:36:07] 已送出 Baresip 撥號請求
+[21:36:07] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[21:36:07] Dial command sent, waiting for audio duration
+[21:36:07] Contact: <sip:101@140.124.42.67:64882>
+[21:36:07] To: <sip:4267@192.168.6.120:5060>
+[21:36:07] From: <sip:101@140.124.42.67>;tag=dddc3d230c110791
+[21:36:07] a=ssrc:959499537 cname:sip:101@140.124.42.67
+[21:36:07] From: <sip:101@140.124.42.67>;tag=dddc3d230c110791
+[21:36:07] To: <sip:4267@192.168.6.120:5060>
+[21:36:07] From: <sip:101@140.124.42.67>;tag=dddc3d230c110791
+[21:36:07] To: <sip:4267@192.168.6.120:5060>;tag=03d80f5b
+[21:36:07] Contact: <sip:101@192.168.6.120:5060>
+[21:36:07] call: SIP Progress: 180 Ringing (/)
+[21:36:07] aufile: writing speaker audio to nil
+[21:36:08] From: <sip:101@140.124.42.67>;tag=dddc3d230c110791
+[21:36:08] To: <sip:4267@192.168.6.120:5060>;tag=03d80f5b
+[21:36:08] Contact: <sip:101@192.168.6.120:5060>
+[21:36:08] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[21:36:08] aufile: writing speaker audio to nil
+[21:36:08] audio: Set audio encoder: PCMA 8000Hz 1ch
+[21:36:08] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[21:36:08] To: <sip:4267@192.168.6.120:5060>;tag=03d80f5b
+[21:36:08] From: <sip:101@140.124.42.67>;tag=dddc3d230c110791
+[21:36:08] Baresip 通話已建立，正在播放音檔
+[21:36:20] call: terminate call '9b580c88e5bd3df3' with sip:4267@192.168.6.120:5060
+[21:36:20] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[21:36:20] To: <sip:4267@192.168.6.120:5060>;tag=03d80f5b
+[21:36:20] From: <sip:101@140.124.42.67>;tag=dddc3d230c110791
+[21:36:20] Baresip 通話已結束
+[21:36:20] From: <sip:101@140.124.42.67>;tag=dddc3d230c110791
+[21:36:20] To: <sip:4267@192.168.6.120:5060>;tag=03d80f5b
+[21:36:24] Broadcast completed
+[00:22:57] GUI ready
+[00:23:00] Button pressed: 測試廣播
+[00:23:00] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[00:23:00] Starting Baresip backend
+[00:23:01] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[00:23:01] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,default
+[00:23:01] 啟動 Baresip
+[00:23:01] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[00:23:02] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[00:23:02] 已送出 Baresip 撥號請求
+[00:23:02] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[00:23:02] Contact: <sip:101@140.124.42.67:64882>
+[00:23:02] To: <sip:4267@192.168.6.120:5060>
+[00:23:02] From: <sip:101@140.124.42.67>;tag=1e4232f6ef7303c0
+[00:23:02] a=ssrc:3032603143 cname:sip:101@140.124.42.67
+[00:23:02] From: <sip:101@140.124.42.67>;tag=1e4232f6ef7303c0
+[00:23:02] To: <sip:4267@192.168.6.120:5060>
+[00:23:02] From: <sip:101@140.124.42.67>;tag=1e4232f6ef7303c0
+[00:23:02] To: <sip:4267@192.168.6.120:5060>;tag=39ec7a73
+[00:23:02] Contact: <sip:101@192.168.6.120:5060>
+[00:23:02] call: SIP Progress: 180 Ringing (/)
+[00:23:02] aufile: writing speaker audio to nil
+[00:23:03] From: <sip:101@140.124.42.67>;tag=1e4232f6ef7303c0
+[00:23:03] To: <sip:4267@192.168.6.120:5060>;tag=39ec7a73
+[00:23:03] Contact: <sip:101@192.168.6.120:5060>
+[00:23:03] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[00:23:03] aufile: writing speaker audio to nil
+[00:23:03] audio: Set audio encoder: PCMA 8000Hz 1ch
+[00:23:03] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[00:23:03] To: <sip:4267@192.168.6.120:5060>;tag=39ec7a73
+[00:23:03] From: <sip:101@140.124.42.67>;tag=1e4232f6ef7303c0
+[00:23:03] Baresip 通話已建立，正在播放音檔
+[00:23:03] 已透過 Windows 播放音檔給 WASAPI 擷取：testing.wav
+[00:23:03] Dial command sent, waiting for audio duration
+[00:23:36] GUI ready
+[00:23:38] Button pressed: 測試廣播
+[00:23:38] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[00:23:38] Starting Baresip backend
+[00:23:38] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[00:23:38] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,default
+[00:23:38] 啟動 Baresip
+[00:23:38] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[00:23:39] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[00:23:39] 已送出 Baresip 撥號請求
+[00:23:39] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[00:23:39] Contact: <sip:101@140.124.42.67:64882>
+[00:23:39] To: <sip:4267@192.168.6.120:5060>
+[00:23:39] From: <sip:101@140.124.42.67>;tag=b0e3f1bbe6b41c18
+[00:23:39] a=ssrc:1501996319 cname:sip:101@140.124.42.67
+[00:23:39] From: <sip:101@140.124.42.67>;tag=b0e3f1bbe6b41c18
+[00:23:39] To: <sip:4267@192.168.6.120:5060>
+[00:23:39] From: <sip:101@140.124.42.67>;tag=b0e3f1bbe6b41c18
+[00:23:39] To: <sip:4267@192.168.6.120:5060>;tag=1b2110f8
+[00:23:39] Contact: <sip:101@192.168.6.120:5060>
+[00:23:39] call: SIP Progress: 180 Ringing (/)
+[00:23:39] aufile: writing speaker audio to nil
+[00:23:40] From: <sip:101@140.124.42.67>;tag=b0e3f1bbe6b41c18
+[00:23:40] To: <sip:4267@192.168.6.120:5060>;tag=1b2110f8
+[00:23:40] Contact: <sip:101@192.168.6.120:5060>
+[00:23:40] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[00:23:40] aufile: writing speaker audio to nil
+[00:23:40] audio: Set audio encoder: PCMA 8000Hz 1ch
+[00:23:40] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[00:23:40] To: <sip:4267@192.168.6.120:5060>;tag=1b2110f8
+[00:23:40] From: <sip:101@140.124.42.67>;tag=b0e3f1bbe6b41c18
+[00:23:40] Baresip 通話已建立，正在播放音檔
+[00:23:40] 已透過 Windows 播放音檔給 WASAPI 擷取：testing.wav
+[00:23:40] Dial command sent, waiting for audio duration
+[14:59:32] GUI ready
+[14:59:33] Button pressed: 測試廣播
+[14:59:33] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[14:59:33] Starting Baresip backend
+[14:59:34] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[14:59:34] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,default
+[14:59:34] 啟動 Baresip
+[14:59:34] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[14:59:35] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[14:59:35] 已送出 Baresip 撥號請求
+[14:59:35] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[14:59:35] Contact: <sip:101@140.124.42.67:64882>
+[14:59:35] To: <sip:4267@192.168.6.120:5060>
+[14:59:35] From: <sip:101@140.124.42.67>;tag=92b472b19e319ff9
+[14:59:35] a=ssrc:2006033054 cname:sip:101@140.124.42.67
+[14:59:35] From: <sip:101@140.124.42.67>;tag=92b472b19e319ff9
+[14:59:35] To: <sip:4267@192.168.6.120:5060>
+[14:59:35] From: <sip:101@140.124.42.67>;tag=92b472b19e319ff9
+[14:59:35] To: <sip:4267@192.168.6.120:5060>;tag=24aa50bd
+[14:59:35] Contact: <sip:101@192.168.6.120:5060>
+[14:59:35] call: SIP Progress: 180 Ringing (/)
+[14:59:35] aufile: writing speaker audio to nil
+[14:59:36] From: <sip:101@140.124.42.67>;tag=92b472b19e319ff9
+[14:59:36] To: <sip:4267@192.168.6.120:5060>;tag=24aa50bd
+[14:59:36] Contact: <sip:101@192.168.6.120:5060>
+[14:59:36] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[14:59:36] aufile: writing speaker audio to nil
+[14:59:36] audio: Set audio encoder: PCMA 8000Hz 1ch
+[14:59:36] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[14:59:36] To: <sip:4267@192.168.6.120:5060>;tag=24aa50bd
+[14:59:36] From: <sip:101@140.124.42.67>;tag=92b472b19e319ff9
+[14:59:36] Baresip 通話已建立，正在播放音檔
+[14:59:36] 已透過 Windows 播放音檔給 WASAPI 擷取：testing.wav
+[14:59:36] Dial command sent, waiting for audio duration
+[14:59:49] call: terminate call 'c176dcedc0cb4876' with sip:4267@192.168.6.120:5060
+[14:59:49] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[14:59:49] To: <sip:4267@192.168.6.120:5060>;tag=24aa50bd
+[14:59:49] From: <sip:101@140.124.42.67>;tag=92b472b19e319ff9
+[14:59:49] Baresip 通話已結束
+[14:59:49] From: <sip:101@140.124.42.67>;tag=92b472b19e319ff9
+[14:59:49] To: <sip:4267@192.168.6.120:5060>;tag=24aa50bd
+[14:59:53] Broadcast completed
+[15:00:39] Button pressed: 測試廣播
+[15:00:39] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:00:39] Starting Baresip backend
+[15:00:39] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:00:39] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,default
+[15:00:39] 啟動 Baresip
+[15:00:39] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:00:40] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:00:40] 已送出 Baresip 撥號請求
+[15:00:40] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:00:40] Contact: <sip:101@140.124.42.67:64882>
+[15:00:40] To: <sip:4267@192.168.6.120:5060>
+[15:00:40] From: <sip:101@140.124.42.67>;tag=a46c4a15675aaa61
+[15:00:40] a=ssrc:2025569897 cname:sip:101@140.124.42.67
+[15:00:40] From: <sip:101@140.124.42.67>;tag=a46c4a15675aaa61
+[15:00:40] To: <sip:4267@192.168.6.120:5060>
+[15:00:40] From: <sip:101@140.124.42.67>;tag=a46c4a15675aaa61
+[15:00:40] To: <sip:4267@192.168.6.120:5060>;tag=2dc7ca56
+[15:00:40] Contact: <sip:101@192.168.6.120:5060>
+[15:00:40] call: SIP Progress: 180 Ringing (/)
+[15:00:40] aufile: writing speaker audio to nil
+[15:00:41] From: <sip:101@140.124.42.67>;tag=a46c4a15675aaa61
+[15:00:41] To: <sip:4267@192.168.6.120:5060>;tag=2dc7ca56
+[15:00:41] Contact: <sip:101@192.168.6.120:5060>
+[15:00:41] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:00:41] aufile: writing speaker audio to nil
+[15:00:41] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:00:41] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:00:41] To: <sip:4267@192.168.6.120:5060>;tag=2dc7ca56
+[15:00:41] From: <sip:101@140.124.42.67>;tag=a46c4a15675aaa61
+[15:00:41] Baresip 通話已建立，正在播放音檔
+[15:00:41] 已透過 Windows 播放音檔給 WASAPI 擷取：testing.wav
+[15:00:41] Dial command sent, waiting for audio duration
+[15:00:54] call: terminate call '7540bbc4ce074e1e' with sip:4267@192.168.6.120:5060
+[15:00:54] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:00:54] To: <sip:4267@192.168.6.120:5060>;tag=2dc7ca56
+[15:00:54] From: <sip:101@140.124.42.67>;tag=a46c4a15675aaa61
+[15:00:54] Baresip 通話已結束
+[15:00:54] From: <sip:101@140.124.42.67>;tag=a46c4a15675aaa61
+[15:00:54] To: <sip:4267@192.168.6.120:5060>;tag=2dc7ca56
+[15:00:58] Broadcast completed
+[15:01:27] Button pressed: 測試廣播
+[15:01:27] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:01:27] Starting Baresip backend
+[15:01:28] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:01:28] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,default
+[15:01:28] 啟動 Baresip
+[15:01:28] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:01:29] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:01:29] 已送出 Baresip 撥號請求
+[15:01:29] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:01:29] Contact: <sip:101@140.124.42.67:64882>
+[15:01:29] To: <sip:4267@192.168.6.120:5060>
+[15:01:29] From: <sip:101@140.124.42.67>;tag=7f1098cf1c686dac
+[15:01:29] a=ssrc:570231717 cname:sip:101@140.124.42.67
+[15:01:29] From: <sip:101@140.124.42.67>;tag=7f1098cf1c686dac
+[15:01:29] To: <sip:4267@192.168.6.120:5060>
+[15:01:29] From: <sip:101@140.124.42.67>;tag=7f1098cf1c686dac
+[15:01:29] To: <sip:4267@192.168.6.120:5060>;tag=7459ee48
+[15:01:29] Contact: <sip:101@192.168.6.120:5060>
+[15:01:29] call: SIP Progress: 180 Ringing (/)
+[15:01:29] aufile: writing speaker audio to nil
+[15:01:29] From: <sip:101@140.124.42.67>;tag=7f1098cf1c686dac
+[15:01:29] To: <sip:4267@192.168.6.120:5060>;tag=7459ee48
+[15:01:29] Contact: <sip:101@192.168.6.120:5060>
+[15:01:29] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:01:29] aufile: writing speaker audio to nil
+[15:01:29] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:01:29] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:01:29] To: <sip:4267@192.168.6.120:5060>;tag=7459ee48
+[15:01:29] From: <sip:101@140.124.42.67>;tag=7f1098cf1c686dac
+[15:01:30] Baresip 通話已建立，正在播放音檔
+[15:01:30] 已透過 Windows 播放音檔給 WASAPI 擷取：testing.wav
+[15:01:30] Dial command sent, waiting for audio duration
+[15:01:43] call: terminate call 'a8fbf13f07eb2a7f' with sip:4267@192.168.6.120:5060
+[15:01:43] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:01:43] To: <sip:4267@192.168.6.120:5060>;tag=7459ee48
+[15:01:43] From: <sip:101@140.124.42.67>;tag=7f1098cf1c686dac
+[15:01:43] Baresip 通話已結束
+[15:01:43] From: <sip:101@140.124.42.67>;tag=7f1098cf1c686dac
+[15:01:43] To: <sip:4267@192.168.6.120:5060>;tag=7459ee48
+[15:01:47] Broadcast completed
+[15:02:11] Button pressed: 測試廣播
+[15:02:11] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:02:11] Starting Baresip backend
+[15:02:12] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:02:12] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,default
+[15:02:12] 啟動 Baresip
+[15:02:12] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:02:13] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:02:13] 已送出 Baresip 撥號請求
+[15:02:13] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:02:13] Contact: <sip:101@140.124.42.67:64882>
+[15:02:13] To: <sip:4267@192.168.6.120:5060>
+[15:02:13] From: <sip:101@140.124.42.67>;tag=4893ef0fd77ac5f9
+[15:02:13] a=ssrc:3990191862 cname:sip:101@140.124.42.67
+[15:02:13] From: <sip:101@140.124.42.67>;tag=4893ef0fd77ac5f9
+[15:02:13] To: <sip:4267@192.168.6.120:5060>
+[15:02:13] From: <sip:101@140.124.42.67>;tag=4893ef0fd77ac5f9
+[15:02:13] To: <sip:4267@192.168.6.120:5060>;tag=3fff9182
+[15:02:13] Contact: <sip:101@192.168.6.120:5060>
+[15:02:13] call: SIP Progress: 180 Ringing (/)
+[15:02:13] aufile: writing speaker audio to nil
+[15:02:13] From: <sip:101@140.124.42.67>;tag=4893ef0fd77ac5f9
+[15:02:13] To: <sip:4267@192.168.6.120:5060>;tag=3fff9182
+[15:02:13] Contact: <sip:101@192.168.6.120:5060>
+[15:02:13] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:02:13] aufile: writing speaker audio to nil
+[15:02:13] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:02:13] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:02:13] To: <sip:4267@192.168.6.120:5060>;tag=3fff9182
+[15:02:13] From: <sip:101@140.124.42.67>;tag=4893ef0fd77ac5f9
+[15:02:13] Baresip 通話已建立，正在播放音檔
+[15:02:14] 已透過 Windows 播放音檔給 WASAPI 擷取：testing.wav
+[15:02:14] Dial command sent, waiting for audio duration
+[15:02:59] GUI ready
+[15:03:03] Button pressed: 測試廣播
+[15:03:03] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:03:03] Starting Baresip backend
+[15:03:04] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:03:04] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,default
+[15:03:04] 啟動 Baresip
+[15:03:04] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:03:05] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:03:05] 已送出 Baresip 撥號請求
+[15:03:05] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:03:05] Contact: <sip:101@140.124.42.67:64882>
+[15:03:05] To: <sip:4267@192.168.6.120:5060>
+[15:03:05] From: <sip:101@140.124.42.67>;tag=d5c90a5ff2131b1d
+[15:03:05] a=ssrc:1696146985 cname:sip:101@140.124.42.67
+[15:03:05] From: <sip:101@140.124.42.67>;tag=d5c90a5ff2131b1d
+[15:03:05] To: <sip:4267@192.168.6.120:5060>
+[15:03:05] From: <sip:101@140.124.42.67>;tag=d5c90a5ff2131b1d
+[15:03:05] To: <sip:4267@192.168.6.120:5060>;tag=7c6c2af8
+[15:03:05] Contact: <sip:101@192.168.6.120:5060>
+[15:03:05] call: SIP Progress: 180 Ringing (/)
+[15:03:05] aufile: writing speaker audio to nil
+[15:03:05] From: <sip:101@140.124.42.67>;tag=d5c90a5ff2131b1d
+[15:03:05] To: <sip:4267@192.168.6.120:5060>;tag=7c6c2af8
+[15:03:05] Contact: <sip:101@192.168.6.120:5060>
+[15:03:05] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:03:05] aufile: writing speaker audio to nil
+[15:03:05] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:03:05] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:03:05] To: <sip:4267@192.168.6.120:5060>;tag=7c6c2af8
+[15:03:05] From: <sip:101@140.124.42.67>;tag=d5c90a5ff2131b1d
+[15:03:05] Baresip 通話已建立，正在播放音檔
+[15:03:06] 已透過 Windows 播放音檔給 WASAPI 擷取：testing.wav
+[15:03:06] Dial command sent, waiting for audio duration
+[15:03:19] call: terminate call '96ebd675fc184596' with sip:4267@192.168.6.120:5060
+[15:03:19] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:03:19] To: <sip:4267@192.168.6.120:5060>;tag=7c6c2af8
+[15:03:19] From: <sip:101@140.124.42.67>;tag=d5c90a5ff2131b1d
+[15:03:19] Baresip 通話已結束
+[15:03:19] From: <sip:101@140.124.42.67>;tag=d5c90a5ff2131b1d
+[15:03:19] To: <sip:4267@192.168.6.120:5060>;tag=7c6c2af8
+[15:03:21] Button pressed: 測試廣播
+[15:03:21] Broadcast ignored: previous broadcast is still running
+[15:03:22] Broadcast completed
+[15:03:29] Button pressed: 測試廣播
+[15:03:29] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:03:29] Starting Baresip backend
+[15:03:30] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:03:30] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,default
+[15:03:30] 啟動 Baresip
+[15:03:30] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:03:31] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:03:31] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:03:31] 已送出 Baresip 撥號請求
+[15:03:31] Contact: <sip:101@140.124.42.67:64882>
+[15:03:31] To: <sip:4267@192.168.6.120:5060>
+[15:03:31] From: <sip:101@140.124.42.67>;tag=4bc12fd595e6c092
+[15:03:31] a=ssrc:4279511299 cname:sip:101@140.124.42.67
+[15:03:31] From: <sip:101@140.124.42.67>;tag=4bc12fd595e6c092
+[15:03:31] To: <sip:4267@192.168.6.120:5060>
+[15:03:31] From: <sip:101@140.124.42.67>;tag=4bc12fd595e6c092
+[15:03:31] To: <sip:4267@192.168.6.120:5060>;tag=5524aa2a
+[15:03:31] Contact: <sip:101@192.168.6.120:5060>
+[15:03:31] call: SIP Progress: 180 Ringing (/)
+[15:03:31] aufile: writing speaker audio to nil
+[15:03:31] From: <sip:101@140.124.42.67>;tag=4bc12fd595e6c092
+[15:03:31] To: <sip:4267@192.168.6.120:5060>;tag=5524aa2a
+[15:03:31] Contact: <sip:101@192.168.6.120:5060>
+[15:03:31] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:03:31] aufile: writing speaker audio to nil
+[15:03:31] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:03:31] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:03:31] To: <sip:4267@192.168.6.120:5060>;tag=5524aa2a
+[15:03:31] From: <sip:101@140.124.42.67>;tag=4bc12fd595e6c092
+[15:03:31] Baresip 通話已建立，正在播放音檔
+[15:03:32] 已透過 Windows 播放音檔給 WASAPI 擷取：testing.wav
+[15:03:32] Dial command sent, waiting for audio duration
+[15:03:45] call: terminate call 'f2f58d57602ba399' with sip:4267@192.168.6.120:5060
+[15:03:45] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:03:45] To: <sip:4267@192.168.6.120:5060>;tag=5524aa2a
+[15:03:45] From: <sip:101@140.124.42.67>;tag=4bc12fd595e6c092
+[15:03:45] Baresip 通話已結束
+[15:03:45] From: <sip:101@140.124.42.67>;tag=4bc12fd595e6c092
+[15:03:45] To: <sip:4267@192.168.6.120:5060>;tag=5524aa2a
+[15:03:48] Broadcast completed
+[15:46:25] GUI ready
+[15:47:05] Button pressed: 測試廣播
+[15:47:05] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:47:05] Starting Baresip backend
+[15:47:05] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:47:05] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,default
+[15:47:05] 啟動 Baresip
+[15:47:05] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:47:06] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:47:06] 已送出 Baresip 撥號請求
+[15:47:06] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:47:06] Contact: <sip:101@140.124.42.67:64882>
+[15:47:06] To: <sip:4267@192.168.6.120:5060>
+[15:47:06] From: <sip:101@140.124.42.67>;tag=6464f52e9893009e
+[15:47:06] a=ssrc:1705075705 cname:sip:101@140.124.42.67
+[15:47:06] From: <sip:101@140.124.42.67>;tag=6464f52e9893009e
+[15:47:06] To: <sip:4267@192.168.6.120:5060>
+[15:47:06] From: <sip:101@140.124.42.67>;tag=6464f52e9893009e
+[15:47:06] To: <sip:4267@192.168.6.120:5060>;tag=51bb4c3e
+[15:47:06] Contact: <sip:101@192.168.6.120:5060>
+[15:47:06] call: SIP Progress: 180 Ringing (/)
+[15:47:06] aufile: writing speaker audio to nil
+[15:47:07] From: <sip:101@140.124.42.67>;tag=6464f52e9893009e
+[15:47:07] To: <sip:4267@192.168.6.120:5060>;tag=51bb4c3e
+[15:47:07] Contact: <sip:101@192.168.6.120:5060>
+[15:47:07] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:47:07] aufile: writing speaker audio to nil
+[15:47:07] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:47:07] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:47:07] To: <sip:4267@192.168.6.120:5060>;tag=51bb4c3e
+[15:47:07] From: <sip:101@140.124.42.67>;tag=6464f52e9893009e
+[15:47:07] Baresip 通話已建立，正在播放音檔
+[15:47:07] 已播放到 CABLE Input，供 WASAPI/CABLE 擷取：baresip_audio_source.wav
+[15:47:07] Dial command sent, waiting for audio duration
+[15:47:20] call: terminate call '050469c35c616e5b' with sip:4267@192.168.6.120:5060
+[15:47:20] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:47:20] To: <sip:4267@192.168.6.120:5060>;tag=51bb4c3e
+[15:47:20] From: <sip:101@140.124.42.67>;tag=6464f52e9893009e
+[15:47:20] Baresip 通話已結束
+[15:47:20] From: <sip:101@140.124.42.67>;tag=6464f52e9893009e
+[15:47:20] To: <sip:4267@192.168.6.120:5060>;tag=51bb4c3e
+[15:47:24] Broadcast completed
+[15:47:27] Button pressed: 測試廣播
+[15:47:27] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:47:27] Starting Baresip backend
+[15:47:27] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:47:27] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,default
+[15:47:27] 啟動 Baresip
+[15:47:27] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:47:28] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:47:28] 已送出 Baresip 撥號請求
+[15:47:28] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:47:28] Contact: <sip:101@140.124.42.67:64882>
+[15:47:28] To: <sip:4267@192.168.6.120:5060>
+[15:47:28] From: <sip:101@140.124.42.67>;tag=9b9483b1899dc1a0
+[15:47:28] a=ssrc:437023278 cname:sip:101@140.124.42.67
+[15:47:28] From: <sip:101@140.124.42.67>;tag=9b9483b1899dc1a0
+[15:47:28] To: <sip:4267@192.168.6.120:5060>
+[15:47:29] From: <sip:101@140.124.42.67>;tag=9b9483b1899dc1a0
+[15:47:29] To: <sip:4267@192.168.6.120:5060>;tag=6c75ea35
+[15:47:29] Contact: <sip:101@192.168.6.120:5060>
+[15:47:29] call: SIP Progress: 180 Ringing (/)
+[15:47:29] aufile: writing speaker audio to nil
+[15:47:29] From: <sip:101@140.124.42.67>;tag=9b9483b1899dc1a0
+[15:47:29] To: <sip:4267@192.168.6.120:5060>;tag=6c75ea35
+[15:47:29] Contact: <sip:101@192.168.6.120:5060>
+[15:47:29] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:47:29] aufile: writing speaker audio to nil
+[15:47:29] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:47:29] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:47:29] To: <sip:4267@192.168.6.120:5060>;tag=6c75ea35
+[15:47:29] From: <sip:101@140.124.42.67>;tag=9b9483b1899dc1a0
+[15:47:29] Baresip 通話已建立，正在播放音檔
+[15:47:29] 已播放到 CABLE Input，供 WASAPI/CABLE 擷取：baresip_audio_source.wav
+[15:47:29] Dial command sent, waiting for audio duration
+[15:47:43] call: terminate call 'db528e33f5ff67c2' with sip:4267@192.168.6.120:5060
+[15:47:43] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:47:43] To: <sip:4267@192.168.6.120:5060>;tag=6c75ea35
+[15:47:43] From: <sip:101@140.124.42.67>;tag=9b9483b1899dc1a0
+[15:47:43] Baresip 通話已結束
+[15:47:43] From: <sip:101@140.124.42.67>;tag=9b9483b1899dc1a0
+[15:47:43] To: <sip:4267@192.168.6.120:5060>;tag=6c75ea35
+[15:49:12] GUI ready
+[15:49:28] Button pressed: 測試廣播
+[15:49:28] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:49:28] Starting Baresip backend
+[15:49:29] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:49:29] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,{0.0.1.00000000}.{aaf7e322-e320-469a-a9b4-a9525e7f8c66}
+[15:49:29] 啟動 Baresip
+[15:49:29] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:49:30] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:49:30] 已送出 Baresip 撥號請求
+[15:49:30] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:49:30] Contact: <sip:101@140.124.42.67:64882>
+[15:49:30] To: <sip:4267@192.168.6.120:5060>
+[15:49:30] From: <sip:101@140.124.42.67>;tag=ff61337b840797ae
+[15:49:30] a=ssrc:2073990118 cname:sip:101@140.124.42.67
+[15:49:30] From: <sip:101@140.124.42.67>;tag=ff61337b840797ae
+[15:49:30] To: <sip:4267@192.168.6.120:5060>
+[15:49:30] From: <sip:101@140.124.42.67>;tag=ff61337b840797ae
+[15:49:30] To: <sip:4267@192.168.6.120:5060>;tag=5b448a5e
+[15:49:30] Contact: <sip:101@192.168.6.120:5060>
+[15:49:30] call: SIP Progress: 180 Ringing (/)
+[15:49:30] aufile: writing speaker audio to nil
+[15:49:30] From: <sip:101@140.124.42.67>;tag=ff61337b840797ae
+[15:49:30] To: <sip:4267@192.168.6.120:5060>;tag=5b448a5e
+[15:49:30] Contact: <sip:101@192.168.6.120:5060>
+[15:49:30] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:49:30] aufile: writing speaker audio to nil
+[15:49:30] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:49:30] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:49:30] To: <sip:4267@192.168.6.120:5060>;tag=5b448a5e
+[15:49:30] From: <sip:101@140.124.42.67>;tag=ff61337b840797ae
+[15:49:30] Baresip 通話已建立，正在播放音檔
+[15:49:30] 已播放到 CABLE Input，供 WASAPI/CABLE 擷取：baresip_audio_source.wav
+[15:49:30] Dial command sent, waiting for audio duration
+[15:49:44] call: terminate call '29c9b0c033436656' with sip:4267@192.168.6.120:5060
+[15:49:44] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:49:44] To: <sip:4267@192.168.6.120:5060>;tag=5b448a5e
+[15:49:44] From: <sip:101@140.124.42.67>;tag=ff61337b840797ae
+[15:49:44] Baresip 通話已結束
+[15:49:44] From: <sip:101@140.124.42.67>;tag=ff61337b840797ae
+[15:49:44] To: <sip:4267@192.168.6.120:5060>;tag=5b448a5e
+[15:49:47] Button pressed: 測試廣播
+[15:49:47] Broadcast ignored: previous broadcast is still running
+[15:49:47] Broadcast completed
+[15:49:49] Button pressed: 測試廣播
+[15:49:49] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:49:49] Starting Baresip backend
+[15:49:49] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:49:49] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,{0.0.1.00000000}.{aaf7e322-e320-469a-a9b4-a9525e7f8c66}
+[15:49:49] 啟動 Baresip
+[15:49:49] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:49:50] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:49:50] 已送出 Baresip 撥號請求
+[15:49:50] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:49:50] Contact: <sip:101@140.124.42.67:64882>
+[15:49:50] To: <sip:4267@192.168.6.120:5060>
+[15:49:50] From: <sip:101@140.124.42.67>;tag=8aae1cb740bed8b7
+[15:49:50] a=ssrc:1729344671 cname:sip:101@140.124.42.67
+[15:49:50] From: <sip:101@140.124.42.67>;tag=8aae1cb740bed8b7
+[15:49:50] To: <sip:4267@192.168.6.120:5060>
+[15:49:50] From: <sip:101@140.124.42.67>;tag=8aae1cb740bed8b7
+[15:49:50] To: <sip:4267@192.168.6.120:5060>;tag=0ee9f3fb
+[15:49:50] Contact: <sip:101@192.168.6.120:5060>
+[15:49:50] call: SIP Progress: 180 Ringing (/)
+[15:49:50] aufile: writing speaker audio to nil
+[15:49:51] From: <sip:101@140.124.42.67>;tag=8aae1cb740bed8b7
+[15:49:51] To: <sip:4267@192.168.6.120:5060>;tag=0ee9f3fb
+[15:49:51] Contact: <sip:101@192.168.6.120:5060>
+[15:49:51] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:49:51] aufile: writing speaker audio to nil
+[15:49:51] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:49:51] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:49:51] To: <sip:4267@192.168.6.120:5060>;tag=0ee9f3fb
+[15:49:51] From: <sip:101@140.124.42.67>;tag=8aae1cb740bed8b7
+[15:49:51] Baresip 通話已建立，正在播放音檔
+[15:49:51] 已播放到 CABLE Input，供 WASAPI/CABLE 擷取：baresip_audio_source.wav
+[15:49:51] Dial command sent, waiting for audio duration
+[15:50:04] call: terminate call '39dd2c0defc19cbf' with sip:4267@192.168.6.120:5060
+[15:50:04] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:50:04] To: <sip:4267@192.168.6.120:5060>;tag=0ee9f3fb
+[15:50:04] From: <sip:101@140.124.42.67>;tag=8aae1cb740bed8b7
+[15:50:05] Baresip 通話已結束
+[15:50:05] From: <sip:101@140.124.42.67>;tag=8aae1cb740bed8b7
+[15:50:05] To: <sip:4267@192.168.6.120:5060>;tag=0ee9f3fb
+[15:50:08] Broadcast completed
+[15:54:37] GUI ready
+[15:54:39] Button pressed: 測試廣播
+[15:54:39] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:54:39] Starting Baresip backend
+[15:54:39] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:54:39] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,{0.0.1.00000000}.{aaf7e322-e320-469a-a9b4-a9525e7f8c66}
+[15:54:39] 啟動 Baresip
+[15:54:39] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:54:41] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:54:41] 已送出 Baresip 撥號請求
+[15:54:41] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:54:41] Contact: <sip:101@140.124.42.67:64882>
+[15:54:41] To: <sip:4267@192.168.6.120:5060>
+[15:54:41] From: <sip:101@140.124.42.67>;tag=4a44219997e38d1c
+[15:54:41] a=ssrc:1867146126 cname:sip:101@140.124.42.67
+[15:54:41] From: <sip:101@140.124.42.67>;tag=4a44219997e38d1c
+[15:54:41] To: <sip:4267@192.168.6.120:5060>
+[15:54:41] From: <sip:101@140.124.42.67>;tag=4a44219997e38d1c
+[15:54:41] To: <sip:4267@192.168.6.120:5060>;tag=215ac5af
+[15:54:41] Contact: <sip:101@192.168.6.120:5060>
+[15:54:41] call: SIP Progress: 180 Ringing (/)
+[15:54:41] aufile: writing speaker audio to nil
+[15:54:41] From: <sip:101@140.124.42.67>;tag=4a44219997e38d1c
+[15:54:42] To: <sip:4267@192.168.6.120:5060>;tag=215ac5af
+[15:54:42] Contact: <sip:101@192.168.6.120:5060>
+[15:54:42] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:54:42] aufile: writing speaker audio to nil
+[15:54:42] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:54:42] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:54:42] To: <sip:4267@192.168.6.120:5060>;tag=215ac5af
+[15:54:42] From: <sip:101@140.124.42.67>;tag=4a44219997e38d1c
+[15:54:42] Baresip 通話已建立，正在播放音檔
+[15:54:42] 已播放到 CABLE Input，供 WASAPI/CABLE 擷取：baresip_audio_source.wav
+[15:54:42] Dial command sent, waiting for audio duration
+[15:54:55] call: terminate call 'ea925bcbe1d86308' with sip:4267@192.168.6.120:5060
+[15:54:55] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:54:55] To: <sip:4267@192.168.6.120:5060>;tag=215ac5af
+[15:54:55] From: <sip:101@140.124.42.67>;tag=4a44219997e38d1c
+[15:54:55] Baresip 通話已結束
+[15:54:55] From: <sip:101@140.124.42.67>;tag=4a44219997e38d1c
+[15:54:55] To: <sip:4267@192.168.6.120:5060>;tag=215ac5af
+[15:54:59] Broadcast completed
+[15:57:42] GUI ready
+[15:57:43] Button pressed: 測試廣播
+[15:57:43] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:57:43] Starting Baresip backend
+[15:57:44] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:57:44] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,{0.0.1.00000000}.{aaf7e322-e320-469a-a9b4-a9525e7f8c66}
+[15:57:44] 啟動 Baresip
+[15:57:44] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:57:46] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:57:46] 已送出 Baresip 撥號請求
+[15:57:46] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:57:46] Contact: <sip:140.124.42.67@140.124.42.67:64882>
+[15:57:46] To: <sip:4267@192.168.6.120:5060>
+[15:57:46] From: <sip:101@140.124.42.67>;tag=aeeb2fa3d3e529bc
+[15:57:46] a=ssrc:1217723557 cname:sip:101@140.124.42.67
+[15:57:46] From: <sip:101@140.124.42.67>;tag=aeeb2fa3d3e529bc
+[15:57:46] To: <sip:4267@192.168.6.120:5060>
+[15:57:46] From: <sip:101@140.124.42.67>;tag=aeeb2fa3d3e529bc
+[15:57:46] To: <sip:4267@192.168.6.120:5060>;tag=7f32f673
+[15:57:46] Contact: <sip:101@192.168.6.120:5060>
+[15:57:46] call: SIP Progress: 180 Ringing (/)
+[15:57:46] aufile: writing speaker audio to nil
+[15:57:46] From: <sip:101@140.124.42.67>;tag=aeeb2fa3d3e529bc
+[15:57:46] To: <sip:4267@192.168.6.120:5060>;tag=7f32f673
+[15:57:46] Contact: <sip:101@192.168.6.120:5060>
+[15:57:46] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:57:46] aufile: writing speaker audio to nil
+[15:57:46] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:57:46] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:57:46] To: <sip:4267@192.168.6.120:5060>;tag=7f32f673
+[15:57:46] From: <sip:101@140.124.42.67>;tag=aeeb2fa3d3e529bc
+[15:57:46] Baresip 通話已建立，正在播放音檔
+[15:57:47] 已播放到 CABLE Input，供 WASAPI/CABLE 擷取：baresip_audio_source.wav
+[15:57:47] Dial command sent, waiting for audio duration
+[15:58:00] call: terminate call 'f96db1c0268df205' with sip:4267@192.168.6.120:5060
+[15:58:00] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:58:00] To: <sip:4267@192.168.6.120:5060>;tag=7f32f673
+[15:58:00] From: <sip:101@140.124.42.67>;tag=aeeb2fa3d3e529bc
+[15:58:00] Baresip 通話已結束
+[15:58:00] From: <sip:101@140.124.42.67>;tag=aeeb2fa3d3e529bc
+[15:58:00] To: <sip:4267@192.168.6.120:5060>;tag=7f32f673
+[15:58:01] Button pressed: 測試廣播
+[15:58:01] Broadcast ignored: previous broadcast is still running
+[15:58:03] Broadcast completed
+[15:58:05] Button pressed: 測試廣播
+[15:58:05] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[15:58:05] Starting Baresip backend
+[15:58:05] Prepared audio with 1500 ms pre-silence: baresip_audio_source.wav
+[15:58:05] Baresip config written: account=<sip:101@140.124.42.67>;regint=0;audio_codecs=pcma,pcmu/8000/1;ptime=20, sip_listen=0.0.0.0:64882, rtp_ports=4004-4005, audio_source wasapi,{0.0.1.00000000}.{aaf7e322-e320-469a-a9b4-a9525e7f8c66}
+[15:58:05] 啟動 Baresip
+[15:58:05] Baresip command: C:\sipbuild\baresip\build\Release\baresip.exe -4 -c -a MicroSIP/3.22.12 -s
+[15:58:06] call: connecting to 'sip:4267@192.168.6.120:5060'..
+[15:58:06] 已送出 Baresip 撥號請求
+[15:58:06] INVITE sip:4267@192.168.6.120:5060 SIP/2.0
+[15:58:06] Contact: <sip:140.124.42.67@140.124.42.67:64882>
+[15:58:06] To: <sip:4267@192.168.6.120:5060>
+[15:58:06] From: <sip:101@140.124.42.67>;tag=848fcaa6f1ac0dc6
+[15:58:06] a=ssrc:2851943158 cname:sip:101@140.124.42.67
+[15:58:06] From: <sip:101@140.124.42.67>;tag=848fcaa6f1ac0dc6
+[15:58:06] To: <sip:4267@192.168.6.120:5060>
+[15:58:06] From: <sip:101@140.124.42.67>;tag=848fcaa6f1ac0dc6
+[15:58:06] To: <sip:4267@192.168.6.120:5060>;tag=6c7369ca
+[15:58:06] Contact: <sip:101@192.168.6.120:5060>
+[15:58:06] call: SIP Progress: 180 Ringing (/)
+[15:58:06] aufile: writing speaker audio to nil
+[15:58:07] From: <sip:101@140.124.42.67>;tag=848fcaa6f1ac0dc6
+[15:58:07] To: <sip:4267@192.168.6.120:5060>;tag=6c7369ca
+[15:58:07] Contact: <sip:101@192.168.6.120:5060>
+[15:58:07] 101@140.124.42.67: Call answered: sip:4267@192.168.6.120:5060
+[15:58:07] aufile: writing speaker audio to nil
+[15:58:07] audio: Set audio encoder: PCMA 8000Hz 1ch
+[15:58:07] ACK sip:101@192.168.6.120:5060 SIP/2.0
+[15:58:07] To: <sip:4267@192.168.6.120:5060>;tag=6c7369ca
+[15:58:07] From: <sip:101@140.124.42.67>;tag=848fcaa6f1ac0dc6
+[15:58:07] Baresip 通話已建立，正在播放音檔
+[15:58:07] 已播放到 CABLE Input，供 WASAPI/CABLE 擷取：baresip_audio_source.wav
+[15:58:07] Dial command sent, waiting for audio duration
+[15:58:20] call: terminate call 'b4e1a1c3b4a3e3af' with sip:4267@192.168.6.120:5060
+[15:58:20] BYE sip:101@192.168.6.120:5060 SIP/2.0
+[15:58:20] To: <sip:4267@192.168.6.120:5060>;tag=6c7369ca
+[15:58:20] From: <sip:101@140.124.42.67>;tag=848fcaa6f1ac0dc6
+[15:58:20] Baresip 通話已結束
+[15:58:20] From: <sip:101@140.124.42.67>;tag=848fcaa6f1ac0dc6
+[15:58:20] To: <sip:4267@192.168.6.120:5060>;tag=6c7369ca
+[15:58:24] Broadcast completed

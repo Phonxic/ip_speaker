@@ -1,26 +1,32 @@
-# Native SIP/RTP IP Speaker Demo
+﻿# Windows Broadcast Management Client
 
-This project controls a PORTech IS-670 / IS-670P+ IP Speaker directly from Python.
-It does not use MicroSIP, VB-CABLE, Asterisk, IBS, or a separate broadcast server.
-
-Flow:
+This project is a Windows tkinter control client for the PORTech IS-670 IP Speaker.
+The current formal test path uses Baresip as the SIP/RTP stack. It does not call MicroSIP.
 
 ```text
-Python tkinter GUI -> SIP INVITE / ACK / BYE -> RTP G.711 u-law -> IP Speaker
+Python tkinter GUI -> Baresip ctrl_tcp -> SIP/RTP G.711 -> IP Speaker
 ```
+
+## Important Notes
+
+- MicroSIP is no longer used by this branch.
+- Baresip is BSD licensed, which keeps this path away from MicroSIP/GPL code reuse concerns.
+- The old Python native SIP/RTP implementation has been moved to `_legacy_native_rtp/`. It is kept only for reference and can be deleted later if the Baresip route works.
+- This Windows Baresip build reads configuration from `%APPDATA%\.baresip`. The app backs up the existing files before the first overwrite.
 
 ## Folder Structure
 
 ```text
 ip_speaker/
-??? app.py                 # Main GUI
-??? config.json            # IP, SIP, RTP, and audio mapping settings
-??? run_demo.bat           # Double-click launcher
-??? README.md
-??? audio/                 # Active 8000 Hz mono 16-bit PCM WAV files
-??? audio_backup/          # Original backup WAV files, not used by the GUI
-??? logs/                  # Native SIP/RTP debug logs
-??? native/                # SIP, RTP, WAV, and G.711 implementation modules
+├── app.py
+├── config.json
+├── run_demo.bat
+├── README.md
+├── audio/
+├── backends/
+│   └── baresip_backend.py
+├── tools/
+└── _legacy_native_rtp/
 ```
 
 ## Run
@@ -36,42 +42,31 @@ Or double-click:
 run_demo.bat
 ```
 
-## Current Settings
+## Baresip Setup
 
-`config.json` contains:
-
-- `local.ip`: the real Windows IP used to bind SIP/RTP sockets.
-- `local.advertise_ip`: optional IP announced inside SIP SDP. Leave empty for normal LAN use. In routed/NAT environments, this can be set to the IP that the speaker sees, such as `192.168.6.1`.
-- `local.sip_port`: local SIP UDP port.
-- `local.rtp_port`: local RTP UDP port.
-- `speaker.ip`: IP Speaker address.
-- `speaker.sip_user`: IP Speaker SIP user.
-- `speaker.sip_port`: IP Speaker SIP UDP port.
-- `audio_files`: GUI button label to WAV filename mapping.
-
-Current demo values:
+`config.json` currently points to:
 
 ```text
-Local IP:      140.124.42.67
-Advertise IP:  192.168.6.1
-Speaker IP:    192.168.6.120
-SIP User:      4267
+C:\sipbuild\baresip\build\Release\baresip.exe
+```
+
+When playback starts, the app writes a managed Baresip config to:
+
+```text
+%APPDATA%\.baresip
+```
+
+Before overwriting an existing Baresip config, it creates a backup like:
+
+```text
+%APPDATA%\.baresip_ip_speaker_backup_YYYYMMDD_HHMMSS
 ```
 
 ## Audio Files
 
-Put playable WAV files in `audio/`.
+Put WAV files in `audio/`.
 
-Required WAV format:
-
-```text
-8000 Hz
-mono
-16-bit PCM
-.wav
-```
-
-Current audio files:
+Current active files:
 
 ```text
 testing.wav
@@ -81,13 +76,41 @@ wheelchair_warning.wav
 stay_warning.wav
 ```
 
-The GUI validates the WAV format before sending RTP. If a file is missing or has the wrong format, it shows an error instead of crashing.
+Recommended WAV format for this SIP speaker path:
+
+```text
+8000 Hz
+mono
+16-bit PCM
+.wav
+```
+
+## Config
+
+Important fields in `config.json`:
+
+- `local.ip`: Windows IP address used for SIP/RTP.
+- `local.advertise_ip`: IP announced in SIP/SDP. Usually same as `local.ip`.
+- `local.sip_port`: local SIP UDP port.
+- `local.rtp_port`: local RTP port range start.
+- `speaker.ip`: IP Speaker address.
+- `speaker.sip_user`: IP Speaker SIP user.
+- `speaker.sip_port`: IP Speaker SIP port.
+- `baresip.path`: Baresip executable path.
+- `baresip.ctrl_tcp_port`: local Baresip control port.
+- `baresip.audio_codecs`: codec priority, currently `pcmu/8000/1,pcma`.
+- `audio_files`: GUI label to WAV filename mapping.
 
 ## Operation
 
-1. Open `app.py` or run `run_demo.bat`.
-2. Confirm the Local IP, Advertise IP, Speaker IP, SIP User, and ports.
+1. Run `python app.py` or double-click `run_demo.bat`.
+2. Confirm Local IP, Advertise IP, Speaker IP, SIP User, and ports.
 3. Click `Apply Settings`.
 4. Click `Test Call / Play Test Audio` or one of the pre-recorded audio buttons.
-5. The program sends SIP INVITE, streams PCMU RTP audio, then sends BYE automatically.
-6. Check `logs/native_debug.log` when troubleshooting SIP/RTP behavior.
+5. The app starts Baresip, creates an account through `ctrl_tcp`, dials the speaker, plays the selected WAV through Baresip `aufile`, and hangs up automatically.
+
+## Troubleshooting
+
+- If Baresip cannot start, confirm `baresip.path` in `config.json`.
+- If the speaker connects but has no sound, try changing `baresip.audio_codecs` between `pcmu/8000/1,pcma` and `pcma,pcmu/8000/1`.
+- If Baresip behaves unexpectedly, restore the backup folder from `%APPDATA%\.baresip_ip_speaker_backup_*`.

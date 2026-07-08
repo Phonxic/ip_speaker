@@ -1,16 +1,38 @@
 {
+  "backend": "baresip",
   "local": {
     "ip": "140.124.42.67",
     "advertise_ip": "140.124.42.67",
     "sip_port": 64882,
     "rtp_port": 4004,
     "audio_gain": 10.0,
-    "start_delay_ms": 500
+    "start_delay_ms": 900,
+    "sip_identity": "101",
+    "sip_user": "101"
   },
   "speaker": {
     "ip": "192.168.6.120",
     "sip_user": "4267",
     "sip_port": 5060
+  },
+  "baresip": {
+    "path": "C:\\sipbuild\\baresip\\build\\Release\\baresip.exe",
+    "module_path": "",
+    "module_suffix": "",
+    "ctrl_tcp_port": 4444,
+    "startup_delay_sec": 1.0,
+    "max_call_seconds": 60,
+    "audio_codecs": "pcma,pcmu/8000/1",
+    "cleanup_existing": true,
+    "pre_silence_ms": 1500,
+    "audio_source": "wasapi",
+    "sine_frequency_hz": 1000,
+    "sip_trace": true,
+    "net_interface": "",
+    "rtp_ports": "4004-4005",
+    "user_agent": "MicroSIP/3.22.12",
+    "wasapi_source_device": "{0.0.1.00000000}.{aaf7e322-e320-469a-a9b4-a9525e7f8c66}",
+    "windows_playback_device": "CABLE Input"
   },
   "audio_files": {
     "測試廣播": "testing.wav",
