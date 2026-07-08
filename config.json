@@ -1,19 +1,35 @@
 {
-  "backend": "baresip",
+  "backend": "pjsua",
   "local": {
     "ip": "140.124.42.67",
     "advertise_ip": "140.124.42.67",
     "sip_port": 64882,
     "rtp_port": 4004,
-    "audio_gain": 10.0,
+    "audio_gain": 50.0,
     "start_delay_ms": 900,
-    "sip_identity": "101",
+    "sip_identity": "140.124.42.67",
     "sip_user": "101"
   },
   "speaker": {
     "ip": "192.168.6.120",
     "sip_user": "4267",
     "sip_port": 5060
+  },
+  "pjsua": {
+    "path": "C:\\sipbuild\\pjproject\\build-cmake\\pjsip-apps\\Release\\pjsua.exe",
+    "log_level": 5,
+    "app_log_level": 4,
+    "extra_wait_seconds": 8.0,
+    "disable_codecs": [
+      "speex/16000",
+      "speex/8000",
+      "speex/32000",
+      "GSM/8000",
+      "iLBC/8000",
+      "G722/8000",
+      "G7221/16000",
+      "G7221/32000"
+    ]
   },
   "baresip": {
     "path": "C:\\sipbuild\\baresip\\build\\Release\\baresip.exe",

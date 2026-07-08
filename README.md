@@ -1,32 +1,55 @@
-﻿# Windows Broadcast Management Client
+# Windows Broadcast Management Client
 
 This project is a Windows tkinter control client for the PORTech IS-670 IP Speaker.
-The current formal test path uses Baresip as the SIP/RTP stack. It does not call MicroSIP.
+
+The currently working test path uses PJSUA from PJSIP:
 
 ```text
-Python tkinter GUI -> Baresip ctrl_tcp -> SIP/RTP G.711 -> IP Speaker
+Python tkinter GUI -> pjsua.exe -> SIP/RTP G.711 PCMU -> PORTech IS-670
 ```
+
+The SIP/RTP implementations are grouped under `sip_stacks/`:
+
+- `sip_stacks/pjsua/`: current working PJSUA backend.
+- `sip_stacks/baresip/`: previous Baresip backend, kept for comparison and future licensing experiments.
+- `sip_stacks/native/`: old native Python SIP/RTP attempt and capture/debug files.
 
 ## Important Notes
 
-- MicroSIP is no longer used by this branch.
-- Baresip is BSD licensed, which keeps this path away from MicroSIP/GPL code reuse concerns.
-- The old Python native SIP/RTP implementation has been moved to `_legacy_native_rtp/`. It is kept only for reference and can be deleted later if the Baresip route works.
-- This Windows Baresip build reads configuration from `%APPDATA%\.baresip`. The app backs up the existing files before the first overwrite.
+- MicroSIP is not used by this branch.
+- PJSUA has been verified to call the speaker, play `testing.wav`, and hang up automatically.
+- PJSIP/PJSUA is GPL/commercial dual licensed. For closed-source or commercial formal delivery, handle the Teluu commercial license or move the verified behavior to a non-GPL stack.
+- Baresip is still available as a selectable backend, but the speaker was silent in the current Baresip route.
 
 ## Folder Structure
 
 ```text
 ip_speaker/
-├── app.py
-├── config.json
-├── run_demo.bat
-├── README.md
-├── audio/
-├── backends/
-│   └── baresip_backend.py
-├── tools/
-└── _legacy_native_rtp/
+|-- app.py
+|-- config.json
+|-- run_demo.bat
+|-- README.md
+|-- audio/
+|   |-- testing.wav
+|   |-- fall_warning.wav
+|   |-- baggage_warning.wav
+|   |-- wheelchair_warning.wav
+|   `-- stay_warning.wav
+`-- sip_stacks/
+    |-- pjsua/
+    |   |-- __init__.py
+    |   `-- backend.py
+    |-- baresip/
+    |   |-- __init__.py
+    |   `-- backend.py
+    `-- native/
+        |-- __init__.py
+        |-- native/
+        |-- captures/
+        |-- logs/
+        |-- audio_backup/
+        |-- README.md
+        `-- TROUBLESHOOTING_NATIVE_RTP.md
 ```
 
 ## Run
@@ -42,24 +65,22 @@ Or double-click:
 run_demo.bat
 ```
 
-## Baresip Setup
+## PJSUA Setup
 
 `config.json` currently points to:
 
 ```text
-C:\sipbuild\baresip\build\Release\baresip.exe
+C:\sipbuild\pjproject\build-cmake\pjsip-apps\Release\pjsua.exe
 ```
 
-When playback starts, the app writes a managed Baresip config to:
+The GUI uses this successful call pattern:
 
 ```text
-%APPDATA%\.baresip
-```
-
-Before overwriting an existing Baresip config, it creates a backup like:
-
-```text
-%APPDATA%\.baresip_ip_speaker_backup_YYYYMMDD_HHMMSS
+Local SIP: 140.124.42.67:64882
+Local RTP: 140.124.42.67:4004
+Speaker: sip:4267@192.168.6.120:5060
+Codec: PCMU / payload type 0
+Audio: 8000 Hz mono WAV
 ```
 
 ## Audio Files
@@ -76,7 +97,7 @@ wheelchair_warning.wav
 stay_warning.wav
 ```
 
-Recommended WAV format for this SIP speaker path:
+Recommended WAV format:
 
 ```text
 8000 Hz
@@ -85,32 +106,41 @@ mono
 .wav
 ```
 
+If a WAV file is missing, the GUI will show an error instead of crashing.
+
 ## Config
 
 Important fields in `config.json`:
 
-- `local.ip`: Windows IP address used for SIP/RTP.
+- `backend`: use `pjsua` for the working route, or `baresip` for the old test route.
+- `local.ip`: Windows IP address used for SIP/RTP bind.
 - `local.advertise_ip`: IP announced in SIP/SDP. Usually same as `local.ip`.
-- `local.sip_port`: local SIP UDP port.
-- `local.rtp_port`: local RTP port range start.
+- `local.sip_port`: local SIP UDP port, currently `64882`.
+- `local.rtp_port`: local RTP base port, currently `4004`.
+- `local.audio_gain`: playback volume percent, from `0` to `200`; `100` means original WAV volume.
+- `local.sip_identity`: SIP identity used in From/Contact, currently `140.124.42.67`.
 - `speaker.ip`: IP Speaker address.
 - `speaker.sip_user`: IP Speaker SIP user.
 - `speaker.sip_port`: IP Speaker SIP port.
-- `baresip.path`: Baresip executable path.
-- `baresip.ctrl_tcp_port`: local Baresip control port.
-- `baresip.audio_codecs`: codec priority, currently `pcmu/8000/1,pcma`.
+- `pjsua.path`: PJSUA executable path.
+- `pjsua.disable_codecs`: codecs hidden from the SDP offer so the speaker chooses PCMU/PCMA.
 - `audio_files`: GUI label to WAV filename mapping.
 
 ## Operation
 
 1. Run `python app.py` or double-click `run_demo.bat`.
-2. Confirm Local IP, Advertise IP, Speaker IP, SIP User, and ports.
-3. Click `Apply Settings`.
-4. Click `Test Call / Play Test Audio` or one of the pre-recorded audio buttons.
-5. The app starts Baresip, creates an account through `ctrl_tcp`, dials the speaker, plays the selected WAV through Baresip `aufile`, and hangs up automatically.
+2. Confirm Backend is `pjsua`.
+3. Confirm Local IP, Advertise IP, Speaker IP, SIP User, and ports.
+4. Adjust `播放音量` if needed. `100%` is the original WAV volume.
+5. Click `套用設定`.
+6. Click `測試撥號 / 播放 testing.wav` or one of the pre-recorded audio buttons.
+7. The app starts PJSUA, dials the speaker, plays the selected WAV, and hangs up automatically.
 
 ## Troubleshooting
 
-- If Baresip cannot start, confirm `baresip.path` in `config.json`.
-- If the speaker connects but has no sound, try changing `baresip.audio_codecs` between `pcmu/8000/1,pcma` and `pcma,pcmu/8000/1`.
-- If Baresip behaves unexpectedly, restore the backup folder from `%APPDATA%\.baresip_ip_speaker_backup_*`.
+- If PJSUA cannot start, confirm `pjsua.path` in `config.json`.
+- If the speaker does not ring, confirm MicroSIP/Baresip/PJSUA is not already occupying SIP port `64882`.
+- If the speaker connects but has no sound, confirm the WAV is 8000 Hz mono 16-bit PCM.
+- If the speaker is too quiet or too loud, adjust the `播放音量` slider. The app creates a temporary adjusted WAV in `logs/`; original WAV files are not modified.
+- Check logs in `logs/pjsua_gui.log` and `logs/gui.log`.
+- The known-good manual PJSUA test used PCMU payload type 0 and sent RTP to speaker port 20000 from local RTP port 4004.

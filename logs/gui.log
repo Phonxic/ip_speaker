@@ -1166,3 +1166,11 @@ menu: create_ua failed: Invalid argument [22]
 [15:58:20] From: <sip:101@140.124.42.67>;tag=848fcaa6f1ac0dc6
 [15:58:20] To: <sip:4267@192.168.6.120:5060>;tag=6c7369ca
 [15:58:24] Broadcast completed
+[17:10:37] GUI ready
+[17:11:02] Button pressed: 測試廣播
+[17:11:02] Selected audio: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[17:11:02] Starting pjsua backend
+[17:11:02] Prepared audio volume: 50%
+[17:11:02] PJSUA dialing sip:4267@192.168.6.120:5060
+[17:11:02] Dial command sent, waiting for playback
+[17:11:07] Broadcast completed

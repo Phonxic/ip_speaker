@@ -7,7 +7,8 @@ import tkinter as tk
 from pathlib import Path
 from tkinter import messagebox, ttk
 
-from backends.baresip_backend import BaresipBackend, BaresipError
+from sip_stacks.baresip.backend import BaresipBackend, BaresipError
+from sip_stacks.pjsua.backend import PjsuaBackend, PjsuaError
 
 APP_TITLE = "Windows Broadcast Management Client"
 BASE_DIR = Path(__file__).resolve().parent
@@ -16,10 +17,16 @@ AUDIO_DIR = BASE_DIR / "audio"
 LOG_DIR = BASE_DIR / "logs"
 GUI_LOG_PATH = LOG_DIR / "gui.log"
 
-AUDIO_DEFAULTS = {"測試廣播": "testing.wav", "旅客跌倒": "fall_warning.wav", "行李滾落": "baggage_warning.wav", "輪椅進入": "wheelchair_warning.wav", "旅客逗留": "stay_warning.wav"}
+AUDIO_DEFAULTS = {
+    "測試廣播": "testing.wav",
+    "旅客跌倒": "fall_warning.wav",
+    "行李滾落": "baggage_warning.wav",
+    "輪椅進入": "wheelchair_warning.wav",
+    "旅客逗留": "stay_warning.wav",
+}
 
 LABELS = {
-    "settings": "IP Speaker Settings",
+    "settings": "IP Speaker 設定",
     "backend": "Backend",
     "local_ip": "Local IP",
     "advertise_ip": "Advertise IP",
@@ -28,32 +35,50 @@ LABELS = {
     "local_sip_port": "Local SIP Port",
     "local_rtp_port": "Local RTP Port",
     "speaker_sip_port": "Speaker SIP Port",
+    "audio_volume": "播放音量",
     "sip_uri": "Current SIP URI",
-    "apply": "Apply Settings",
-    "test": "Test Call / Play Test Audio",
-    "live": "Live Broadcast",
-    "live_disabled": "Live microphone broadcast is not enabled in this Baresip test build. Current flow uses pre-recorded WAV files.",
-    "audio": "Pre-recorded Audio Broadcast",
-    "stop": "Stop Playback / Hangup",
-    "open_audio": "Open Audio Folder",
-    "log": "Event Log",
-    "ready": "Ready",
+    "apply": "套用設定",
+    "test": "測試撥號 / 播放 testing.wav",
+    "live": "人員通話廣播",
+    "live_disabled": "目前流程使用預錄 WAV 檔。PJSUA 可自動撥號、播放音檔、播放完自動掛斷。",
+    "audio": "預錄語音廣播",
+    "stop": "停止播放 / 掛斷",
+    "open_audio": "開啟音訊資料夾",
+    "log": "事件紀錄",
+    "ready": "準備就緒",
 }
 
 
 def default_config() -> dict:
     return {
-        "backend": "baresip",
+        "backend": "pjsua",
         "local": {
-            "ip": "",
-            "advertise_ip": "",
+            "ip": "140.124.42.67",
+            "advertise_ip": "140.124.42.67",
             "sip_port": 64882,
             "sip_user": "101",
+            "sip_identity": "140.124.42.67",
             "rtp_port": 4004,
-            "audio_gain": 10.0,
+            "audio_gain": 100.0,
             "start_delay_ms": 500,
         },
         "speaker": {"ip": "192.168.6.120", "sip_user": "4267", "sip_port": 5060},
+        "pjsua": {
+            "path": r"C:\sipbuild\pjproject\build-cmake\pjsip-apps\Release\pjsua.exe",
+            "log_level": 5,
+            "app_log_level": 4,
+            "extra_wait_seconds": 8.0,
+            "disable_codecs": [
+                "speex/16000",
+                "speex/8000",
+                "speex/32000",
+                "GSM/8000",
+                "iLBC/8000",
+                "G722/8000",
+                "G7221/16000",
+                "G7221/32000",
+            ],
+        },
         "baresip": {
             "path": r"C:\sipbuild\baresip\build\Release\baresip.exe",
             "module_path": "",
@@ -64,10 +89,14 @@ def default_config() -> dict:
             "audio_codecs": "pcma,pcmu/8000/1",
             "cleanup_existing": True,
             "pre_silence_ms": 1500,
-            "audio_source": "ausine",
+            "audio_source": "wasapi",
             "sine_frequency_hz": 1000,
             "sip_trace": True,
-            "net_interface": "乙太網路",
+            "net_interface": "",
+            "rtp_ports": "4004-4005",
+            "user_agent": "MicroSIP/3.22.12",
+            "wasapi_source_device": "",
+            "windows_playback_device": "CABLE Input",
         },
         "audio_files": AUDIO_DEFAULTS.copy(),
     }
@@ -85,7 +114,7 @@ def normalize_audio_files(audio_files: dict) -> dict:
         canonical = filename_to_label.get(filename)
         if canonical:
             result[canonical] = filename
-        elif isinstance(label, str) and label.strip():
+        elif isinstance(label, str) and label.strip() and "?" not in label:
             result[label] = filename
     return result
 
@@ -96,10 +125,12 @@ def load_config() -> dict:
         with CONFIG_PATH.open("r", encoding="utf-8-sig") as file:
             old = json.load(file)
         config.update(old)
-        config["local"] = {**default_config()["local"], **old.get("local", {})}
-        config["speaker"] = {**default_config()["speaker"], **old.get("speaker", {})}
-        config["baresip"] = {**default_config()["baresip"], **old.get("baresip", {})}
-        config["backend"] = old.get("backend", "baresip")
+        defaults = default_config()
+        config["local"] = {**defaults["local"], **old.get("local", {})}
+        config["speaker"] = {**defaults["speaker"], **old.get("speaker", {})}
+        config["pjsua"] = {**defaults["pjsua"], **old.get("pjsua", {})}
+        config["baresip"] = {**defaults["baresip"], **old.get("baresip", {})}
+        config["backend"] = old.get("backend", "pjsua")
         if "sip_uri" in old and not old.get("speaker"):
             user, ip = parse_sip_uri(old["sip_uri"])
             config["speaker"]["sip_user"] = user or config["speaker"]["sip_user"]
@@ -125,14 +156,15 @@ class BroadcastApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title(APP_TITLE)
-        self.geometry("860x720")
-        self.minsize(780, 640)
+        self.geometry("920x760")
+        self.minsize(820, 680)
         self.configure(padx=16, pady=16)
         self.config_data = load_config()
-        self.baresip_backend = None
+        self.active_backend = None
         self.worker_thread = None
         self.status_text = tk.StringVar(value=LABELS["ready"])
         self.sip_uri_text = tk.StringVar()
+        self.volume_text = tk.StringVar()
         self.audio_frame = None
         self.log_text = None
         self._build_ui()
@@ -152,7 +184,7 @@ class BroadcastApp(tk.Tk):
     def _build_settings_section(self):
         frame = tk.LabelFrame(self, text=LABELS["settings"], padx=12, pady=12, font=("Microsoft JhengHei UI", 10, "bold"))
         frame.pack(fill="x", pady=(0, 10))
-        for col in range(6):
+        for col in range(8):
             frame.columnconfigure(col, weight=1)
 
         self.backend_var = tk.StringVar()
@@ -163,6 +195,7 @@ class BroadcastApp(tk.Tk):
         self.local_sip_port_var = tk.StringVar()
         self.local_rtp_port_var = tk.StringVar()
         self.speaker_sip_port_var = tk.StringVar()
+        self.audio_gain_var = tk.DoubleVar()
 
         fields = [
             (LABELS["backend"], self.backend_var, "combo"),
@@ -179,23 +212,38 @@ class BroadcastApp(tk.Tk):
             col = (index % 4) * 2
             tk.Label(frame, text=label, anchor="w").grid(row=row, column=col, sticky="ew", padx=(0, 4), pady=4)
             if kind == "combo":
-                widget = ttk.Combobox(frame, textvariable=var, values=("baresip",), state="readonly")
+                widget = ttk.Combobox(frame, textvariable=var, values=("pjsua", "baresip"), state="readonly")
             else:
                 widget = tk.Entry(frame, textvariable=var)
             widget.grid(row=row, column=col + 1, sticky="ew", padx=(0, 10), pady=4)
             if var is not self.backend_var:
                 var.trace_add("write", lambda *_args: self.update_sip_uri())
 
-        tk.Label(frame, text=LABELS["sip_uri"], anchor="w").grid(row=2, column=0, sticky="ew", padx=(0, 4), pady=4)
-        tk.Label(frame, textvariable=self.sip_uri_text, anchor="w").grid(row=2, column=1, columnspan=7, sticky="ew", pady=4)
+        tk.Label(frame, text=LABELS["audio_volume"], anchor="w").grid(row=2, column=0, sticky="ew", padx=(0, 4), pady=4)
+        volume_frame = tk.Frame(frame)
+        volume_frame.grid(row=2, column=1, columnspan=3, sticky="ew", padx=(0, 10), pady=4)
+        volume_frame.columnconfigure(0, weight=1)
+        tk.Scale(
+            volume_frame,
+            variable=self.audio_gain_var,
+            from_=0,
+            to=200,
+            orient="horizontal",
+            resolution=5,
+            showvalue=False,
+            command=self.update_volume_text,
+        ).grid(row=0, column=0, sticky="ew")
+        tk.Label(volume_frame, textvariable=self.volume_text, width=6, anchor="e").grid(row=0, column=1, padx=(8, 0))
+
+        tk.Label(frame, text=LABELS["sip_uri"], anchor="w").grid(row=2, column=4, sticky="ew", padx=(0, 4), pady=4)
+        tk.Label(frame, textvariable=self.sip_uri_text, anchor="w").grid(row=2, column=5, columnspan=3, sticky="ew", pady=4)
         tk.Button(frame, text=LABELS["apply"], command=self.apply_settings, height=2).grid(row=3, column=0, columnspan=4, sticky="ew", padx=(0, 8), pady=(8, 0))
         tk.Button(frame, text=LABELS["test"], command=lambda: self.start_audio_broadcast("測試廣播"), height=2).grid(row=3, column=4, columnspan=4, sticky="ew", pady=(8, 0))
 
     def _build_live_section(self):
         frame = tk.LabelFrame(self, text=LABELS["live"], padx=12, pady=12, font=("Microsoft JhengHei UI", 10, "bold"))
         frame.pack(fill="x", pady=(0, 10))
-        tk.Label(frame, text=LABELS["live_disabled"], anchor="w", justify="left", wraplength=800).pack(fill="x")
-        tk.Button(frame, text="Start Live Broadcast (Disabled)", state="disabled", height=2).pack(fill="x", pady=(8, 0))
+        tk.Label(frame, text=LABELS["live_disabled"], anchor="w", justify="left", wraplength=850).pack(fill="x")
 
     def _build_audio_section(self):
         frame = tk.LabelFrame(self, text=LABELS["audio"], padx=12, pady=12, font=("Microsoft JhengHei UI", 10, "bold"))
@@ -226,14 +274,16 @@ class BroadcastApp(tk.Tk):
     def _load_config_to_vars(self):
         local = self.config_data.get("local", {})
         speaker = self.config_data.get("speaker", {})
-        self.backend_var.set(self.config_data.get("backend", "baresip"))
+        self.backend_var.set(self.config_data.get("backend", "pjsua"))
         self.local_ip_var.set(local.get("ip", ""))
         self.advertise_ip_var.set(local.get("advertise_ip", ""))
-        self.local_sip_port_var.set(str(local.get("sip_port", 5062)))
+        self.local_sip_port_var.set(str(local.get("sip_port", 64882)))
         self.local_rtp_port_var.set(str(local.get("rtp_port", 4004)))
         self.speaker_ip_var.set(speaker.get("ip", "192.168.6.120"))
         self.sip_user_var.set(str(speaker.get("sip_user", "4267")))
         self.speaker_sip_port_var.set(str(speaker.get("sip_port", 5060)))
+        self.audio_gain_var.set(float(local.get("audio_gain", 100.0)))
+        self.update_volume_text()
 
     def refresh_audio_buttons(self):
         for child in self.audio_frame.winfo_children():
@@ -254,6 +304,10 @@ class BroadcastApp(tk.Tk):
     def update_sip_uri(self):
         if hasattr(self, "sip_uri_text"):
             self.sip_uri_text.set(f"sip:{self.sip_user_var.get()}@{self.speaker_ip_var.get()}:{self.speaker_sip_port_var.get()}")
+
+    def update_volume_text(self, _value=None):
+        if hasattr(self, "volume_text"):
+            self.volume_text.set(f"{self.audio_gain_var.get():.0f}%")
 
     def current_settings(self) -> dict:
         local_ip = self.local_ip_var.get().strip()
@@ -280,7 +334,7 @@ class BroadcastApp(tk.Tk):
             "speaker_ip": speaker_ip,
             "speaker_sip_user": sip_user,
             "speaker_sip_port": speaker_sip_port,
-            "audio_gain": float(self.config_data.get("local", {}).get("audio_gain", 10.0)),
+            "audio_gain": max(0.0, min(200.0, float(self.audio_gain_var.get()))),
             "start_delay_ms": int(self.config_data.get("local", {}).get("start_delay_ms", 500)),
         }
 
@@ -292,8 +346,9 @@ class BroadcastApp(tk.Tk):
                 self.log(f"Settings error: {exc}")
                 messagebox.showerror(APP_TITLE, str(exc))
             return False
-        self.config_data["backend"] = self.backend_var.get() or "baresip"
+
         existing_local = self.config_data.get("local", {})
+        self.config_data["backend"] = self.backend_var.get() or "pjsua"
         self.config_data["local"] = {
             "ip": settings["local_ip"],
             "advertise_ip": settings["advertise_ip"],
@@ -301,7 +356,7 @@ class BroadcastApp(tk.Tk):
             "rtp_port": settings["local_rtp_port"],
             "audio_gain": settings["audio_gain"],
             "start_delay_ms": settings["start_delay_ms"],
-            "sip_identity": existing_local.get("sip_identity", "140.124.42.67"),
+            "sip_identity": existing_local.get("sip_identity", settings["advertise_ip"]),
             "sip_user": existing_local.get("sip_user", "101"),
         }
         self.config_data["speaker"] = {
@@ -312,64 +367,76 @@ class BroadcastApp(tk.Tk):
         self.config_data["audio_files"] = normalize_audio_files(self.config_data.get("audio_files", {}))
         save_config(self.config_data)
         self.update_sip_uri()
+        self.update_volume_text()
         if not silent:
-            self.set_status("Settings applied")
+            self.set_status(f"設定已套用，音量 {settings['audio_gain']:.0f}%")
             self.log("Settings applied and saved")
         return True
 
     def start_audio_broadcast(self, audio_name: str):
         self.log(f"Button pressed: {audio_name}")
-        self.set_status(f"Preparing broadcast: {audio_name}")
+        self.set_status(f"準備廣播：{audio_name}，音量 {self.audio_gain_var.get():.0f}%")
         if self.worker_thread and self.worker_thread.is_alive():
             self.log("Broadcast ignored: previous broadcast is still running")
             messagebox.showwarning(APP_TITLE, "A broadcast is already running. Please stop it first.")
             return
         if not self.apply_settings(silent=True):
             return
+
         audio_files = normalize_audio_files(self.config_data.get("audio_files", {}))
         audio_file = audio_files.get(audio_name)
         if not audio_file:
             self.log(f"Audio setting not found: {audio_name}")
             messagebox.showerror(APP_TITLE, f"Audio setting not found: {audio_name}")
             return
+
         audio_path = AUDIO_DIR / audio_file
         self.log(f"Selected audio: {audio_path}")
         if not audio_path.exists():
             self.log(f"Audio file not found: {audio_path}")
             messagebox.showerror(APP_TITLE, f"Audio file not found:\n{audio_path}")
             return
-        self.worker_thread = threading.Thread(target=self._baresip_worker, args=(audio_path,), daemon=True)
+
+        backend_name = self.config_data.get("backend", "pjsua")
+        self.worker_thread = threading.Thread(target=self._broadcast_worker, args=(backend_name, audio_path), daemon=True)
         self.worker_thread.start()
 
-    def _baresip_worker(self, audio_path: Path):
+    def _broadcast_worker(self, backend_name: str, audio_path: Path):
         try:
-            self.set_status_threadsafe("Starting Baresip backend")
-            self.log_threadsafe("Starting Baresip backend")
-            self.baresip_backend = BaresipBackend(self.config_data, BASE_DIR, self.log_and_status_threadsafe)
-            self.baresip_backend.start_broadcast(audio_path)
-            self.log_threadsafe("Dial command sent, waiting for audio duration")
-            self.baresip_backend.wait_for_audio_then_hangup(audio_path)
+            self.set_status_threadsafe(f"Starting {backend_name} backend")
+            self.log_threadsafe(f"Starting {backend_name} backend")
+            if backend_name == "pjsua":
+                backend = PjsuaBackend(self.config_data, BASE_DIR, self.log_and_status_threadsafe)
+            elif backend_name == "baresip":
+                backend = BaresipBackend(self.config_data, BASE_DIR, self.log_and_status_threadsafe)
+            else:
+                raise RuntimeError(f"Unknown backend: {backend_name}")
+
+            self.active_backend = backend
+            backend.start_broadcast(audio_path)
+            self.log_threadsafe("Dial command sent, waiting for playback")
+            backend.wait_for_audio_then_hangup(audio_path)
             self.log_threadsafe("Broadcast completed")
-            self.set_status_threadsafe("Broadcast completed")
-        except BaresipError as exc:
-            self.log_threadsafe(f"Baresip error: {exc}")
+            self.set_status_threadsafe("廣播完成")
+        except (PjsuaError, BaresipError) as exc:
+            self.log_threadsafe(f"{backend_name} error: {exc}")
             self.show_error_threadsafe(str(exc))
-            self.set_status_threadsafe("Baresip setup error")
+            self.set_status_threadsafe(f"{backend_name} setup error")
         except Exception as exc:
             self.log_threadsafe(f"Unexpected error: {exc}")
             self.show_error_threadsafe(str(exc))
-            self.set_status_threadsafe(f"Baresip error: {exc}")
+            self.set_status_threadsafe(f"{backend_name} error: {exc}")
         finally:
-            self.baresip_backend = None
+            self.active_backend = None
 
     def stop_playback(self):
         self.log("Stop requested")
         try:
-            if self.baresip_backend:
-                self.baresip_backend.stop()
+            if self.active_backend:
+                self.active_backend.stop()
         except Exception as exc:
             self.log(f"Stop error: {exc}")
-        self.set_status("Stop requested")
+        self.set_status("已送出停止請求")
 
     def open_audio_folder(self):
         AUDIO_DIR.mkdir(parents=True, exist_ok=True)
