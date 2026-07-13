@@ -1,55 +1,45 @@
 # Windows Broadcast Management Client
 
-This project is a Windows tkinter control client for the PORTech IS-670 IP Speaker.
+Windows tkinter control client for PORTech IS-670 IP Speaker.
 
-The currently working test path uses PJSUA from PJSIP:
+Current working SIP path:
 
 ```text
-Python tkinter GUI -> pjsua.exe -> SIP/RTP G.711 PCMU -> PORTech IS-670
+Python GUI -> PJSUA -> SIP/RTP G.711 PCMU -> PORTech IS-670
 ```
 
-The SIP/RTP implementations are grouped under `sip_stacks/`:
+## Current Status
 
-- `sip_stacks/pjsua/`: current working PJSUA backend.
-- `sip_stacks/baresip/`: previous Baresip backend, kept for comparison and future licensing experiments.
-- `sip_stacks/native/`: old native Python SIP/RTP attempt and capture/debug files.
+- Main backend: `pjsua`
+- PJSUA can call `sip:4267@192.168.6.120:5060`
+- Pre-recorded WAV playback works
+- Playback auto-hangup works
+- Live microphone broadcast has been added for PJSUA
+- Audio recording and audio-file management have been added
+- Baresip and native Python SIP/RTP stacks are kept for comparison and future licensing work
 
-## Important Notes
+## License Note
 
-- MicroSIP is not used by this branch.
-- PJSUA has been verified to call the speaker, play `testing.wav`, and hang up automatically.
-- PJSIP/PJSUA is GPL/commercial dual licensed. For closed-source or commercial formal delivery, handle the Teluu commercial license or move the verified behavior to a non-GPL stack.
-- Baresip is still available as a selectable backend, but the speaker was silent in the current Baresip route.
+PJSIP/PJSUA is GPL/commercial dual licensed. It is useful for technical validation and demo work, but closed-source or commercial formal delivery should either use a Teluu commercial license or move the verified behavior to a non-GPL SIP/RTP stack.
 
 ## Folder Structure
 
 ```text
 ip_speaker/
 |-- app.py
+|-- audio_recorder.py
 |-- config.json
-|-- run_demo.bat
+|-- requirements.txt
 |-- README.md
+|-- run_demo.bat
 |-- audio/
-|   |-- testing.wav
-|   |-- fall_warning.wav
-|   |-- baggage_warning.wav
-|   |-- wheelchair_warning.wav
-|   `-- stay_warning.wav
+|-- logs/
 `-- sip_stacks/
     |-- pjsua/
-    |   |-- __init__.py
     |   `-- backend.py
     |-- baresip/
-    |   |-- __init__.py
     |   `-- backend.py
     `-- native/
-        |-- __init__.py
-        |-- native/
-        |-- captures/
-        |-- logs/
-        |-- audio_backup/
-        |-- README.md
-        `-- TROUBLESHOOTING_NATIVE_RTP.md
 ```
 
 ## Run
@@ -59,45 +49,42 @@ cd C:\Users\user\Desktop\ip_speaker
 python app.py
 ```
 
-Or double-click:
+If you want to use GUI recording, install:
 
-```text
-run_demo.bat
+```powershell
+pip install sounddevice numpy
 ```
 
-## PJSUA Setup
+## PJSUA Settings
 
-`config.json` currently points to:
+Known-good path:
 
 ```text
+PJSUA executable:
 C:\sipbuild\pjproject\build-cmake\pjsip-apps\Release\pjsua.exe
+
+Speaker:
+sip:4267@192.168.6.120:5060
+
+Local SIP:
+140.124.42.67:64882
+
+Local RTP:
+140.124.42.67:4004
+
+Codec:
+PCMU / payload type 0
 ```
 
-The GUI uses this successful call pattern:
+## Pre-recorded Broadcast
+
+Audio files live in:
 
 ```text
-Local SIP: 140.124.42.67:64882
-Local RTP: 140.124.42.67:4004
-Speaker: sip:4267@192.168.6.120:5060
-Codec: PCMU / payload type 0
-Audio: 8000 Hz mono WAV
+audio/
 ```
 
-## Audio Files
-
-Put WAV files in `audio/`.
-
-Current active files:
-
-```text
-testing.wav
-fall_warning.wav
-baggage_warning.wav
-wheelchair_warning.wav
-stay_warning.wav
-```
-
-Recommended WAV format:
+Recommended format:
 
 ```text
 8000 Hz
@@ -106,41 +93,104 @@ mono
 .wav
 ```
 
-If a WAV file is missing, the GUI will show an error instead of crashing.
+Flow:
 
-## Config
+```text
+Select audio button -> PJSUA dials speaker -> PJSUA plays WAV -> PJSUA sends BYE
+```
 
-Important fields in `config.json`:
+The GUI supports playback volume from `0%` to `200%`. The original WAV is not changed; the app creates a temporary adjusted WAV in `logs/`.
 
-- `backend`: use `pjsua` for the working route, or `baresip` for the old test route.
-- `local.ip`: Windows IP address used for SIP/RTP bind.
-- `local.advertise_ip`: IP announced in SIP/SDP. Usually same as `local.ip`.
-- `local.sip_port`: local SIP UDP port, currently `64882`.
-- `local.rtp_port`: local RTP base port, currently `4004`.
-- `local.audio_gain`: playback volume percent, from `0` to `200`; `100` means original WAV volume.
-- `local.sip_identity`: SIP identity used in From/Contact, currently `140.124.42.67`.
-- `speaker.ip`: IP Speaker address.
-- `speaker.sip_user`: IP Speaker SIP user.
-- `speaker.sip_port`: IP Speaker SIP port.
-- `pjsua.path`: PJSUA executable path.
-- `pjsua.disable_codecs`: codecs hidden from the SDP offer so the speaker chooses PCMU/PCMA.
-- `audio_files`: GUI label to WAV filename mapping.
+## Live Broadcast
 
-## Operation
+Use the `開始即時廣播` and `停止即時廣播` buttons.
 
-1. Run `python app.py` or double-click `run_demo.bat`.
-2. Confirm Backend is `pjsua`.
-3. Confirm Local IP, Advertise IP, Speaker IP, SIP User, and ports.
-4. Adjust `播放音量` if needed. `100%` is the original WAV volume.
-5. Click `套用設定`.
-6. Click `測試撥號 / 播放 testing.wav` or one of the pre-recorded audio buttons.
-7. The app starts PJSUA, dials the speaker, plays the selected WAV, and hangs up automatically.
+Live broadcast uses PJSUA without:
+
+```text
+--null-audio
+--play-file
+--auto-play
+--auto-play-hangup
+```
+
+PJSUA will use the Windows default capture device unless `pjsua.capture_dev` is set in `config.json`.
+
+If there is no sound, check:
+
+- Windows default microphone
+- microphone permission
+- PJSUA device selection
+- whether another process is using local SIP port `64882`
+
+## Audio Recording
+
+The right-side audio manager can create new WAV files:
+
+1. Enter an Audio ID, for example `custom_warning_01`.
+2. Enter display name and description.
+3. Click `開始錄音`.
+4. Speak into the Windows default microphone.
+5. Click `停止錄音並儲存`.
+
+The app writes:
+
+```text
+audio/<audio_id>.wav
+```
+
+Recording format:
+
+```text
+8000 Hz
+mono
+16-bit PCM
+```
+
+The new audio entry is saved to `config.json`.
+
+## Audio Config Schema
+
+`audio_files` now uses a structured format:
+
+```json
+{
+  "testing": {
+    "display_name": "測試廣播",
+    "filename": "testing.wav",
+    "description": "確認 IP Speaker 是否可正常播放。"
+  }
+}
+```
+
+Old format is migrated automatically when `app.py` loads:
+
+```json
+{
+  "測試廣播": "testing.wav"
+}
+```
+
+## Useful Config Fields
+
+- `backend`: currently `pjsua`
+- `local.ip`: Windows IP address used for SIP/RTP bind
+- `local.advertise_ip`: IP announced in SIP/SDP
+- `local.sip_port`: local SIP UDP port
+- `local.rtp_port`: local RTP base port
+- `local.audio_gain`: playback volume percent
+- `speaker.ip`: IP Speaker address
+- `speaker.sip_user`: IP Speaker SIP user
+- `speaker.sip_port`: IP Speaker SIP port
+- `pjsua.path`: PJSUA executable path
+- `pjsua.capture_dev`: optional PJSUA capture device id for live broadcast
+- `audio.sample_rate`: recording sample rate, currently `8000`
+- `audio.channels`: recording channels, currently `1`
 
 ## Troubleshooting
 
-- If PJSUA cannot start, confirm `pjsua.path` in `config.json`.
-- If the speaker does not ring, confirm MicroSIP/Baresip/PJSUA is not already occupying SIP port `64882`.
-- If the speaker connects but has no sound, confirm the WAV is 8000 Hz mono 16-bit PCM.
-- If the speaker is too quiet or too loud, adjust the `播放音量` slider. The app creates a temporary adjusted WAV in `logs/`; original WAV files are not modified.
-- Check logs in `logs/pjsua_gui.log` and `logs/gui.log`.
-- The known-good manual PJSUA test used PCMU payload type 0 and sent RTP to speaker port 20000 from local RTP port 4004.
+- If PJSUA cannot start, confirm `pjsua.path`.
+- If playback connects but no sound, confirm WAV format.
+- If live broadcast connects but no sound, check Windows default input device.
+- If recording fails, install `sounddevice` and `numpy`.
+- Logs are written to `logs/gui.log`, `logs/pjsua_gui.log`, and `logs/pjsua_live.log`.

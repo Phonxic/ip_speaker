@@ -5,7 +5,7 @@
     "advertise_ip": "140.124.42.67",
     "sip_port": 64882,
     "rtp_port": 4004,
-    "audio_gain": 50.0,
+    "audio_gain": 25.0,
     "start_delay_ms": 900,
     "sip_identity": "140.124.42.67",
     "sip_user": "101"
@@ -20,6 +20,8 @@
     "log_level": 5,
     "app_log_level": 4,
     "extra_wait_seconds": 8.0,
+    "capture_dev": "",
+    "playback_dev": "",
     "disable_codecs": [
       "speex/16000",
       "speex/8000",
@@ -50,11 +52,42 @@
     "wasapi_source_device": "{0.0.1.00000000}.{aaf7e322-e320-469a-a9b4-a9525e7f8c66}",
     "windows_playback_device": "CABLE Input"
   },
+  "audio": {
+    "folder": "audio",
+    "sample_rate": 8000,
+    "channels": 1,
+    "sample_width": 2
+  },
   "audio_files": {
-    "測試廣播": "testing.wav",
-    "旅客跌倒": "fall_warning.wav",
-    "行李滾落": "baggage_warning.wav",
-    "輪椅進入": "wheelchair_warning.wav",
-    "旅客逗留": "stay_warning.wav"
+    "testing": {
+      "display_name": "測試廣播",
+      "filename": "testing.wav",
+      "description": "確認 IP Speaker 是否可正常播放。"
+    },
+    "testing_1": {
+      "display_name": "測試廣播_1",
+      "filename": "testing_1.wav",
+      "description": "確認 IP Speaker 是否可正常播放。"
+    },
+    "fall_warning": {
+      "display_name": "旅客跌倒",
+      "filename": "fall_warning.wav",
+      "description": "旅客跌倒事件警示廣播。"
+    },
+    "baggage_warning": {
+      "display_name": "行李滾落",
+      "filename": "baggage_warning.wav",
+      "description": "行李滾落事件警示廣播。"
+    },
+    "wheelchair_warning": {
+      "display_name": "輪椅進入",
+      "filename": "wheelchair_warning.wav",
+      "description": "輪椅進入區域事件警示廣播。"
+    },
+    "stay_warning": {
+      "display_name": "旅客逗留",
+      "filename": "stay_warning.wav",
+      "description": "旅客逗留事件警示廣播。"
+    }
   }
 }

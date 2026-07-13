@@ -1174,3 +1174,147 @@ menu: create_ua failed: Invalid argument [22]
 [17:11:02] PJSUA dialing sip:4267@192.168.6.120:5060
 [17:11:02] Dial command sent, waiting for playback
 [17:11:07] Broadcast completed
+[04:11:02] GUI ready
+[04:12:47] GUI ready
+[04:12:54] Audio list refreshed
+[04:12:55] Audio list refreshed
+[15:10:45] GUI ready
+[15:10:50] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:10:50] Prepared audio volume: 30%
+[15:10:50] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:10:55] Broadcast completed
+[15:10:58] Live broadcast started
+[15:10:58] Starting live broadcast to sip:4267@192.168.6.120:5060
+[15:11:39] Live broadcast stopped
+[15:14:30] Live broadcast started
+[15:14:30] Starting live broadcast to sip:4267@192.168.6.120:5060
+[15:16:04] Live broadcast error: Live broadcast is already running.
+[15:16:08] Live broadcast stopped
+[15:16:09] Live broadcast started
+[15:16:09] Starting live broadcast to sip:4267@192.168.6.120:5060
+[15:18:39] GUI ready
+[15:18:43] Settings applied and saved
+[15:18:46] Live broadcast started
+[15:18:46] Starting live broadcast to sip:4267@192.168.6.120:5060
+[15:19:05] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:19:05] Prepared audio volume: 20%
+[15:19:05] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:19:07] Broadcast completed
+[15:19:15] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:19:15] Prepared audio volume: 20%
+[15:19:15] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:19:16] Broadcast completed
+[15:19:19] Live broadcast stopped
+[15:19:25] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:19:25] Prepared audio volume: 20%
+[15:19:25] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:19:26] Broadcast completed
+[15:19:36] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:19:36] Prepared audio volume: 50%
+[15:19:36] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:19:38] Broadcast completed
+[15:19:45] GUI ready
+[15:19:47] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:19:47] Prepared audio volume: 50%
+[15:19:47] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:19:48] Broadcast completed
+[15:20:58] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:20:58] Prepared audio volume: 50%
+[15:20:58] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:20:59] Broadcast completed
+[15:21:07] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:21:07] Prepared audio volume: 50%
+[15:21:07] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:21:09] Broadcast completed
+[15:21:34] GUI ready
+[15:21:36] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:21:36] Prepared audio volume: 50%
+[15:21:36] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:21:37] Broadcast completed
+[15:21:45] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:21:45] Prepared audio volume: 50%
+[15:21:45] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:21:46] Broadcast completed
+[15:21:59] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:21:59] Prepared audio volume: 50%
+[15:21:59] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:22:00] Broadcast completed
+[15:22:05] Live broadcast started
+[15:22:05] Starting live broadcast to sip:4267@192.168.6.120:5060
+[15:22:09] Live broadcast stopped
+[15:22:24] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:22:24] Prepared audio volume: 50%
+[15:22:24] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:22:25] Broadcast completed
+[15:28:27] GUI ready
+[15:28:30] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:28:30] Prepared audio volume: 35%
+[15:28:30] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:28:35] Broadcast completed
+[15:28:46] Live broadcast started
+[15:28:46] Starting live broadcast to sip:4267@192.168.6.120:5060
+[15:28:58] Live broadcast stopped
+[15:29:03] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:29:04] Prepared audio volume: 20%
+[15:29:04] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:29:09] Broadcast completed
+[15:30:02] GUI ready
+[15:30:03] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:30:04] Prepared audio volume: 20%
+[15:30:04] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:30:09] Broadcast completed
+[15:30:12] Live broadcast started
+[15:30:12] Starting live broadcast to sip:4267@192.168.6.120:5060
+[15:30:26] Live broadcast stopped
+[15:30:50] GUI ready
+[15:31:28] Saved audio entry: testing -> testing.wav
+[15:33:30] GUI ready
+[15:33:52] Recording started: C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav
+[15:33:59] Saved audio entry: testing_1 -> testing_1.wav
+[15:33:59] Recording saved: C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav
+[15:34:17] Playing 測試廣播_1 | C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav | 確認 IP Speaker 是否可正常播放。
+[15:34:17] Prepared audio volume: 20%
+[15:34:17] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:34:27] Broadcast completed
+[15:34:28] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:34:28] Prepared audio volume: 20%
+[15:34:28] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:34:33] Broadcast completed
+[15:34:35] Saved audio entry: testing_1 -> testing_1.wav
+[15:34:37] Playing 測試廣播_1 | C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav | 確認 IP Speaker 是否可正常播放。
+[15:34:37] Prepared audio volume: 20%
+[15:34:37] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:34:46] Broadcast completed
+[15:34:48] Playing 測試廣播_1 | C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav | 確認 IP Speaker 是否可正常播放。
+[15:34:48] Prepared audio volume: 70%
+[15:34:48] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:34:57] Broadcast completed
+[15:34:59] Playing 測試廣播_1 | C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav | 確認 IP Speaker 是否可正常播放。
+[15:34:59] Prepared audio volume: 125%
+[15:34:59] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:35:08] Broadcast completed
+[15:35:22] GUI ready
+[15:39:50] GUI ready
+[15:40:13] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | 確認 IP Speaker 是否可正常播放。
+[15:40:13] Prepared audio volume: 25%
+[15:40:13] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:40:18] Broadcast completed
+[15:40:22] Playing 測試廣播_1 | C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav | 確認 IP Speaker 是否可正常播放。
+[15:40:22] Prepared audio volume: 25%
+[15:40:22] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:40:31] Broadcast completed
+[15:40:37] Recording started: C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav
+[15:40:44] Saved audio entry: testing_1 -> testing_1.wav
+[15:40:44] Recording saved: C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav
+[15:40:53] Saved audio entry: testing_1 -> testing_1.wav
+[15:41:04] Playing 測試廣播_1 | C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav | 確認 IP Speaker 是否可正常播放。
+[15:41:04] Prepared audio volume: 25%
+[15:41:04] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:41:13] Broadcast completed
+[15:42:34] Opening audio folder: C:\Users\user\Desktop\ip_speaker\audio
+[15:43:51] GUI ready
+[15:43:54] Audio order updated: testing_1
+[15:43:55] Audio order updated: testing_1
+[15:43:55] Audio order updated: testing_1
+[15:43:56] Audio order updated: testing_1
+[15:44:00] Settings applied and saved

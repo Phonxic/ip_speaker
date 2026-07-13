@@ -14,21 +14,97 @@ class PjsuaBackend:
         self.base_dir = base_dir
         self.notify = notify
         self.process: subprocess.Popen | None = None
+        self.live_process: subprocess.Popen | None = None
+        self.is_live_broadcasting = False
         self.playback_audio_path: Path | None = None
         self.logs_dir = base_dir / "logs"
         self.logs_dir.mkdir(parents=True, exist_ok=True)
 
     def start_broadcast(self, audio_path: Path) -> None:
+        if self.process and self.process.poll() is None:
+            raise PjsuaError("A pre-recorded broadcast is already running.")
+        if self.live_process and self.live_process.poll() is None:
+            raise PjsuaError("Live broadcast is running. Stop it before playing WAV audio.")
+        if not audio_path.exists():
+            raise PjsuaError(f"Audio file not found:\n{audio_path}")
+
+        self.playback_audio_path = self._prepare_audio_file(audio_path)
+        args, target_uri = self._base_args("pjsua_gui.log")
+        args.extend(
+            [
+                "--null-audio",
+                f"--play-file={self.playback_audio_path}",
+                "--auto-play",
+                "--auto-play-hangup",
+                target_uri,
+            ]
+        )
+
+        self.notify(f"PJSUA dialing {target_uri}")
+        self.process = self._spawn(args)
+        self._raise_if_startup_failed("pjsua_gui.log", self.process, "pre-recorded broadcast")
+
+    def wait_for_audio_then_hangup(self, audio_path: Path) -> None:
+        duration = self._wave_duration(self.playback_audio_path or audio_path)
+        timeout = duration + float(self.config.get("pjsua", {}).get("extra_wait_seconds", 8.0))
+        started = time.monotonic()
+
+        while time.monotonic() - started < timeout:
+            if self.process and self.process.poll() is not None:
+                error = self._extract_error("pjsua_gui.log")
+                if error:
+                    self.process = None
+                    raise PjsuaError(error)
+                break
+            if self._log_contains_disconnected("pjsua_gui.log"):
+                break
+            time.sleep(0.2)
+
+        self.stop()
+
+    def start_live_broadcast(self) -> None:
+        if self.live_process and self.live_process.poll() is None:
+            raise PjsuaError("Live broadcast is already running.")
+        if self.process and self.process.poll() is None:
+            raise PjsuaError("Pre-recorded broadcast is running. Stop it before live broadcast.")
+
+        args, target_uri = self._base_args("pjsua_live.log")
+        pjsua_config = self.config.get("pjsua", {})
+        capture_dev = pjsua_config.get("capture_dev")
+        playback_dev = pjsua_config.get("playback_dev")
+        if capture_dev not in (None, ""):
+            args.append(f"--capture-dev={int(capture_dev)}")
+        if playback_dev not in (None, ""):
+            args.append(f"--playback-dev={int(playback_dev)}")
+        args.append(target_uri)
+
+        self.notify(f"Starting live broadcast to {target_uri}")
+        self.live_process = self._spawn(args)
+        self._raise_if_startup_failed("pjsua_live.log", self.live_process, "live broadcast")
+        self.is_live_broadcasting = True
+
+    def stop_live_broadcast(self) -> None:
+        self._stop_process("live")
+        self.is_live_broadcasting = False
+        self.notify("Live broadcast stopped")
+
+    def stop(self) -> None:
+        self._stop_process("playback")
+
+    def is_playback_running(self) -> bool:
+        return self.process is not None and self.process.poll() is None
+
+    def is_live_running(self) -> bool:
+        return self.live_process is not None and self.live_process.poll() is None
+
+    def _base_args(self, log_name: str) -> tuple[list[str], str]:
         pjsua_config = self.config.get("pjsua", {})
         local = self.config.get("local", {})
         speaker = self.config.get("speaker", {})
 
-        exe_path = Path(pjsua_config.get("path", ""))
+        exe_path = Path(pjsua_config.get("path") or pjsua_config.get("exe_path", ""))
         if not exe_path.exists():
             raise PjsuaError(f"PJSUA executable not found:\n{exe_path}")
-        if not audio_path.exists():
-            raise PjsuaError(f"Audio file not found:\n{audio_path}")
-        self.playback_audio_path = self._prepare_audio_file(audio_path)
 
         local_ip = str(local.get("ip", "")).strip()
         advertise_ip = str(local.get("advertise_ip") or local_ip).strip()
@@ -42,7 +118,7 @@ class PjsuaBackend:
         if not local_ip or not speaker_ip:
             raise PjsuaError("Local IP and Speaker IP are required.")
 
-        log_path = self.logs_dir / "pjsua_gui.log"
+        log_path = self.logs_dir / log_name
         log_path.write_text("", encoding="utf-8")
         target_uri = f"sip:{speaker_user}@{speaker_ip}:{speaker_port}"
         contact = f"sip:{sip_identity}:{local_sip_port};ob"
@@ -63,19 +139,15 @@ class PjsuaBackend:
             "--no-vad",
             "--clock-rate=8000",
             "--snd-clock-rate=8000",
-            "--null-audio",
-            f"--play-file={self.playback_audio_path}",
-            "--auto-play",
-            "--auto-play-hangup",
         ]
 
         for codec in pjsua_config.get("disable_codecs", []):
             args.append(f"--dis-codec={codec}")
 
-        args.append(target_uri)
+        return args, target_uri
 
-        self.notify(f"PJSUA dialing {target_uri}")
-        self.process = subprocess.Popen(
+    def _spawn(self, args: list[str]) -> subprocess.Popen:
+        return subprocess.Popen(
             args,
             cwd=str(self.base_dir),
             stdin=subprocess.PIPE,
@@ -85,46 +157,67 @@ class PjsuaBackend:
             creationflags=subprocess.CREATE_NO_WINDOW,
         )
 
-    def wait_for_audio_then_hangup(self, audio_path: Path) -> None:
-        duration = self._wave_duration(self.playback_audio_path or audio_path)
-        timeout = duration + float(self.config.get("pjsua", {}).get("extra_wait_seconds", 8.0))
-        started = time.monotonic()
-
-        while time.monotonic() - started < timeout:
-            if self.process and self.process.poll() is not None:
-                break
-            if self._log_contains_disconnected():
-                break
-            time.sleep(0.2)
-
-        self.stop()
-
-    def stop(self) -> None:
-        if not self.process:
+    def _raise_if_startup_failed(self, log_name: str, process: subprocess.Popen, label: str) -> None:
+        time.sleep(0.5)
+        if process.poll() is None:
             return
-        if self.process.poll() is None:
-            try:
-                if self.process.stdin:
-                    self.process.stdin.write("q\n")
-                    self.process.stdin.flush()
-                self.process.wait(timeout=3)
-            except Exception:
-                self.process.terminate()
-                try:
-                    self.process.wait(timeout=3)
-                except Exception:
-                    self.process.kill()
-        self.process = None
+        error = self._extract_error(log_name) or f"PJSUA {label} exited immediately."
+        if process is self.live_process:
+            self.live_process = None
+            self.is_live_broadcasting = False
+        if process is self.process:
+            self.process = None
+        raise PjsuaError(error)
 
-    def _log_contains_disconnected(self) -> bool:
-        log_path = self.logs_dir / "pjsua_gui.log"
-        if not log_path.exists():
-            return False
-        try:
-            text = log_path.read_text(encoding="utf-8", errors="ignore")
-        except OSError:
-            return False
+    def _stop_process(self, kind: str) -> None:
+        process = self.live_process if kind == "live" else self.process
+        if not process:
+            return
+        if process.poll() is None:
+            try:
+                if process.stdin:
+                    process.stdin.write("h\nq\n")
+                    process.stdin.flush()
+                process.wait(timeout=4)
+            except Exception:
+                process.terminate()
+                try:
+                    process.wait(timeout=3)
+                except Exception:
+                    process.kill()
+        if kind == "live":
+            self.live_process = None
+        else:
+            self.process = None
+
+    def _log_contains_disconnected(self, log_name: str) -> bool:
+        text = self._read_log(log_name)
         return "Call 0 is DISCONNECTED" in text or "Response msg 200/BYE" in text
+
+    def _extract_error(self, log_name: str) -> str | None:
+        text = self._read_log(log_name)
+        if not text:
+            return None
+        checks = [
+            ("WSAEADDRINUSE", "PJSUA SIP port is already in use. Please stop live broadcast or close the existing pjsua.exe, then try again."),
+            ("Address already in use", "PJSUA SIP port is already in use. Please stop live broadcast or close the existing pjsua.exe, then try again."),
+            ("bind() error", "PJSUA could not bind the configured SIP/RTP port. Please close the existing pjsua.exe or change the local ports in config.json."),
+            ("Unable to open sound device", "PJSUA could not open the selected audio device. Please check capture_dev/playback_dev in config.json."),
+            ("Invalid audio device", "PJSUA audio device setting is invalid. Please check capture_dev/playback_dev in config.json."),
+        ]
+        for marker, message in checks:
+            if marker in text:
+                return message
+        return None
+
+    def _read_log(self, log_name: str) -> str:
+        log_path = self.logs_dir / log_name
+        if not log_path.exists():
+            return ""
+        try:
+            return log_path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            return ""
 
     @staticmethod
     def _wave_duration(audio_path: Path) -> float:
