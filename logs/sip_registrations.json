@@ -1,0 +1,30 @@
+[
+  {
+    "key": "120@192.168.6.120:5060",
+    "user": "120",
+    "source_ip": "140.124.44.229",
+    "source_port": 5060,
+    "contact_uri": "sip:120@192.168.6.120:5060",
+    "contact_ip": "192.168.6.120",
+    "contact_port": 5060,
+    "expires": 60,
+    "user_agent": "IPSPK-v1.306",
+    "registered_at": 1783936853.392559,
+    "expires_at": 1783936913.392559,
+    "online": true
+  },
+  {
+    "key": "121@192.168.6.121:5060",
+    "user": "121",
+    "source_ip": "140.124.44.229",
+    "source_port": 21983,
+    "contact_uri": "sip:121@192.168.6.121:5060",
+    "contact_ip": "192.168.6.121",
+    "contact_port": 5060,
+    "expires": 60,
+    "user_agent": "IPSPK-v1.306",
+    "registered_at": 1783936816.7933626,
+    "expires_at": 1783936876.7933626,
+    "online": true
+  }
+]

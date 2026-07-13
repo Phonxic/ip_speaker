@@ -79,7 +79,7 @@ Then Windows firewall, routing, or socket binding is blocking the local send. Ch
 
 ### Case C: Speaker-side capture receives RTP but no audio
 
-Then the speaker accepts the SIP call but rejects or ignores the RTP media format/source behavior. Compare against a MicroSIP capture. Important fields to compare:
+Then the speaker accepts the SIP call but rejects or ignores the RTP media format/source behavior. Compare against a known-good SIP/RTP capture. Important fields to compare:
 
 - SIP Via / Contact / From IP
 - SDP `c=IN IP4`
@@ -92,7 +92,7 @@ Then the speaker accepts the SIP call but rejects or ignores the RTP media forma
 
 Do two captures:
 
-1. MicroSIP successful call.
+1. Known-good successful call.
 2. Native Python failed call.
 
 Then compare SIP INVITE/SDP and RTP streams side by side.

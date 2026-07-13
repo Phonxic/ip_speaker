@@ -1318,3 +1318,269 @@ menu: create_ua failed: Invalid argument [22]
 [15:43:55] Audio order updated: testing_1
 [15:43:56] Audio order updated: testing_1
 [15:44:00] Settings applied and saved
+[15:52:41] GUI ready
+[15:53:15] Live broadcast started
+[15:53:15] Starting live broadcast to sip:4267@192.168.6.120:5060
+[15:53:20] Live broadcast stopped
+[15:53:41] Recording started: C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav
+[15:53:44] Saved audio entry: testing_1 -> testing_1.wav
+[15:53:44] Recording saved: C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav
+[15:53:50] Playing 測試廣播_1 | C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav | 確認 IP Speaker 是否可正常播放。
+[15:53:50] Prepared audio volume: 25%
+[15:53:50] PJSUA dialing sip:4267@192.168.6.120:5060
+[15:53:56] Broadcast completed
+[16:13:50] GUI ready
+[17:13:31] GUI ready
+[17:13:41] IBS Server started on UDP 0.0.0.0:5060
+[17:13:41] SIP registrar listening on UDP 0.0.0.0:5060
+[17:14:16] REGISTER 4267 contact=sip:4267@192.168.6.120:5060 source=140.124.44.229:5060 expires=60
+[17:14:16] Sent 200 OK to 140.124.44.229:5060
+[17:14:38] Imported registered speakers: reg_4267_192_168_6_120_5060
+[17:15:11] REGISTER 4267 contact=sip:4267@192.168.6.120:5060 source=140.124.44.229:5060 expires=60
+[17:15:11] Sent 200 OK to 140.124.44.229:5060
+[17:15:14] GUI ready
+[17:15:23] Settings applied and saved
+[17:15:26] GUI ready
+[17:18:42] GUI ready
+[17:19:28] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | targets: Registered 4267 | 確認 IP Speaker 是否可正常播放。
+[17:19:28] Broadcast target 1/1: Registered 4267 4267@192.168.6.120:5060
+[17:19:28] Prepared audio volume: 25%
+[17:19:28] PJSUA dialing sip:4267@192.168.6.120:5060
+[17:19:34] Broadcast completed
+[17:58:48] GUI ready
+[17:58:57] IBS Server started on UDP 0.0.0.0:5060
+[17:58:57] SIP registrar listening on UDP 0.0.0.0:5060
+[17:58:57] REGISTER 4267 contact=sip:4267@192.168.6.120:5060 source=140.124.44.229:5060 expires=60
+[17:58:57] Sent 200 OK to 140.124.44.229:5060
+[17:59:33] REGISTER 4267 contact=sip:4267@192.168.6.120:5060 source=140.124.44.229:5060 expires=0
+[17:59:33] Sent 200 OK to 140.124.44.229:5060
+[17:59:58] REGISTER 120 contact=sip:120@192.168.6.120:5060 source=140.124.44.229:5060 expires=60
+[17:59:58] Sent 200 OK to 140.124.44.229:5060
+[18:00:16] REGISTER 121 contact=sip:121@192.168.6.121:5060 source=140.124.44.229:21983 expires=60
+[18:00:16] Sent 200 OK to 140.124.44.229:21983
+[18:00:20] Imported registered speakers: reg_120_192_168_6_120_5060, reg_121_192_168_6_121_5060
+[18:00:52] Imported registered speakers: reg_120_192_168_6_120_5060, reg_121_192_168_6_121_5060
+[18:00:53] REGISTER 120 contact=sip:120@192.168.6.120:5060 source=140.124.44.229:5060 expires=60
+[18:00:53] Sent 200 OK to 140.124.44.229:5060
+[18:00:56] SIP registrar stopped
+[18:01:06] Live broadcast started
+[18:01:06] Starting live broadcast to sip:4267@192.168.6.120:5060
+[18:01:09] Live broadcast stopped
+[18:01:35] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | targets: IP Speaker 1 | 確認 IP Speaker 是否可正常播放。
+[18:01:35] Broadcast target 1/1: IP Speaker 1 4267@192.168.6.120:5060
+[18:01:35] Prepared audio volume: 20%
+[18:01:35] PJSUA dialing sip:4267@192.168.6.120:5060
+[18:01:41] Broadcast completed
+[18:01:44] Playing 測試廣播 | C:\Users\user\Desktop\ip_speaker\audio\testing.wav | targets: Registered 120, Registered 121 | 確認 IP Speaker 是否可正常播放。
+[18:01:44] Broadcast target 1/2: Registered 120 120@192.168.6.120:5060
+[18:01:44] Prepared audio volume: 20%
+[18:01:44] PJSUA dialing sip:120@192.168.6.120:5060
+[18:01:50] Broadcast target 2/2: Registered 121 121@192.168.6.121:5060
+[18:01:50] Prepared audio volume: 20%
+[18:01:50] PJSUA dialing sip:121@192.168.6.121:5060
+[18:01:56] Broadcast completed
+[18:06:06] GUI ready
+[18:07:19] GUI ready
+[18:09:05] GUI ready
+[18:09:31] GUI ready
+[18:29:53] GUI ready
+[18:37:01] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:37:01] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:37:01] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:37:01] Prepared audio volume: 20%
+[18:37:01] Prepared audio volume: 20%
+[18:37:01] PJSUA dialing sip:121@192.168.6.121:5060
+[18:37:01] PJSUA dialing sip:120@192.168.6.120:5060
+[18:37:06] Broadcast completed
+[18:39:10] GUI ready
+[18:39:34] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:39:34] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:39:34] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:39:34] Prepared audio volume: 30%
+[18:39:34] Prepared audio volume: 30%
+[18:39:34] PJSUA dialing sip:121@192.168.6.121:5060
+[18:39:34] PJSUA dialing sip:120@192.168.6.120:5060
+[18:39:39] Broadcast completed
+[18:39:43] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:39:43] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:39:43] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:39:43] Prepared audio volume: 80%
+[18:39:43] Prepared audio volume: 80%
+[18:39:43] PJSUA dialing sip:120@192.168.6.120:5060
+[18:39:43] PJSUA dialing sip:121@192.168.6.121:5060
+[18:39:48] Broadcast completed
+[18:39:56] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:39:56] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:39:56] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:39:56] Prepared audio volume: 180%
+[18:39:56] Prepared audio volume: 180%
+[18:39:56] PJSUA dialing sip:120@192.168.6.120:5060
+[18:39:56] PJSUA dialing sip:121@192.168.6.121:5060
+[18:40:59] GUI ready
+[18:41:08] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:41:08] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:41:08] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:41:08] Prepared audio volume: 180%
+[18:41:08] Prepared audio volume: 180%
+[18:41:08] PJSUA dialing sip:121@192.168.6.121:5060
+[18:41:08] PJSUA dialing sip:120@192.168.6.120:5060
+[18:41:21] Broadcast completed
+[18:41:23] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:41:23] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:41:23] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:41:23] Prepared audio volume: 180%
+[18:41:23] Prepared audio volume: 180%
+[18:41:23] PJSUA dialing sip:120@192.168.6.120:5060
+[18:41:23] PJSUA dialing sip:121@192.168.6.121:5060
+[18:42:44] GUI ready
+[18:42:46] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:42:46] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:42:46] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:42:46] Prepared audio volume: 180%
+[18:42:46] Prepared audio volume: 180%
+[18:42:46] PJSUA dialing sip:120@192.168.6.120:5060
+[18:42:46] PJSUA dialing sip:121@192.168.6.121:5060
+[18:42:51] Broadcast completed
+[18:43:58] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:43:58] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:43:58] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:43:58] Prepared audio volume: 180%
+[18:43:58] Prepared audio volume: 180%
+[18:43:58] PJSUA dialing sip:120@192.168.6.120:5060
+[18:43:58] PJSUA dialing sip:121@192.168.6.121:5060
+[18:44:04] Broadcast completed
+[18:44:42] GUI ready
+[18:44:48] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:44:48] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:44:48] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:44:48] Prepared audio volume: 180%
+[18:44:48] Prepared audio volume: 180%
+[18:44:48] PJSUA dialing sip:121@192.168.6.121:5060
+[18:44:48] PJSUA dialing sip:120@192.168.6.120:5060
+[18:45:01] Broadcast completed
+[18:45:03] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:45:03] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:45:03] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:45:03] Prepared audio volume: 180%
+[18:45:03] Prepared audio volume: 180%
+[18:45:03] PJSUA dialing sip:121@192.168.6.121:5060
+[18:45:03] PJSUA dialing sip:120@192.168.6.120:5060
+[18:45:12] Broadcast completed
+[18:45:16] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:45:16] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:45:16] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:45:16] Prepared audio volume: 60%
+[18:45:16] Prepared audio volume: 60%
+[18:45:16] PJSUA dialing sip:120@192.168.6.120:5060
+[18:45:16] PJSUA dialing sip:121@192.168.6.121:5060
+[18:45:21] Broadcast completed
+[18:45:22] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:45:22] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:45:22] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:45:22] Prepared audio volume: 200%
+[18:45:22] Prepared audio volume: 200%
+[18:45:22] PJSUA dialing sip:120@192.168.6.120:5060
+[18:45:22] PJSUA dialing sip:121@192.168.6.121:5060
+[18:45:27] Broadcast completed
+[18:46:14] GUI ready
+[18:46:18] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:46:18] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:46:18] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:46:18] Prepared audio volume: 120%
+[18:46:18] Prepared audio volume: 120%
+[18:46:18] PJSUA dialing sip:120@192.168.6.120:5060
+[18:46:18] PJSUA dialing sip:121@192.168.6.121:5060
+[18:46:23] Broadcast completed
+[18:46:23] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:46:23] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:46:23] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:46:23] Prepared audio volume: 200%
+[18:46:23] Prepared audio volume: 200%
+[18:46:23] PJSUA dialing sip:121@192.168.6.121:5060
+[18:46:23] PJSUA dialing sip:120@192.168.6.120:5060
+[18:46:28] Broadcast completed
+[18:46:29] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:46:29] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:46:30] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:46:30] Prepared audio volume: 200%
+[18:46:30] Prepared audio volume: 200%
+[18:46:30] PJSUA dialing sip:120@192.168.6.120:5060
+[18:46:30] PJSUA dialing sip:121@192.168.6.121:5060
+[18:46:35] Broadcast completed
+[18:46:48] GUI ready
+[18:46:53] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:46:53] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:46:53] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:46:53] Prepared audio volume: 150%
+[18:46:53] Prepared audio volume: 150%
+[18:46:53] PJSUA dialing sip:120@192.168.6.120:5060
+[18:46:53] PJSUA dialing sip:121@192.168.6.121:5060
+[18:46:58] Broadcast completed
+[18:47:02] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:47:02] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:47:02] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:47:02] Prepared audio volume: 200%
+[18:47:02] Prepared audio volume: 200%
+[18:47:02] PJSUA dialing sip:121@192.168.6.121:5060
+[18:47:02] PJSUA dialing sip:120@192.168.6.120:5060
+[18:47:07] Broadcast completed
+[18:47:21] Starting simultaneous broadcast | mode: 各自指定音檔 | targets: Registered 120, Registered 121
+[18:47:21] Broadcast 1/2: Registered 120 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[18:47:21] Broadcast 2/2: Registered 121 121@192.168.6.121:5060 audio=測試廣播 local_ports=64884/4006
+[18:47:21] PJSUA dialing sip:120@192.168.6.120:5060
+[18:47:21] PJSUA dialing sip:121@192.168.6.121:5060
+[18:47:27] Broadcast completed
+[18:49:13] GUI ready
+[18:52:28] GUI ready
+[18:58:05] GUI ready
+[18:59:10] GUI ready
+[19:06:22] GUI ready
+[19:08:28] Local audio preview started: C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav
+[19:08:36] Local audio preview started: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[19:08:41] Local audio preview started: C:\Users\user\Desktop\ip_speaker\audio\testing_1.wav
+[19:09:56] Saved audio entry: Right -> right.wav
+[19:10:03] Deleted audio entry: testing_1
+[19:11:27] Saved audio entry: Left -> left.wav
+[19:11:32] Recording started: C:\Users\user\Desktop\ip_speaker\audio\right.wav
+[19:11:37] Saved audio entry: Right -> right.wav
+[19:11:37] Recording saved: C:\Users\user\Desktop\ip_speaker\audio\right.wav
+[19:11:46] Local audio preview started: C:\Users\user\Desktop\ip_speaker\audio\right.wav
+[19:11:56] Recording started: C:\Users\user\Desktop\ip_speaker\audio\right.wav
+[19:12:00] Saved audio entry: Right -> right.wav
+[19:12:00] Recording saved: C:\Users\user\Desktop\ip_speaker\audio\right.wav
+[19:12:10] Recording started: C:\Users\user\Desktop\ip_speaker\audio\left.wav
+[19:12:14] Saved audio entry: Left -> left.wav
+[19:12:14] Recording saved: C:\Users\user\Desktop\ip_speaker\audio\left.wav
+[19:12:20] Local audio preview started: C:\Users\user\Desktop\ip_speaker\audio\right.wav
+[19:12:25] Local audio preview started: C:\Users\user\Desktop\ip_speaker\audio\left.wav
+[19:13:44] Starting simultaneous broadcast | mode: 選取音檔 | targets: escalator_1
+[19:13:44] Broadcast 1/1: escalator_1 121@192.168.6.121:5060 audio=測試廣播 local_ports=64882/4004
+[19:13:44] PJSUA dialing sip:121@192.168.6.121:5060
+[19:13:50] Broadcast completed
+[19:13:55] Starting simultaneous broadcast | mode: 事件：測試廣播 | targets: platform_1, escalator_1
+[19:13:55] Broadcast 2/2: escalator_1 121@192.168.6.121:5060 audio=左 local_ports=64884/4006
+[19:13:56] Broadcast 1/2: platform_1 120@192.168.6.120:5060 audio=右 local_ports=64882/4004
+[19:13:56] Prepared audio volume: 70%
+[19:13:56] Prepared audio volume: 70%
+[19:13:56] PJSUA dialing sip:121@192.168.6.121:5060
+[19:13:56] PJSUA dialing sip:120@192.168.6.120:5060
+[19:14:02] Broadcast completed
+[19:14:12] Starting simultaneous broadcast | mode: 事件：測試廣播 | targets: platform_1, escalator_1
+[19:14:12] Broadcast 1/2: platform_1 120@192.168.6.120:5060 audio=右 local_ports=64882/4004
+[19:14:12] Broadcast 2/2: escalator_1 121@192.168.6.121:5060 audio=左 local_ports=64884/4006
+[19:14:12] PJSUA dialing sip:120@192.168.6.120:5060
+[19:14:12] PJSUA dialing sip:121@192.168.6.121:5060
+[19:14:19] Broadcast completed
+[19:17:41] Settings applied and saved
+[19:17:44] Live broadcast target 1/2: platform_1 local_ports=64882/4004
+[19:17:45] Live broadcast target 2/2: escalator_1 local_ports=64884/4006
+[19:17:45] Live group broadcast started
+[19:17:45] Starting live broadcast to sip:120@192.168.6.120:5060
+[19:17:45] Starting live broadcast to sip:121@192.168.6.121:5060
+[19:18:03] Live broadcast stopped
+[19:18:09] Live broadcast stopped
+[19:18:09] Live broadcast stopped
+[19:39:53] GUI ready
+[19:40:09] Simple config template created: C:\Users\user\Desktop\ip_speaker\speaker設定範本.xlsx
+[19:51:55] GUI ready
+[20:31:17] GUI ready

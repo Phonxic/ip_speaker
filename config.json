@@ -5,14 +5,14 @@
     "advertise_ip": "140.124.42.67",
     "sip_port": 64882,
     "rtp_port": 4004,
-    "audio_gain": 25.0,
+    "audio_gain": 100.0,
     "start_delay_ms": 900,
     "sip_identity": "140.124.42.67",
     "sip_user": "101"
   },
   "speaker": {
     "ip": "192.168.6.120",
-    "sip_user": "4267",
+    "sip_user": "120",
     "sip_port": 5060
   },
   "pjsua": {
@@ -33,25 +33,6 @@
       "G7221/32000"
     ]
   },
-  "baresip": {
-    "path": "C:\\sipbuild\\baresip\\build\\Release\\baresip.exe",
-    "module_path": "",
-    "module_suffix": "",
-    "ctrl_tcp_port": 4444,
-    "startup_delay_sec": 1.0,
-    "max_call_seconds": 60,
-    "audio_codecs": "pcma,pcmu/8000/1",
-    "cleanup_existing": true,
-    "pre_silence_ms": 1500,
-    "audio_source": "wasapi",
-    "sine_frequency_hz": 1000,
-    "sip_trace": true,
-    "net_interface": "",
-    "rtp_ports": "4004-4005",
-    "user_agent": "MicroSIP/3.22.12",
-    "wasapi_source_device": "{0.0.1.00000000}.{aaf7e322-e320-469a-a9b4-a9525e7f8c66}",
-    "windows_playback_device": "CABLE Input"
-  },
   "audio": {
     "folder": "audio",
     "sample_rate": 8000,
@@ -62,11 +43,6 @@
     "testing": {
       "display_name": "測試廣播",
       "filename": "testing.wav",
-      "description": "確認 IP Speaker 是否可正常播放。"
-    },
-    "testing_1": {
-      "display_name": "測試廣播_1",
-      "filename": "testing_1.wav",
       "description": "確認 IP Speaker 是否可正常播放。"
     },
     "fall_warning": {
@@ -88,6 +64,52 @@
       "display_name": "旅客逗留",
       "filename": "stay_warning.wav",
       "description": "旅客逗留事件警示廣播。"
+    },
+    "Right": {
+      "display_name": "右",
+      "filename": "right.wav",
+      "description": "右邊喇叭。"
+    },
+    "Left": {
+      "display_name": "左",
+      "filename": "left.wav",
+      "description": "左邊喇叭。"
     }
+  },
+  "speakers": {
+    "reg_120_192_168_6_120_5060": {
+      "display_name": "platform_1",
+      "ip": "192.168.6.120",
+      "sip_user": "120",
+      "sip_port": 5060,
+      "audio_id": "testing",
+      "event_audio_ids": {
+        "testing": "Right"
+      }
+    },
+    "reg_121_192_168_6_121_5060": {
+      "display_name": "escalator_1",
+      "ip": "192.168.6.121",
+      "sip_user": "121",
+      "sip_port": 5060,
+      "audio_id": "testing",
+      "event_audio_ids": {
+        "testing": "Left"
+      }
+    }
+  },
+  "speaker_groups": {
+    "registered": {
+      "display_name": "已註冊 Speaker",
+      "speaker_ids": [
+        "reg_120_192_168_6_120_5060",
+        "reg_121_192_168_6_121_5060"
+      ]
+    }
+  },
+  "selected_speaker_group": "registered",
+  "registrar": {
+    "host": "0.0.0.0",
+    "port": 5060
   }
 }

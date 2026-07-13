@@ -16,7 +16,6 @@ Python GUI -> PJSUA -> SIP/RTP G.711 PCMU -> PORTech IS-670
 - Playback auto-hangup works
 - Live microphone broadcast has been added for PJSUA
 - Audio recording and audio-file management have been added
-- Baresip and native Python SIP/RTP stacks are kept for comparison and future licensing work
 
 ## License Note
 
@@ -37,9 +36,6 @@ ip_speaker/
 `-- sip_stacks/
     |-- pjsua/
     |   `-- backend.py
-    |-- baresip/
-    |   `-- backend.py
-    `-- native/
 ```
 
 ## Run
@@ -96,10 +92,96 @@ mono
 Flow:
 
 ```text
-Select audio button -> PJSUA dials speaker -> PJSUA plays WAV -> PJSUA sends BYE
+Select target group -> click an event Trigger -> PJSUA dials all speakers in parallel -> each speaker plays its audio assigned for that event -> PJSUA sends BYE
 ```
 
 The GUI supports playback volume from `0%` to `200%`. The original WAV is not changed; the app creates a temporary adjusted WAV in `logs/`.
+
+## Multiple Speakers
+
+Pre-recorded playback supports speaker groups. The app starts one PJSUA process per speaker in the selected group, so speakers can be called at the same time.
+
+Each process gets its own local SIP/RTP ports:
+
+```text
+speaker 1: local SIP 64882, RTP 4004
+speaker 2: local SIP 64884, RTP 4006
+speaker 3: local SIP 64886, RTP 4008
+```
+
+Each speaker has a default test audio through `audio_id`, plus event-specific audio through `event_audio_ids`. For example, clicking `Trigger：旅客跌倒` makes each speaker look up its own `event_audio_ids.fall_warning`. If a speaker has no override for that event, it plays the event's default audio.
+
+The `Speaker 管理` tab can edit speaker names, create groups, assign event audio, and test one speaker at a time.
+
+Add speakers in `config.json`:
+
+```json
+{
+  "speakers": {
+    "speaker_1": {
+      "display_name": "IP Speaker 1",
+      "ip": "192.168.6.120",
+      "sip_user": "4267",
+      "sip_port": 5060,
+      "audio_id": "testing",
+      "event_audio_ids": {
+        "fall_warning": "fall_warning"
+      }
+    },
+    "speaker_2": {
+      "display_name": "IP Speaker 2",
+      "ip": "192.168.6.121",
+      "sip_user": "4267",
+      "sip_port": 5060,
+      "audio_id": "testing",
+      "event_audio_ids": {
+        "fall_warning": "testing_1"
+      }
+    }
+  },
+  "speaker_groups": {
+    "all": {
+      "display_name": "全部 Speaker",
+      "speaker_ids": ["speaker_1", "speaker_2"]
+    }
+  },
+  "selected_speaker_group": "all"
+}
+```
+
+Live broadcast also attempts one PJSUA process per speaker in the selected group. For reliable group live broadcast, use a shared virtual input device such as VB-CABLE or VoiceMeeter. Some Windows physical microphones cannot be opened by multiple PJSUA processes at the same time.
+
+## IBS / IPB Registration Server
+
+The app can also act as a minimal SIP registrar for PORTech IBS/IPB registration.
+
+1. Close any other SIP tool if it is using UDP `5060`.
+2. In the GUI, click `啟動 IBS Server`.
+3. In the IS-670 Web UI, set `Service Domain Settings`:
+
+```text
+Active: ON
+User Name: 4267
+Register Name: 4267
+Register Password: empty for the current test
+IPB Server: 140.124.42.67
+```
+
+4. Click `Submit`, then save/reboot the speaker if required.
+5. Confirm the speaker page shows `Registered`.
+6. In the GUI, click `重新整理註冊清單`.
+7. Click `匯入註冊 Speaker`.
+
+Imported speakers are written to `config.json` under `speakers`, and the app creates/updates a `registered` target group.
+
+Registrar logs are written to:
+
+```text
+logs/sip_registrar.log
+logs/sip_registrations.json
+```
+
+This registrar currently handles SIP `REGISTER` and returns `200 OK`. Broadcasting still uses the existing PJSUA path to call the registered speaker contact.
 
 ## Live Broadcast
 
@@ -182,6 +264,11 @@ Old format is migrated automatically when `app.py` loads:
 - `speaker.ip`: IP Speaker address
 - `speaker.sip_user`: IP Speaker SIP user
 - `speaker.sip_port`: IP Speaker SIP port
+- `speakers`: named speaker list for multi-speaker playback
+- `speaker_groups`: named target groups; each group contains speaker ids
+- `selected_speaker_group`: default group selected by the GUI
+- `registrar.host`: IBS/IPB registrar bind host, usually `0.0.0.0`
+- `registrar.port`: IBS/IPB registrar UDP port, usually `5060`
 - `pjsua.path`: PJSUA executable path
 - `pjsua.capture_dev`: optional PJSUA capture device id for live broadcast
 - `audio.sample_rate`: recording sample rate, currently `8000`

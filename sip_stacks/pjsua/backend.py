@@ -17,6 +17,8 @@ class PjsuaBackend:
         self.live_process: subprocess.Popen | None = None
         self.is_live_broadcasting = False
         self.playback_audio_path: Path | None = None
+        self.playback_log_name = "pjsua_gui.log"
+        self.live_log_name = "pjsua_live.log"
         self.logs_dir = base_dir / "logs"
         self.logs_dir.mkdir(parents=True, exist_ok=True)
 
@@ -29,7 +31,8 @@ class PjsuaBackend:
             raise PjsuaError(f"Audio file not found:\n{audio_path}")
 
         self.playback_audio_path = self._prepare_audio_file(audio_path)
-        args, target_uri = self._base_args("pjsua_gui.log")
+        self.playback_log_name = self.config.get("pjsua", {}).get("playback_log_name", "pjsua_gui.log")
+        args, target_uri = self._base_args(self.playback_log_name)
         args.extend(
             [
                 "--null-audio",
@@ -42,7 +45,7 @@ class PjsuaBackend:
 
         self.notify(f"PJSUA dialing {target_uri}")
         self.process = self._spawn(args)
-        self._raise_if_startup_failed("pjsua_gui.log", self.process, "pre-recorded broadcast")
+        self._raise_if_startup_failed(self.playback_log_name, self.process, "pre-recorded broadcast")
 
     def wait_for_audio_then_hangup(self, audio_path: Path) -> None:
         duration = self._wave_duration(self.playback_audio_path or audio_path)
@@ -51,12 +54,12 @@ class PjsuaBackend:
 
         while time.monotonic() - started < timeout:
             if self.process and self.process.poll() is not None:
-                error = self._extract_error("pjsua_gui.log")
+                error = self._extract_error(self.playback_log_name)
                 if error:
                     self.process = None
                     raise PjsuaError(error)
                 break
-            if self._log_contains_disconnected("pjsua_gui.log"):
+            if self._log_contains_disconnected(self.playback_log_name):
                 break
             time.sleep(0.2)
 
@@ -68,7 +71,8 @@ class PjsuaBackend:
         if self.process and self.process.poll() is None:
             raise PjsuaError("Pre-recorded broadcast is running. Stop it before live broadcast.")
 
-        args, target_uri = self._base_args("pjsua_live.log")
+        self.live_log_name = self.config.get("pjsua", {}).get("live_log_name", "pjsua_live.log")
+        args, target_uri = self._base_args(self.live_log_name)
         pjsua_config = self.config.get("pjsua", {})
         capture_dev = pjsua_config.get("capture_dev")
         playback_dev = pjsua_config.get("playback_dev")
@@ -80,7 +84,7 @@ class PjsuaBackend:
 
         self.notify(f"Starting live broadcast to {target_uri}")
         self.live_process = self._spawn(args)
-        self._raise_if_startup_failed("pjsua_live.log", self.live_process, "live broadcast")
+        self._raise_if_startup_failed(self.live_log_name, self.live_process, "live broadcast")
         self.is_live_broadcasting = True
 
     def stop_live_broadcast(self) -> None:
@@ -230,7 +234,9 @@ class PjsuaBackend:
         if abs(gain_percent - 100.0) < 0.01:
             return audio_path
 
-        output_path = self.logs_dir / f"_pjsua_volume_{audio_path.stem}.wav"
+        instance_id = str(self.config.get("pjsua", {}).get("instance_id", "")).strip()
+        suffix = f"_{instance_id}" if instance_id else ""
+        output_path = self.logs_dir / f"_pjsua_volume_{audio_path.stem}{suffix}.wav"
         self._write_gain_adjusted_wav(audio_path, output_path, gain_percent / 100.0)
         self.notify(f"Prepared audio volume: {gain_percent:.0f}%")
         return output_path

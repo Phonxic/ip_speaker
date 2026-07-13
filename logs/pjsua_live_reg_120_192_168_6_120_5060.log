@@ -1,0 +1,476 @@
+19:17:44.125         sip_endpoint.c !.Module "mod-pjsua-log" registered
+19:17:44.125         sip_endpoint.c  .Module "mod-tsx-layer" registered
+19:17:44.125         sip_endpoint.c  .Module "mod-stateful-util" registered
+19:17:44.125         sip_endpoint.c  .Module "mod-ua" registered
+19:17:44.126         sip_endpoint.c  .Module "mod-100rel" registered
+19:17:44.126         sip_endpoint.c  .Module "mod-pjsua" registered
+19:17:44.126         sip_endpoint.c  .Module "mod-invite" registered
+19:17:44.138             wmme_dev.c  ..WMME found 8 devices:
+19:17:44.138             wmme_dev.c  .. dev_id 0: Wave mapper  (in=2, out=2)
+19:17:44.138             wmme_dev.c  .. dev_id 1: 麥克風 (Realtek(R) Audio)  (in=2, out=0)
+19:17:44.138             wmme_dev.c  .. dev_id 2: CABLE Output (VB-Audio Virtual   (in=2, out=0)
+19:17:44.138             wmme_dev.c  .. dev_id 3: 立體聲混音 (Realtek(R) Audio)  (in=2, out=0)
+19:17:44.138             wmme_dev.c  .. dev_id 4: 耳機 (Realtek(R) Audio)  (in=0, out=2)
+19:17:44.138             wmme_dev.c  .. dev_id 5: CABLE Input (VB-Audio Virtual C  (in=0, out=2)
+19:17:44.138             wmme_dev.c  .. dev_id 6: 喇叭 (Realtek(R) Audio)  (in=0, out=2)
+19:17:44.138             wmme_dev.c  .. dev_id 7: CABLE In 16ch (VB-Audio Virtual  (in=0, out=2)
+19:17:44.138             wmme_dev.c  ..WMME initialized
+19:17:44.138                  pjlib  ..select() I/O Queue created (0000021630699188)
+19:17:44.138           conference.c  ..Creating conference bridge with 254 ports
+19:17:44.138           Master/sound  ..Using delay buffer with WSOLA.
+19:17:44.142            pjsua_vid.c  ..Initializing video subsystem..
+19:17:44.142             vid_conf.c  ...Created video conference bridge with 32 ports
+19:17:44.142         colorbar_dev.c  ...Colorbar video src initialized with 2 device(s):
+19:17:44.142         colorbar_dev.c  ... 0: Colorbar generator
+19:17:44.142         colorbar_dev.c  ... 1: Colorbar-active
+19:17:44.142             null_dev.c  ...Null video initialized with 2 device(s):
+19:17:44.142             null_dev.c  ... 0: Null capture
+19:17:44.142             null_dev.c  ... 1: Null renderer
+19:17:44.142         sip_endpoint.c  .Module "mod-evsub" registered
+19:17:44.142         sip_endpoint.c  .Module "mod-presence" registered
+19:17:44.142                evsub.c  .Event pkg "presence" registered by mod-presence
+19:17:44.142         sip_endpoint.c  .Module "mod-dlg_even" registered
+19:17:44.142                evsub.c  .Event pkg "dialog" registered by mod-dlg_even
+19:17:44.142         sip_endpoint.c  .Module "mod-mwi" registered
+19:17:44.142                evsub.c  .Event pkg "message-summary" registered by mod-mwi
+19:17:44.142         sip_endpoint.c  .Module "mod-refer" registered
+19:17:44.142                evsub.c  .Event pkg "refer" registered by mod-refer
+19:17:44.142         sip_endpoint.c  .Module "mod-pjsua-pres" registered
+19:17:44.142         sip_endpoint.c  .Module "mod-unsolicited-mwi" registered
+19:17:44.142         sip_endpoint.c  .Module "mod-pjsua-im" registered
+19:17:44.142         sip_endpoint.c  .Module "mod-pjsua-options" registered
+19:17:44.142           pjsua_core.c  .1 SIP worker threads created
+19:17:44.142           pjsua_core.c  .pjsua version 2.17-dev for win32-6.2/x86_64/msvc-19.5.1 initialized
+19:17:44.142           pjsua_core.c  .PJSUA state changed: CREATED --> INIT
+19:17:44.142         sip_endpoint.c  Module "mod-default-handler" registered
+19:17:44.142           conference.c  .Add port 1 (ringback) queued
+19:17:44.142           conference.c  .Add port 2 (ring) queued
+19:17:44.142           pjsua_core.c  SIP UDP socket reachable at 140.124.42.67:64882
+19:17:44.142    udp0000021632542F40  SIP UDP transport started, published address is 140.124.42.67:64882
+19:17:44.142            pjsua_acc.c  Adding account: id=<sip:140.124.42.67:64882>
+19:17:44.142            pjsua_acc.c  .Account <sip:140.124.42.67:64882> added with id 0
+19:17:44.142            pjsua_acc.c  Modifying account 0
+19:17:44.142            pjsua_acc.c  Acc 0: setting online status to 1..
+19:17:44.142            pjsua_acc.c  Adding account: id=sip:140.124.42.67
+19:17:44.142            pjsua_acc.c  .Account sip:140.124.42.67 added with id 1
+19:17:44.142            pjsua_acc.c  Acc 1: setting online status to 1..
+19:17:44.142           pjsua_pres.c  Adding buddy: sip:120@192.168.6.120:5060
+19:17:44.142           pjsua_pres.c  .Buddy 0 added.
+19:17:44.142           pjsua_core.c  PJSUA state changed: INIT --> STARTING
+19:17:44.142           pjsua_core.c  .PJSUA state changed: STARTING --> RUNNING
+19:17:44.142                 main.c  Ready: Success
+19:17:44.142           pjsua_call.c  Making call with acc #1 to sip:120@192.168.6.120:5060
+19:17:44.142            pjsua_aud.c  .Set sound device: capture=-1, playback=-2, mode=0, use_default_settings=0
+19:17:44.142            pjsua_app.c  ..Turning sound device -1 -2 ON
+19:17:44.142            pjsua_aud.c  ..Opening sound device (speaker + mic) PCM@8000/1/20ms
+19:17:44.153             wmme_dev.c  ... WaveAPI Sound player "Wave mapper" initialized (format=PCM, clock_rate=8000, channel_count=1, samples_per_frame=160 (20ms))
+19:17:44.165             wmme_dev.c  ... WaveAPI Sound recorder "Wave mapper" initialized (format=PCM, clock_rate=8000, channel_count=1, samples_per_frame=160 (20ms))
+19:17:44.166     ec00000216306949C0  ...Creating Echo suppressor
+19:17:44.166     ec00000216306949C0  ...Using delay buffer with WSOLA.
+19:17:44.166     ec00000216306949C0  ...Echo suppressor created, clock_rate=8000, channel=1, samples per frame=160, tail length=200 ms, latency=100 ms
+19:17:44.166               playdbuf  ...Using delay buffer with WSOLA.
+19:17:44.166                capdbuf  ...Using delay buffer with WSOLA.
+19:17:44.166           sound_port.c  ...Sound port uses internal (or software) clock
+19:17:44.166             wmme_dev.c  ...WMME playback stream started
+19:17:44.166             wmme_dev.c  ...WMME capture stream started
+19:17:44.166               playdbuf  ...Delay buffer is reset
+19:17:44.166                capdbuf  ...Delay buffer is reset
+19:17:44.167    dlg000002163256DC30  .UAC dialog created
+19:17:44.167    dlg000002163256DC30  ..Session count inc to 2 by mod-pjsua
+19:17:44.168          pjsua_media.c  .Call 0: initializing media..
+19:17:44.168          pjsua_media.c  ..RTP socket reachable at 140.124.42.67:4004
+19:17:44.168          pjsua_media.c  ..RTCP socket reachable at 140.124.42.67:4005
+19:17:44.168   srtp00000216325490B0  ..SRTP keying SDES created
+19:17:44.168   srtp00000216325490B0  ..SRTP transport created
+19:17:44.168          pjsua_media.c  ..Media index 0 selected for audio call 0
+19:17:44.168          pjsua_media.c  ..Call 0: media transport initialization complete: Success
+19:17:44.168    udp0000021632568590  ..UDP media transport created
+19:17:44.168    dlg000002163256DC30  ..Session count dec to 2 by mod-pjsua
+19:17:44.168    dlg000002163256DC30  .Module mod-invite added as dialog usage, data=00000216306A2B88
+19:17:44.168    dlg000002163256DC30  ..Session count inc to 4 by mod-invite
+19:17:44.168    dlg000002163256DC30  .Module mod-100rel added as dialog usage, data=00000216306AB078
+19:17:44.168    dlg000002163256DC30  .100rel module attached
+19:17:44.168    inv000002163256DC30  .UAC invite session created for dialog dlg000002163256DC30
+19:17:44.168             sip_util.c  .Request msg INVITE/cseq=30999 (tdta0000021632572BE0) created.
+19:17:44.168    inv000002163256DC30  ..Sending Request msg INVITE/cseq=30999 (tdta0000021632572BE0)
+19:17:44.168    dlg000002163256DC30  ...Sending Request msg INVITE/cseq=30999 (tdta0000021632572BE0)
+19:17:44.168    tsx0000021632573BF0  ....Transaction created for Request msg INVITE/cseq=30999 (tdta0000021632572BE0)
+19:17:44.168    tsx0000021632573BF0  ...Sending Request msg INVITE/cseq=30999 (tdta0000021632572BE0) in state Null
+19:17:44.168          sip_resolve.c  ....Target '192.168.6.120:5060' type=Unspecified resolved to '192.168.6.120:5060' type=UDP (UDP transport)
+19:17:44.168             sip_util.c  ....Resorting target addresses based on IPv4 preference
+19:17:44.168           pjsua_core.c  ....TX 1007 bytes Request msg INVITE/cseq=30999 (tdta0000021632572BE0) to UDP 192.168.6.120:5060:
+INVITE sip:120@192.168.6.120:5060 SIP/2.0
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport;branch=z9hG4bKPj5a6ac8401ca04d748a8dce4da53f1570
+Max-Forwards: 70
+From: sip:140.124.42.67;tag=a0d1a1a8e9714829bb54cf2455e38e16
+To: sip:120@192.168.6.120
+Contact: <sip:140.124.42.67:64882>;ob
+Call-ID: 53ed8ea782e54e13a94bb3ce88f28d8d
+CSeq: 30999 INVITE
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+Supported: replaces, 100rel, timer, norefersub
+Session-Expires: 1800
+Min-SE: 90
+User-Agent: PJSUA/v2.17-dev win32-6.2 x86_64 msvc-19.5.1
+Content-Type: application/sdp
+Content-Length:   367
+
+v=0
+o=- 3992959064 3992959064 IN IP4 140.124.42.67
+s=pjmedia
+b=AS:84
+t=0 0
+a=X-nat:0
+m=audio 4004 RTP/AVP 0 8 9 120
+c=IN IP4 140.124.42.67
+b=TIAS:64000
+a=rtcp:4005 IN IP4 140.124.42.67
+a=sendrecv
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:9 G722/8000
+a=rtpmap:120 telephone-event/8000
+a=fmtp:120 0-16
+a=ssrc:1559063618 cname:1d8f5ced106227c7
+
+--end msg--
+19:17:44.168    udp0000021632542F40  ....Request msg INVITE/cseq=30999 (tdta0000021632572BE0) sent successfully
+19:17:44.168    tsx0000021632573BF0  ....State changed from Null to Calling, event=TX_MSG
+19:17:44.168    dlg000002163256DC30  .....Transaction tsx0000021632573BF0 state changed to Calling
+19:17:44.168    inv000002163256DC30  ......State changed from NULL to CALLING, event=TSX_STATE
+19:17:44.168            pjsua_app.c  .......Call 0 state changed to CALLING
+19:17:44.186     ec00000216306949C0 !Prefetching..
+19:17:44.195           conference.c !.Added port 1 (ringback), port count=2
+19:17:44.195           conference.c  .Added port 2 (ring), port count=3
+19:17:44.206     ec00000216306949C0 !Prefetching..
+19:17:44.223         sip_endpoint.c !Processing incoming message: Response msg 100/INVITE/cseq=30999 (rdata000002163254FC48)
+19:17:44.223           pjsua_core.c  .RX 317 bytes Response msg 100/INVITE/cseq=30999 (rdata000002163254FC48) from UDP 192.168.6.120:5060:
+SIP/2.0 100 Trying
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bKPj5a6ac8401ca04d748a8dce4da53f1570
+From: <sip:140.124.42.67>;tag=a0d1a1a8e9714829bb54cf2455e38e16
+To: <sip:120@192.168.6.120>
+Call-ID: 53ed8ea782e54e13a94bb3ce88f28d8d
+CSeq: 30999 INVITE
+Content-Length: 0
+
+
+--end msg--
+19:17:44.223    tsx0000021632573BF0  .Incoming Response msg 100/INVITE/cseq=30999 (rdata000002163254FC48) in state Calling
+19:17:44.223    tsx0000021632573BF0  ..State changed from Calling to Proceeding, event=RX_MSG
+19:17:44.223    dlg000002163256DC30  ...Received Response msg 100/INVITE/cseq=30999 (rdata000002163254FC48)
+19:17:44.223    dlg000002163256DC30  ...Transaction tsx0000021632573BF0 state changed to Proceeding
+19:17:44.226     ec00000216306949C0 !Prefetching..
+19:17:44.247     ec00000216306949C0  Prefetching..
+19:17:44.266     ec00000216306949C0  Prefetching..
+19:17:44.286     ec00000216306949C0  Prefetching..
+19:17:44.299         sip_endpoint.c !Processing incoming message: Response msg 180/INVITE/cseq=30999 (rdata000002163254FC48)
+19:17:44.299           pjsua_core.c  .RX 370 bytes Response msg 180/INVITE/cseq=30999 (rdata000002163254FC48) from UDP 192.168.6.120:5060:
+SIP/2.0 180 Ringing
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bKPj5a6ac8401ca04d748a8dce4da53f1570
+From: <sip:140.124.42.67>;tag=a0d1a1a8e9714829bb54cf2455e38e16
+To: <sip:120@192.168.6.120>;tag=432b4b49
+Call-ID: 53ed8ea782e54e13a94bb3ce88f28d8d
+Contact: <sip:120@192.168.6.120:5060>
+CSeq: 30999 INVITE
+Content-Length: 0
+
+
+--end msg--
+19:17:44.299    tsx0000021632573BF0  .Incoming Response msg 180/INVITE/cseq=30999 (rdata000002163254FC48) in state Proceeding
+19:17:44.299    tsx0000021632573BF0  ..State changed from Proceeding to Proceeding, event=RX_MSG
+19:17:44.299    dlg000002163256DC30  ...Received Response msg 180/INVITE/cseq=30999 (rdata000002163254FC48)
+19:17:44.299    dlg000002163256DC30  ....Route-set updated
+19:17:44.299    dlg000002163256DC30  ...Transaction tsx0000021632573BF0 state changed to Proceeding
+19:17:44.299    inv000002163256DC30  ....State changed from CALLING to EARLY, event=TSX_STATE
+19:17:44.299            pjsua_aud.c  .....Conf connect: 1 --> 0
+19:17:44.299           conference.c  .......Connect ports 1->0 requested
+19:17:44.299           conference.c  .......Connect ports 1->0 queued
+19:17:44.299            pjsua_app.c  .....Call 0 state changed to EARLY (180 Ringing)
+19:17:44.303     ec00000216306949C0 !Latency bufferring complete
+19:17:44.321           conference.c !.Port 1 (ringback) transmitting to port 0 (Wave mapper)
+19:17:44.694         sip_endpoint.c !Processing incoming message: Response msg 200/INVITE/cseq=30999 (rdata000002163254FC48)
+19:17:44.694           pjsua_core.c  .RX 742 bytes Response msg 200/INVITE/cseq=30999 (rdata000002163254FC48) from UDP 192.168.6.120:5060:
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bKPj5a6ac8401ca04d748a8dce4da53f1570
+From: <sip:140.124.42.67>;tag=a0d1a1a8e9714829bb54cf2455e38e16
+To: <sip:120@192.168.6.120>;tag=432b4b49
+Call-ID: 53ed8ea782e54e13a94bb3ce88f28d8d
+Contact: <sip:120@192.168.6.120:5060>
+CSeq: 30999 INVITE
+Allow: INVITE,CANCEL,ACK,BYE,NOTIFY,REFER,OPTIONS,INFO,MESSAGE,UPDATE
+Supported: replaces,timer
+Session-Expires: 1800;refresher=uac
+Content-Type: application/sdp
+User-Agent: IPSPK-v1.306
+Content-Length: 183
+
+v=0
+o=CMI-SIPUA 63382 0 IN IP4 192.168.6.120
+s=SIP CALL
+c=IN IP4 192.168.6.120
+t=0 0
+m=audio 20000 RTP/AVP 0 101
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+a=sendrecv
+
+--end msg--
+19:17:44.694    tsx0000021632573BF0  .Incoming Response msg 200/INVITE/cseq=30999 (rdata000002163254FC48) in state Proceeding
+19:17:44.694    tsx0000021632573BF0  ..State changed from Proceeding to Terminated, event=RX_MSG
+19:17:44.694    dlg000002163256DC30  ...Received Response msg 200/INVITE/cseq=30999 (rdata000002163254FC48)
+19:17:44.694    dlg000002163256DC30  ....Route-set updated
+19:17:44.694    dlg000002163256DC30  ....Route-set frozen
+19:17:44.694    dlg000002163256DC30  ...Transaction tsx0000021632573BF0 state changed to Terminated
+19:17:44.694    inv000002163256DC30  ....State changed from EARLY to CONNECTING, event=TSX_STATE
+19:17:44.694            pjsua_app.c  .....Call 0 state changed to CONNECTING
+19:17:44.694    inv000002163256DC30  ....Got SDP answer in Response msg 200/INVITE/cseq=30999 (rdata000002163254FC48)
+19:17:44.694    inv000002163256DC30  ....SDP negotiation done: Success
+19:17:44.694           pjsua_call.c  .....Call 0: remote NAT type is 0 (Unknown)
+19:17:44.694          pjsua_media.c  .....Call 0: updating media..
+19:17:44.694          pjsua_media.c  .......Media stream call00:0 is destroyed
+19:17:44.694    udp0000021632568590  ......UDP media transport started
+19:17:44.694            pjsua_aud.c  ......Audio channel update for index 0 for call 0...
+19:17:44.694   strm0000021632580598  .......Jitter buffer reset
+19:17:44.694                  rtp.c  .......pjmedia_rtp_session_init: ses=0000021632583924, default_pt=0, ssrc=0x5ced6c42
+19:17:44.694                  rtp.c  .......pjmedia_rtp_session_init2: ses=0000021632583924, seq=15724, ts=2926761516, peer_ssrc=0
+19:17:44.694                  rtp.c  .......pjmedia_rtp_session_init: ses=0000021632583FBC, default_pt=0, ssrc=0x5ced6c42
+19:17:44.694                  rtp.c  .......pjmedia_rtp_session_init2: ses=0000021632583FBC, seq=24464, ts=4050471190, peer_ssrc=0
+19:17:44.694    udp0000021632568590  .......SO_RCVBUF set to 65536
+19:17:44.694    udp0000021632568590  .......SO_SNDBUF set to 65536
+19:17:44.694    udp0000021632568590  .......UDP media transport attached
+19:17:44.694               stream.c  .......Stream strm0000021632580598 created
+19:17:44.694   strm0000021632580598  .......Encoder stream started
+19:17:44.694   strm0000021632580598  .......Decoder stream started
+19:17:44.694           conference.c  ........Add port 3 (sip:120@192.168.6.120:5060) queued
+19:17:44.694          pjsua_media.c  ......audio updated, stream #0: PCMU (sendrecv)
+19:17:44.694            pjsua_app.c  .....Call 0 media 0 [type=audio], status is Active
+19:17:44.694            pjsua_aud.c  .....Conf disconnect: 1 -x- 0
+19:17:44.694           conference.c  .......Disconnect ports 1->0 requested
+19:17:44.694           conference.c  .......Disconnect ports 1->0 queued
+19:17:44.694            pjsua_aud.c  .....Conf connect: 3 --> 0
+19:17:44.694           conference.c  .......Connect ports 3->0 requested
+19:17:44.694           conference.c  .......Connect ports 3->0 queued
+19:17:44.694            pjsua_aud.c  .....Conf connect: 0 --> 3
+19:17:44.694           conference.c  .......Connect ports 0->3 requested
+19:17:44.694           conference.c  .......Connect ports 0->3 queued
+19:17:44.694    inv000002163256DC30  ....Received Response msg 200/INVITE/cseq=30999 (rdata000002163254FC48), sending ACK
+19:17:44.694             sip_util.c  ....Request msg ACK/cseq=30999 (tdta0000021632585690) created.
+19:17:44.694    dlg000002163256DC30  .....Sending Request msg ACK/cseq=30999 (tdta0000021632585690)
+19:17:44.694          sip_resolve.c  .....Target '192.168.6.120:5060' type=Unspecified resolved to '192.168.6.120:5060' type=UDP (UDP transport)
+19:17:44.694             sip_util.c  .....Resorting target addresses based on IPv4 preference
+19:17:44.694           pjsua_core.c  .....TX 335 bytes Request msg ACK/cseq=30999 (tdta0000021632585690) to UDP 192.168.6.120:5060:
+ACK sip:120@192.168.6.120:5060 SIP/2.0
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport;branch=z9hG4bKPj130bc444cfcb4c5ea389b71f36bb8e93
+Max-Forwards: 70
+From: sip:140.124.42.67;tag=a0d1a1a8e9714829bb54cf2455e38e16
+To: sip:120@192.168.6.120;tag=432b4b49
+Call-ID: 53ed8ea782e54e13a94bb3ce88f28d8d
+CSeq: 30999 ACK
+Content-Length:  0
+
+
+--end msg--
+19:17:44.694    udp0000021632542F40  .....Request msg ACK/cseq=30999 (tdta0000021632585690) sent successfully
+19:17:44.694    inv000002163256DC30  ....State changed from CONNECTING to CONFIRMED, event=TX_MSG
+19:17:44.694            pjsua_app.c  .....Call 0 state changed to CONFIRMED
+19:17:44.694    tsx0000021632573BF0  Timeout timer event
+19:17:44.694    tsx0000021632573BF0  .State changed from Terminated to Destroyed, event=TIMER
+19:17:44.694    tsx0000021632573BF0  Transaction destroyed!
+19:17:44.696           conference.c !.Added port 3 (sip:120@192.168.6.120:5060), port count=4
+19:17:44.696           conference.c  .Port 1 (ringback) stop transmitting to port 0 (Wave mapper)
+19:17:44.696           conference.c  .Port 3 (sip:120@192.168.6.120:5060) transmitting to port 0 (Wave mapper)
+19:17:44.696           conference.c  .Port 0 (Wave mapper) transmitting to port 3 (sip:120@192.168.6.120:5060)
+19:17:44.696           Master/sound  Underflow, buf_cnt=0, will generate 1 frame
+19:17:44.696   strm0000021632580598  Resetting jitter buffer in stream playback start
+19:17:44.696   strm0000021632580598  Jitter buffer reset
+19:17:44.696   strm0000021632580598 !RTP status: badpt=0, badssrc=0, dup=0, outorder=0, probation=-1, restart=0
+19:17:44.696   strm0000021632580598 !Starting talksprut..
+19:17:44.696    udp0000021632568590 !Remote RTP address switched to 140.124.44.229:20000
+19:17:44.696    udp0000021632568590  Remote RTCP address switched to predicted address 140.124.44.229:20001
+19:17:44.713   strm0000021632580598  RTP status: badpt=0, badssrc=0, dup=0, outorder=0, probation=-1, restart=0
+19:17:44.726                capdbuf !Underflow, buf_cnt=0, will generate 1 frame
+19:17:44.766        echo_suppress.c !Echo suppressor updated at t=000.480s, echo tail=30 msec, factor min/avg=0.007/0.000
+19:17:47.041   strm0000021632580598 !Frame lost, recovered!
+19:17:47.057   strm0000021632580598  Jitter buffer starts returning normal frames (after 1 empty/lost)
+19:17:50.151   strm0000021632580598  Jitter buffer empty (prefetch=0), plc invoked
+19:17:50.181   strm0000021632580598  Jitter buffer starts returning normal frames (after 1 empty/lost)
+19:17:52.081   strm0000021632580598  Frame lost, recovered!
+19:17:52.096   strm0000021632580598  Jitter buffer starts returning normal frames (after 1 empty/lost)
+19:18:02.700           pjsua_call.c !Call 0 hanging up: code=0..
+19:18:02.700          pjsua_media.c  .Call 0: deinitializing media..
+19:18:02.700          pjsua_media.c  ..
+  [CONFIRMED] To: sip:120@192.168.6.120;tag=432b4b49
+    Call time: 00h:00m:18s, 1st res in 132 ms, conn in 527ms
+    #0 audio PCMU @8kHz, sendrecv, peer=140.124.44.229:20000
+       EC stat: Echo suppressor learning in progress at t=018.400s, tail=30 ms,
+          factor min/avg=0.007/0.002
+       SRTP status: Not active Crypto-suite: 
+       RX pt=0, last update:00h:00m:02.890s ago
+          total 901pkt 144.1KB (180.2KB +IP hdr) @avg=64.0Kbps/80.0Kbps
+          pkt loss=0 (0.0%), discrd=0 (0.0%), dup=0 (0.0%), reord=0 (0.0%)
+                (msec)    min     avg     max     last    dev
+          loss period:   0.000   0.000   0.000   0.000   0.000
+          jitter     :   0.000   0.300   1.625   0.250   0.171
+       TX pt=0, ptime=20, last update:never
+          total 901pkt 144.1KB (180.2KB +IP hdr) @avg=64.0Kbps/80.0Kbps
+          pkt loss=0 (0.0%), dup=0 (0.0%), reorder=0 (0.0%)
+                (msec)    min     avg     max     last    dev 
+          loss period:   0.000   0.000   0.000   0.000   0.000
+          jitter     :   0.000   0.000   0.000   0.000   0.000
+       RTT msec      :   0.000   0.000   0.000   0.000   0.000
+19:18:02.700           conference.c  ....Remove port 3 requested
+19:18:02.700           conference.c  ....Remove port 3 queued
+19:18:02.700   strm0000021632580598  ...Stream destroying
+19:18:02.700    udp0000021632568590  ...UDP media transport detached
+19:18:02.700          pjsua_media.c  ...Media stream call00:0 is destroyed
+19:18:02.700    udp0000021632568590  ..UDP media transport already stopped
+19:18:02.700   srtp00000216325490B0  ..Destroying SRTP transport
+19:18:02.700    udp0000021632568590  ..UDP media transport destroying
+19:18:02.700            pjsua_app.c  .Call 0 is DISCONNECTED [reason=200 (OK)]
+19:18:02.700             sip_util.c  ..Request msg BYE/cseq=31000 (tdta000002163259D7E0) created.
+19:18:02.700    inv000002163256DC30  ..Sending Request msg BYE/cseq=31000 (tdta000002163259D7E0)
+19:18:02.700    dlg000002163256DC30  ...Sending Request msg BYE/cseq=31000 (tdta000002163259D7E0)
+19:18:02.700    tsx0000021632573BF0  ....Transaction created for Request msg BYE/cseq=31000 (tdta000002163259D7E0)
+19:18:02.700    tsx0000021632573BF0  ...Sending Request msg BYE/cseq=31000 (tdta000002163259D7E0) in state Null
+19:18:02.700          sip_resolve.c  ....Target '192.168.6.120:5060' type=Unspecified resolved to '192.168.6.120:5060' type=UDP (UDP transport)
+19:18:02.700             sip_util.c  ....Resorting target addresses based on IPv4 preference
+19:18:02.700           pjsua_core.c  ....TX 393 bytes Request msg BYE/cseq=31000 (tdta000002163259D7E0) to UDP 192.168.6.120:5060:
+BYE sip:120@192.168.6.120:5060 SIP/2.0
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport;branch=z9hG4bKPj48b074cdd8d24b6c89e71b78d10afecd
+Max-Forwards: 70
+From: sip:140.124.42.67;tag=a0d1a1a8e9714829bb54cf2455e38e16
+To: sip:120@192.168.6.120;tag=432b4b49
+Call-ID: 53ed8ea782e54e13a94bb3ce88f28d8d
+CSeq: 31000 BYE
+User-Agent: PJSUA/v2.17-dev win32-6.2 x86_64 msvc-19.5.1
+Content-Length:  0
+
+
+--end msg--
+19:18:02.700    udp0000021632542F40  ....Request msg BYE/cseq=31000 (tdta000002163259D7E0) sent successfully
+19:18:02.700    tsx0000021632573BF0  ....State changed from Null to Calling, event=TX_MSG
+19:18:02.700    dlg000002163256DC30  .....Transaction tsx0000021632573BF0 state changed to Calling
+19:18:02.700           conference.c  .Remove port 1 requested
+19:18:02.700           conference.c  .Remove port 1 queued
+19:18:02.700           conference.c  .Remove port 2 requested
+19:18:02.700           conference.c  .Remove port 2 queued
+19:18:02.700           pjsua_core.c  Shutting down, flags=0...
+19:18:02.700           pjsua_core.c  PJSUA state changed: RUNNING --> CLOSING
+19:18:02.709           conference.c !.Stop any transmission to port 3 (sip:120@192.168.6.120:5060)
+19:18:02.709           conference.c  .Port 0 (Wave mapper) stop transmitting to port 3 (sip:120@192.168.6.120:5060)
+19:18:02.709           Master/sound  .Delay buffer is reset
+19:18:02.709           conference.c  .Stop any transmission from port 3 (sip:120@192.168.6.120:5060)
+19:18:02.709           conference.c  .Port 3 (sip:120@192.168.6.120:5060) stop transmitting to port 0 (Wave mapper)
+19:18:02.709           conference.c  .Removing port 3 (sip:120@192.168.6.120:5060)
+19:18:02.709           pjsua_call.c !.Hangup all calls..
+19:18:02.709           conference.c !.Removed port 3, port count=3
+19:18:02.709           pjsua_call.c !..Call 0 hanging up: code=0..
+19:18:02.709    udp0000021632568590 !.UDP media transport destroyed
+19:18:02.709   srtp00000216325490B0 !.SRTP transport destroyed
+19:18:02.709   strm0000021632580598  .JB summary:
+  size=1/eff=1 prefetch=0 level=2
+  delay (min/max/avg/dev)=20/40/32/4 ms
+  burst (min/max/avg/dev)=2/4/2/0 frames
+  lost=2 discard=0 empty=1
+19:18:02.709   strm0000021632580598  .Stream destroyed
+19:18:02.709           conference.c  .Stop any transmission to port 1 (ringback)
+19:18:02.709           pjsua_call.c !...Call 0 hangup request ignored as it is on progress
+19:18:02.709           conference.c  .Stop any transmission from port 1 (ringback)
+19:18:02.709           conference.c  .Removing port 1 (ringback)
+19:18:02.709           pjsua_pres.c !.Shutting down presence..
+19:18:02.709           conference.c !.Removed port 1, port count=2
+19:18:02.709           conference.c  .Stop any transmission to port 2 (ring)
+19:18:02.709           conference.c  .Stop any transmission from port 2 (ring)
+19:18:02.709           conference.c  .Removing port 2 (ring)
+19:18:02.709           conference.c  .Removed port 2, port count=1
+19:18:02.738         sip_endpoint.c !.Processing incoming message: Response msg 200/BYE/cseq=31000 (rdata000002163254FC48)
+19:18:02.738           pjsua_core.c  ..RX 323 bytes Response msg 200/BYE/cseq=31000 (rdata000002163254FC48) from UDP 192.168.6.120:5060:
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 140.124.42.67:64882;rport=64882;received=192.168.6.1;branch=z9hG4bKPj48b074cdd8d24b6c89e71b78d10afecd
+From: <sip:140.124.42.67>;tag=a0d1a1a8e9714829bb54cf2455e38e16
+To: <sip:120@192.168.6.120>;tag=432b4b49
+Call-ID: 53ed8ea782e54e13a94bb3ce88f28d8d
+CSeq: 31000 BYE
+Content-Length: 0
+
+
+--end msg--
+19:18:02.738    tsx0000021632573BF0  ..Incoming Response msg 200/BYE/cseq=31000 (rdata000002163254FC48) in state Calling
+19:18:02.738    tsx0000021632573BF0  ...State changed from Calling to Completed, event=RX_MSG
+19:18:02.738    dlg000002163256DC30  ....Received Response msg 200/BYE/cseq=31000 (rdata000002163254FC48)
+19:18:02.738    dlg000002163256DC30  ....Transaction tsx0000021632573BF0 state changed to Completed
+19:18:02.738    inv000002163256DC30  .....State changed from CONFIRMED to DISCONNECTED, event=TSX_STATE
+19:18:02.738   tdta0000021632585690  .....Destroying txdata Request msg ACK/cseq=30999 (tdta0000021632585690)
+19:18:02.738   tdta0000021632572BE0  .....Destroying txdata Request msg INVITE/cseq=30999 (tdta0000021632572BE0)
+19:18:02.738    dlg000002163256DC30  ......Session count dec to 1 by mod-invite
+19:18:03.703            pjsua_aud.c  .Closing sound device after idle for 1 second(s)
+19:18:03.703            pjsua_app.c  ..Turning sound device -1 -2 OFF
+19:18:03.703            pjsua_aud.c  ..Closing Wave mapper sound playback device and Wave mapper sound capture device
+19:18:03.723             wmme_dev.c  ..Stopped WMME playback stream
+19:18:03.726             wmme_dev.c  ..Stopped WMME capture stream
+19:18:03.726             wmme_dev.c  ..Stopped WMME playback stream
+19:18:03.726             wmme_dev.c  ..Stopped WMME capture stream
+19:18:03.726             wmme_dev.c !WMME: thread stopping..
+19:18:03.765           pjsua_core.c !.Destroying...
+19:18:03.765        sip_transport.c  .Transport udp0000021632542F40 shutting down, force=0
+19:18:03.765          pjsua_media.c  .Shutting down media..
+19:18:03.780           conference.c  ..Audio conference bridge destroy requested
+19:18:03.780           conference.c  ...Stop any transmission to port 0 (Wave mapper)
+19:18:03.780           conference.c  ...Stop any transmission from port 0 (Wave mapper)
+19:18:03.780           conference.c  ...Removing port 0 (Wave mapper)
+19:18:03.780           conference.c  ...Removed port 0, port count=0
+19:18:03.780           conference.c  ..Audio conference bridge destroyed
+19:18:03.780            pjsua_vid.c  ..Destroying video subsystem..
+19:18:03.780            pjsua_vid.c  ...Window 0: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 1: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 2: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 3: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 4: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 5: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 6: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 7: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 8: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 9: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 10: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 11: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 12: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 13: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 14: destroying..
+19:18:03.780            pjsua_vid.c  ...Window 15: destroying..
+19:18:03.780             vid_conf.c  ...Video conference bridge destroy requested
+19:18:03.780             vid_conf.c  ...Video conference bridge destroyed
+19:18:03.780         sip_endpoint.c  .Destroying endpoint instance..
+19:18:03.780      sip_transaction.c  .Stopping transaction layer module
+19:18:03.780    tsx0000021632573BF0  .Request to terminate transaction
+19:18:03.780    tsx0000021632573BF0  ..State changed from Completed to Terminated, event=USER
+19:18:03.780    dlg000002163256DC30  ...Transaction tsx0000021632573BF0 state changed to Terminated
+19:18:03.780   tdta000002163259D7E0  .Destroying txdata Request msg BYE/cseq=31000 (tdta000002163259D7E0)
+19:18:03.780    tsx0000021632573BF0  .Transaction destroyed!
+19:18:03.780    dlg000002163256DC30  .Dialog destroyed!
+19:18:03.780      sip_transaction.c  .Stopped transaction layer module
+19:18:03.780         sip_endpoint.c  .Module "mod-default-handler" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-pjsua-options" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-pjsua-im" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-unsolicited-mwi" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-pjsua-pres" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-pjsua" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-stateful-util" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-refer" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-mwi" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-dlg_even" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-presence" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-evsub" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-invite" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-100rel" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-ua" unregistered
+19:18:03.780      sip_transaction.c  .Transaction layer module destroyed
+19:18:03.780         sip_endpoint.c  .Module "mod-tsx-layer" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-msg-print" unregistered
+19:18:03.780         sip_endpoint.c  .Module "mod-pjsua-log" unregistered
+19:18:03.780        sip_transport.c  .Destroying transport manager
+19:18:03.795    udp0000021632542F40  .SIP UDP transport destroyed
+19:18:03.795                timer.c  .Dumping timer heap:
+19:18:03.795                timer.c  .  Cur size: 0 entries, max: 3070
+19:18:03.795         sip_endpoint.c  .Endpoint 0000021630624A80 destroyed
+19:18:03.795           pjsua_core.c  .PJSUA state changed: CLOSING --> NULL
+19:18:03.795           pjsua_core.c  .PJSUA destroyed...

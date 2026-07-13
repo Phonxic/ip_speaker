@@ -98,7 +98,7 @@ def main() -> int:
         paths = [Path(arg) for arg in sys.argv[1:]]
     else:
         base = Path(__file__).resolve().parent / "captures"
-        paths = [base / "ip_speaker_trace.pcapng", base / "microsip_success_trace.pcapng"]
+        paths = [base / "ip_speaker_trace.pcapng"]
     for path in paths:
         if path.exists():
             analyze(path)
