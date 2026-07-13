@@ -1,5 +1,26 @@
 # IP Speaker Demo Control
 
+[!IMPORTANT]
+## 完整版 Demo 請使用 `PythonGUI+PJSIP` 分支
+目前 `main` 分支是使用 **Python tkinter + MicroSIP** 的早期測試版本。
+真正完整的 Demo 位於 **`PythonGUI+PJSIP`** 分支，該版本已整合 Python GUI 與 PJSIP，不需要透過 MicroSIP 操作。
+請使用以下指令直接下載完整版本：
+```powershell
+git clone --branch "PythonGUI+PJSIP" --single-branch https://github.com/Phonxic/ip_speaker.git
+cd ip_speaker
+```
+專案分支頁面：
+https://github.com/Phonxic/ip_speaker/tree/PythonGUI%2BPJSIP
+若使用一般的 `git clone`，預設會下載目前的 `main` 分支，而不是完整的 PJSIP Demo。
+
+## 關於此分支
+
+這個 `main` 分支是一個 Windows Python tkinter Demo，用來控制 PORTech IS-670 IP Speaker。
+
+程式會透過 Windows `start` 指令開啟 SIP URI，讓系統交給 MicroSIP 撥號；預錄語音播放使用 Python 內建 `winsound`，不需要額外套件。
+
+此分支主要保留作為 MicroSIP 測試版本。若要使用完整的 Python GUI + PJSIP Demo，請切換至 `PythonGUI+PJSIP` 分支。
+
 這是一個 Windows Python tkinter Demo，用來控制 PORTech IS-670 IP Speaker。程式會透過 Windows `start` 指令開啟 SIP URI，讓系統交給 MicroSIP 撥號；預錄語音播放使用 Python 內建 `winsound`，不需要額外套件。
 
 ## 專案結構
