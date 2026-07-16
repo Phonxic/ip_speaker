@@ -57,7 +57,7 @@ Known-good path:
 
 ```text
 PJSUA executable:
-C:\sipbuild\pjproject\build-cmake\pjsip-apps\Release\pjsua.exe
+tools/pjsua/pjsua.exe
 
 Speaker:
 sip:4267@192.168.6.120:5060
@@ -269,7 +269,7 @@ Old format is migrated automatically when `app.py` loads:
 - `selected_speaker_group`: default group selected by the GUI
 - `registrar.host`: IBS/IPB registrar bind host, usually `0.0.0.0`
 - `registrar.port`: IBS/IPB registrar UDP port, usually `5060`
-- `pjsua.path`: PJSUA executable path
+- `pjsua.path`: PJSUA executable path; the default bundled path is `tools/pjsua/pjsua.exe`
 - `pjsua.capture_dev`: optional PJSUA capture device id for live broadcast
 - `audio.sample_rate`: recording sample rate, currently `8000`
 - `audio.channels`: recording channels, currently `1`

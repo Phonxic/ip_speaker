@@ -1584,3 +1584,29 @@ menu: create_ua failed: Invalid argument [22]
 [19:40:09] Simple config template created: C:\Users\user\Desktop\ip_speaker\speaker設定範本.xlsx
 [19:51:55] GUI ready
 [20:31:17] GUI ready
+[13:53:42] GUI ready
+[17:30:11] GUI ready
+[17:30:19] Starting simultaneous broadcast | mode: 事件：測試廣播 | targets: platform_1, escalator_1
+[17:30:19] Broadcast 1/2: platform_1 120@192.168.6.120:5060 audio=右 local_ports=64882/4004
+[17:30:19] Broadcast 2/2: escalator_1 121@192.168.6.121:5060 audio=左 local_ports=64884/4006
+[17:30:19] Prepared audio volume: 60%
+[17:30:19] Prepared audio volume: 60%
+[17:30:19] PJSUA dialing sip:120@192.168.6.120:5060
+[17:30:19] PJSUA dialing sip:121@192.168.6.121:5060
+[17:30:29] Broadcast completed
+[17:30:34] Starting simultaneous broadcast | mode: 事件：測試廣播 | targets: platform_1, escalator_1
+[17:30:34] Broadcast 1/2: platform_1 120@192.168.6.120:5060 audio=右 local_ports=64882/4004
+[17:30:35] Broadcast 2/2: escalator_1 121@192.168.6.121:5060 audio=左 local_ports=64884/4006
+[17:30:35] Prepared audio volume: 115%
+[17:30:35] Prepared audio volume: 115%
+[17:30:35] PJSUA dialing sip:121@192.168.6.121:5060
+[17:30:35] PJSUA dialing sip:120@192.168.6.120:5060
+[17:30:41] Broadcast completed
+[17:30:43] Starting simultaneous broadcast | mode: 事件：測試廣播 | targets: platform_1, escalator_1
+[17:30:43] Broadcast 1/2: platform_1 120@192.168.6.120:5060 audio=右 local_ports=64882/4004
+[17:30:43] Broadcast 2/2: escalator_1 121@192.168.6.121:5060 audio=左 local_ports=64884/4006
+[17:30:43] Prepared audio volume: 150%
+[17:30:43] Prepared audio volume: 150%
+[17:30:43] PJSUA dialing sip:121@192.168.6.121:5060
+[17:30:43] PJSUA dialing sip:120@192.168.6.120:5060
+[17:30:50] Broadcast completed

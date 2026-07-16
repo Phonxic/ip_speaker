@@ -107,6 +107,8 @@ class PjsuaBackend:
         speaker = self.config.get("speaker", {})
 
         exe_path = Path(pjsua_config.get("path") or pjsua_config.get("exe_path", ""))
+        if not exe_path.is_absolute():
+            exe_path = self.base_dir / exe_path
         if not exe_path.exists():
             raise PjsuaError(f"PJSUA executable not found:\n{exe_path}")
 
