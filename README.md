@@ -11,11 +11,13 @@ Python GUI -> PJSUA -> SIP/RTP G.711 PCMU -> PORTech IS-670
 ## Current Status
 
 - Main backend: `pjsua`
-- PJSUA can call `sip:4267@192.168.6.120:5060`
+- PJSUA is bundled at `tools/pjsua/pjsua.exe`
 - Pre-recorded WAV playback works
 - Playback auto-hangup works
 - Live microphone broadcast has been added for PJSUA
 - Audio recording and audio-file management have been added
+- IBS/IPB registration server has been added
+- Multi-speaker group broadcast has been added
 
 ## License Note
 
@@ -30,12 +32,18 @@ ip_speaker/
 |-- config.json
 |-- requirements.txt
 |-- README.md
+|-- README_zh.md
 |-- run_demo.bat
+|-- sip_registrar.py
 |-- audio/
 |-- logs/
+|-- tools/
+|   `-- pjsua/
+|       `-- pjsua.exe
 `-- sip_stacks/
     |-- pjsua/
     |   `-- backend.py
+    `-- native/
 ```
 
 ## Run
@@ -45,23 +53,35 @@ cd C:\Users\user\Desktop\ip_speaker
 python app.py
 ```
 
+Or run:
+
+```text
+run_demo.bat
+```
+
 If you want to use GUI recording, install:
 
 ```powershell
 pip install sounddevice numpy
 ```
 
-## PJSUA Settings
-
-Known-good path:
+Or run:
 
 ```text
-PJSUA executable:
+install_audio_deps.bat
+```
+
+## PJSUA Settings
+
+Bundled PJSUA path:
+
+```text
 tools/pjsua/pjsua.exe
+```
 
-Speaker:
-sip:4267@192.168.6.120:5060
+Known-good settings:
 
+```text
 Local SIP:
 140.124.42.67:64882
 
@@ -113,7 +133,7 @@ Each speaker has a default test audio through `audio_id`, plus event-specific au
 
 The `Speaker 管理` tab can edit speaker names, create groups, assign event audio, and test one speaker at a time.
 
-Add speakers in `config.json`:
+Example speaker configuration:
 
 ```json
 {
@@ -121,7 +141,7 @@ Add speakers in `config.json`:
     "speaker_1": {
       "display_name": "IP Speaker 1",
       "ip": "192.168.6.120",
-      "sip_user": "4267",
+      "sip_user": "120",
       "sip_port": 5060,
       "audio_id": "testing",
       "event_audio_ids": {
@@ -131,17 +151,17 @@ Add speakers in `config.json`:
     "speaker_2": {
       "display_name": "IP Speaker 2",
       "ip": "192.168.6.121",
-      "sip_user": "4267",
+      "sip_user": "121",
       "sip_port": 5060,
       "audio_id": "testing",
       "event_audio_ids": {
-        "fall_warning": "testing_1"
+        "fall_warning": "testing"
       }
     }
   },
   "speaker_groups": {
     "all": {
-      "display_name": "全部 Speaker",
+      "display_name": "All Speakers",
       "speaker_ids": ["speaker_1", "speaker_2"]
     }
   },
@@ -155,14 +175,14 @@ Live broadcast also attempts one PJSUA process per speaker in the selected group
 
 The app can also act as a minimal SIP registrar for PORTech IBS/IPB registration.
 
-1. Close any other SIP tool if it is using UDP `5060`.
+1. Close any SIP tool using UDP `5060`.
 2. In the GUI, click `啟動 IBS Server`.
 3. In the IS-670 Web UI, set `Service Domain Settings`:
 
 ```text
 Active: ON
-User Name: 4267
-Register Name: 4267
+User Name: 120
+Register Name: 120
 Register Password: empty for the current test
 IPB Server: 140.124.42.67
 ```
@@ -183,9 +203,13 @@ logs/sip_registrations.json
 
 This registrar currently handles SIP `REGISTER` and returns `200 OK`. Broadcasting still uses the existing PJSUA path to call the registered speaker contact.
 
+If the IBS Server cannot start, the GUI reports which process is using UDP `5060`, including process name, PID, and executable path.
+
 ## Live Broadcast
 
 Use the `開始即時廣播` and `停止即時廣播` buttons.
+
+Closing the GUI also stops active playback/live broadcast, stops the IBS Server, and closes any bundled `tools/pjsua/pjsua.exe` process left by this app.
 
 Live broadcast uses PJSUA without:
 
@@ -207,7 +231,7 @@ If there is no sound, check:
 
 ## Audio Recording
 
-The right-side audio manager can create new WAV files:
+The audio manager can create new WAV files:
 
 1. Enter an Audio ID, for example `custom_warning_01`.
 2. Enter display name and description.
@@ -233,7 +257,7 @@ The new audio entry is saved to `config.json`.
 
 ## Audio Config Schema
 
-`audio_files` now uses a structured format:
+`audio_files` uses a structured format:
 
 ```json
 {
@@ -245,20 +269,12 @@ The new audio entry is saved to `config.json`.
 }
 ```
 
-Old format is migrated automatically when `app.py` loads:
-
-```json
-{
-  "測試廣播": "testing.wav"
-}
-```
-
 ## Useful Config Fields
 
 - `backend`: currently `pjsua`
 - `local.ip`: Windows IP address used for SIP/RTP bind
 - `local.advertise_ip`: IP announced in SIP/SDP
-- `local.sip_port`: local SIP UDP port
+- `local.sip_port`: local SIP UDP base port
 - `local.rtp_port`: local RTP base port
 - `local.audio_gain`: playback volume percent
 - `speaker.ip`: IP Speaker address
@@ -276,8 +292,9 @@ Old format is migrated automatically when `app.py` loads:
 
 ## Troubleshooting
 
-- If PJSUA cannot start, confirm `pjsua.path`.
+- If PJSUA cannot start, confirm `tools/pjsua/pjsua.exe` exists.
+- If IBS Server cannot start, close the process shown in the error dialog for UDP `5060`.
 - If playback connects but no sound, confirm WAV format.
 - If live broadcast connects but no sound, check Windows default input device.
 - If recording fails, install `sounddevice` and `numpy`.
-- Logs are written to `logs/gui.log`, `logs/pjsua_gui.log`, and `logs/pjsua_live.log`.
+- Logs are written to `logs/gui.log`, `logs/pjsua_gui.log`, `logs/pjsua_live.log`, and `logs/sip_registrar.log`.

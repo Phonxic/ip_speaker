@@ -5,7 +5,7 @@
     "advertise_ip": "140.124.42.67",
     "sip_port": 64882,
     "rtp_port": 4004,
-    "audio_gain": 150.0,
+    "audio_gain": 200.0,
     "start_delay_ms": 900,
     "sip_identity": "140.124.42.67",
     "sip_user": "101"

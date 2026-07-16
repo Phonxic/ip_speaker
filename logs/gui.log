@@ -1610,3 +1610,29 @@ menu: create_ua failed: Invalid argument [22]
 [17:30:43] PJSUA dialing sip:121@192.168.6.121:5060
 [17:30:43] PJSUA dialing sip:120@192.168.6.120:5060
 [17:30:50] Broadcast completed
+[17:33:05] GUI ready
+[17:33:15] Local audio preview started: C:\Users\user\Desktop\ip_speaker\audio\testing.wav
+[17:33:33] Starting simultaneous broadcast | mode: 選取音檔 | targets: platform_1
+[17:33:33] Broadcast 1/1: platform_1 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[17:33:33] Prepared audio volume: 150%
+[17:33:33] PJSUA dialing sip:120@192.168.6.120:5060
+[17:33:38] Broadcast completed
+[17:33:39] Starting simultaneous broadcast | mode: 選取音檔 | targets: platform_1
+[17:33:39] Broadcast 1/1: platform_1 120@192.168.6.120:5060 audio=測試廣播 local_ports=64882/4004
+[17:33:39] Prepared audio volume: 200%
+[17:33:39] PJSUA dialing sip:120@192.168.6.120:5060
+[17:33:44] Broadcast completed
+[17:33:46] Starting simultaneous broadcast | mode: 選取音檔 | targets: escalator_1
+[17:33:46] Broadcast 1/1: escalator_1 121@192.168.6.121:5060 audio=測試廣播 local_ports=64882/4004
+[17:33:46] Prepared audio volume: 200%
+[17:33:46] PJSUA dialing sip:121@192.168.6.121:5060
+[17:33:51] Broadcast completed
+[17:53:40] GUI ready
+[17:58:23] GUI ready
+[18:02:42] GUI ready
+[18:02:45] IBS Server started on UDP 0.0.0.0:5060
+[18:02:45] SIP registrar listening on UDP 0.0.0.0:5060
+[18:02:45] REGISTER 121 contact=sip:121@192.168.6.121:5060 source=140.124.44.229:21983 expires=60
+[18:02:46] Sent 200 OK to 140.124.44.229:21983
+[18:03:04] SIP registrar stopped
+[18:33:19] GUI ready

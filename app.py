@@ -1,7 +1,9 @@
 import copy
+import csv
 import json
 import os
 import re
+import subprocess
 import threading
 import time
 import tkinter as tk
@@ -852,6 +854,7 @@ class BroadcastApp(tk.Tk):
         registrar_config = self.config_data.get("registrar", {})
         host = str(registrar_config.get("host", "0.0.0.0"))
         port = int(registrar_config.get("port", 5060))
+        self.cleanup_pjsua_processes()
         try:
             self.registrar_server = SipRegistrarServer(
                 host=host,
@@ -863,7 +866,9 @@ class BroadcastApp(tk.Tk):
             self.registrar_server.start()
         except OSError as exc:
             self.registrar_server = None
-            messagebox.showerror(APP_TITLE, f"無法啟動 IBS Server UDP {port}：\n{exc}\n\n請先關閉 PJSUA 或測試 server。")
+            owners = self.udp_port_owners(port)
+            owner_text = self.format_port_owners(owners) if owners else "查不到占用程序，可能是系統服務或剛釋放中的 socket。"
+            messagebox.showerror(APP_TITLE, f"無法啟動 IBS Server UDP {port}：\n{exc}\n\n目前占用 UDP {port} 的程序：\n{owner_text}")
             self.set_status("IBS Server 啟動失敗")
             return
         self.registrar_status_var.set(f"IBS Server：執行中 UDP {host}:{port}")
@@ -1505,11 +1510,117 @@ class BroadcastApp(tk.Tk):
     def show_error_threadsafe(self, message: str):
         self.after(0, lambda msg=message: messagebox.showerror(APP_TITLE, msg))
 
+    def configured_pjsua_path(self) -> Path:
+        pjsua_config = self.config_data.get("pjsua", {})
+        configured = pjsua_config.get("path") or pjsua_config.get("exe_path") or "tools/pjsua/pjsua.exe"
+        exe_path = Path(configured)
+        if not exe_path.is_absolute():
+            exe_path = BASE_DIR / exe_path
+        return exe_path.resolve()
+
+    def cleanup_pjsua_processes(self):
+        target_path = self.configured_pjsua_path()
+        try:
+            result = subprocess.run(
+                [
+                    "wmic",
+                    "process",
+                    "where",
+                    "name='pjsua.exe'",
+                    "get",
+                    "ProcessId,ExecutablePath",
+                    "/format:csv",
+                ],
+                capture_output=True,
+                text=True,
+                timeout=5,
+                creationflags=subprocess.CREATE_NO_WINDOW,
+            )
+        except Exception as exc:
+            self.log(f"PJSUA cleanup skipped: {exc}")
+            return
+
+        if result.returncode != 0:
+            self.log(f"PJSUA cleanup query failed: {result.stderr.strip()}")
+            return
+
+        killed = 0
+        for row in csv.DictReader(line for line in result.stdout.splitlines() if line.strip()):
+            exe_value = (row.get("ExecutablePath") or "").strip()
+            pid = (row.get("ProcessId") or "").strip()
+            if not exe_value or not pid:
+                continue
+            try:
+                exe_path = Path(exe_value).resolve()
+            except OSError:
+                continue
+            if exe_path != target_path:
+                continue
+            subprocess.run(
+                ["taskkill", "/PID", pid, "/T", "/F"],
+                capture_output=True,
+                text=True,
+                timeout=5,
+                creationflags=subprocess.CREATE_NO_WINDOW,
+            )
+            killed += 1
+            self.log(f"Closed bundled PJSUA process: PID {pid}")
+
+        if killed:
+            self.set_status(f"已關閉 PJSUA：{killed} 個程序")
+
+    def udp_port_owners(self, port: int) -> list[dict]:
+        script = (
+            f"Get-NetUDPEndpoint -LocalPort {port} -ErrorAction SilentlyContinue | "
+            "ForEach-Object { "
+            "$p = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue; "
+            "[PSCustomObject]@{PID=$_.OwningProcess;ProcessName=$p.ProcessName;Path=$p.Path;LocalAddress=$_.LocalAddress} "
+            "} | ConvertTo-Csv -NoTypeInformation"
+        )
+        try:
+            result = subprocess.run(
+                ["powershell", "-NoProfile", "-Command", script],
+                capture_output=True,
+                text=True,
+                timeout=5,
+                creationflags=subprocess.CREATE_NO_WINDOW,
+            )
+        except Exception as exc:
+            self.log(f"UDP owner query skipped: {exc}")
+            return []
+        if result.returncode != 0 or not result.stdout.strip():
+            return []
+        return list(csv.DictReader(line for line in result.stdout.splitlines() if line.strip()))
+
+    @staticmethod
+    def format_port_owners(owners: list[dict]) -> str:
+        lines = []
+        for owner in owners:
+            pid = owner.get("PID") or "unknown"
+            name = owner.get("ProcessName") or "unknown"
+            path = owner.get("Path") or "(no path)"
+            address = owner.get("LocalAddress") or "*"
+            lines.append(f"- {name} / PID {pid} / {address}\n  {path}")
+        return "\n".join(lines)
+
     def on_close(self):
+        self.set_status("正在關閉程式與 PJSUA...")
+        try:
+            self.stop_playback()
+        except Exception as exc:
+            self.log(f"Close stop playback error: {exc}")
+        try:
+            self.stop_live_broadcast(silent=True)
+        except Exception as exc:
+            self.log(f"Close stop live error: {exc}")
         try:
             self.stop_registrar_server()
-        except Exception:
-            pass
+        except Exception as exc:
+            self.log(f"Close registrar error: {exc}")
+        try:
+            self.cleanup_pjsua_processes()
+        except Exception as exc:
+            self.log(f"Close PJSUA cleanup error: {exc}")
         self.destroy()
 
 
